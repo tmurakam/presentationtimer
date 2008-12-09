@@ -22,7 +22,6 @@
 		3E55F3FD0E7BAA0C008D9D4B /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */; };
 		3E5A8ED30EAF5B3200118C3C /* TimePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */; };
 		3E5E77400E7CCB5F00527AD6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E773F0E7CCB5F00527AD6 /* Default.png */; };
-		3EE2B7B10E7BF1E5003F9362 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1107310486CEB800E47090 /* Info.plist */; };
 		3EE2B7B50E7BF2D0003F9362 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7B40E7BF2D0003F9362 /* Localizable.strings */; };
 		3EE2B7C70E7BF363003F9362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7C60E7BF363003F9362 /* InfoPlist.strings */; };
 		3EE2B7FD0E7BFAEF003F9362 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7FC0E7BFAEF003F9362 /* icon.png */; };
@@ -197,7 +196,6 @@
 				3E0E24940E7BE37E00CA7AC4 /* 3bell.wav in Resources */,
 				3E0E24950E7BE37E00CA7AC4 /* 2bell.wav in Resources */,
 				3E0E24960E7BE37E00CA7AC4 /* 1bell.wav in Resources */,
-				3EE2B7B10E7BF1E5003F9362 /* Info.plist in Resources */,
 				3EE2B7B50E7BF2D0003F9362 /* Localizable.strings in Resources */,
 				3EE2B7C70E7BF363003F9362 /* InfoPlist.strings in Resources */,
 				3EE2B7FD0E7BFAEF003F9362 /* icon.png in Resources */,
@@ -309,7 +307,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				PRODUCT_NAME = PresentationTimer;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0617463E-539A-40EB-9782-964BADBD4EA5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EFF1F2D2-2B0E-49F3-9453-96FD5CB1960C";
 				SDKROOT = iphoneos2.1;
 			};
 			name = Debug;
