@@ -22,6 +22,8 @@
 		3E55F3FD0E7BAA0C008D9D4B /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */; };
 		3E5A8ED30EAF5B3200118C3C /* TimePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */; };
 		3E5E77400E7CCB5F00527AD6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E773F0E7CCB5F00527AD6 /* Default.png */; };
+		3E6FCF3911573A320078B23E /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6FCF3811573A320078B23E /* MainWindow-iPad.xib */; };
+		3E6FCF3E11573A6F0078B23E /* PresentationTimerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6FCF3D11573A6F0078B23E /* PresentationTimerViewController-iPad.xib */; };
 		3EE2B7B50E7BF2D0003F9362 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7B40E7BF2D0003F9362 /* Localizable.strings */; };
 		3EE2B7C70E7BF363003F9362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7C60E7BF363003F9362 /* InfoPlist.strings */; };
 		3EE2B7FD0E7BFAEF003F9362 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7FC0E7BFAEF003F9362 /* icon.png */; };
@@ -50,6 +52,8 @@
 		3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
 		3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimePickerViewController.xib; sourceTree = "<group>"; };
 		3E5E773F0E7CCB5F00527AD6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3E6FCF3811573A320078B23E /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		3E6FCF3D11573A6F0078B23E /* PresentationTimerViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PresentationTimerViewController-iPad.xib"; sourceTree = "<group>"; };
 		3EE2B7B20E7BF2C5003F9362 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3EE2B7B60E7BF2D8003F9362 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3EE2B7C40E7BF350003F9362 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -120,9 +124,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2899E5210DE3E06400AC0155 /* PresentationTimerViewController.xib */,
-				3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				3E6FCF3811573A320078B23E /* MainWindow-iPad.xib */,
+				2899E5210DE3E06400AC0155 /* PresentationTimerViewController.xib */,
+				3E6FCF3D11573A6F0078B23E /* PresentationTimerViewController-iPad.xib */,
+				3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				3EE2B7FC0E7BFAEF003F9362 /* icon.png */,
 				3EE2B80D0E7BFBC2003F9362 /* bell28.png */,
@@ -202,6 +208,8 @@
 				3EE2B80E0E7BFBC2003F9362 /* bell28.png in Resources */,
 				3EE2B8100E7BFCCE003F9362 /* bell40w.png in Resources */,
 				3E5E77400E7CCB5F00527AD6 /* Default.png in Resources */,
+				3E6FCF3911573A320078B23E /* MainWindow-iPad.xib in Resources */,
+				3E6FCF3E11573A6F0078B23E /* PresentationTimerViewController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,13 +255,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = PresentationTimer;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -261,11 +273,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = PresentationTimer;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -288,11 +304,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = PresentationTimer;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
 		};
