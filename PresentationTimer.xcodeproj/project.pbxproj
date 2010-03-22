@@ -26,7 +26,7 @@
 		3EA9809F1157451300526A21 /* 1bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809A1157451300526A21 /* 1bell.wav */; };
 		3EA980A01157451300526A21 /* 2bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809B1157451300526A21 /* 2bell.wav */; };
 		3EA980A11157451300526A21 /* 3bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809C1157451300526A21 /* 3bell.wav */; };
-		3EA980E011574A3300526A21 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA980DF11574A3300526A21 /* icon-ipad.png */; };
+		3EA9812511574D9500526A21 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9812411574D9500526A21 /* icon-ipad.png */; };
 		3EE2B7B50E7BF2D0003F9362 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7B40E7BF2D0003F9362 /* Localizable.strings */; };
 		3EE2B7C70E7BF363003F9362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7C60E7BF363003F9362 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,7 @@
 		3EA9809A1157451300526A21 /* 1bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1bell.wav; sourceTree = "<group>"; };
 		3EA9809B1157451300526A21 /* 2bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2bell.wav; sourceTree = "<group>"; };
 		3EA9809C1157451300526A21 /* 3bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3bell.wav; sourceTree = "<group>"; };
-		3EA980DF11574A3300526A21 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ipad.png"; sourceTree = "<group>"; };
+		3EA9812411574D9500526A21 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ipad.png"; sourceTree = "<group>"; };
 		3EE2B7B20E7BF2C5003F9362 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3EE2B7B60E7BF2D8003F9362 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3EE2B7C40E7BF350003F9362 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				3EA9807E115744C700526A21 /* bell28.png */,
 				3EA98080115744C700526A21 /* bell40w.png */,
 				3EA98081115744C700526A21 /* icon.png */,
-				3EA980DF11574A3300526A21 /* icon-ipad.png */,
+				3EA9812411574D9500526A21 /* icon-ipad.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 				3EA9809F1157451300526A21 /* 1bell.wav in Resources */,
 				3EA980A01157451300526A21 /* 2bell.wav in Resources */,
 				3EA980A11157451300526A21 /* 3bell.wav in Resources */,
-				3EA980E011574A3300526A21 /* icon-ipad.png in Resources */,
+				3EA9812511574D9500526A21 /* icon-ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
