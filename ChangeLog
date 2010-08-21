@@ -1,0 +1,4 @@
+2010/8/21 : Takuya Murakami
+	* ver 2.1
+	* iOS 4 対応 : サスペンドに対応
+	* バグ修正 : NSTimer retain count 問題
