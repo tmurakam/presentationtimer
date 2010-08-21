@@ -1,8 +1,8 @@
-// -*-  Mode:ObjC; c-basic-offset:4; tab-width:4; indent-tabs-mode:t -*-
+// -*-  Mode:ObjC; c-basic-offset:4; tab-width:8; indent-tabs-mode:nil -*-
 /*
   Presentation Timer for iPhone
 
-  Copyright (c) 2008, Takuya Murakami, All rights reserved.
+  Copyright (c) 2008-2010, Takuya Murakami, All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are
@@ -37,13 +37,13 @@
 @class PresentationTimerViewController;
 
 @interface TimePickerViewController : UIViewController {
-	IBOutlet UIDatePicker *picker;
-	IBOutlet UIButton *cdtButton;
+    IBOutlet UIDatePicker *picker;
+    IBOutlet UIButton *cdtButton;
 	
-	int editingItem;
-	int seconds;
+    int editingItem;
+    int seconds;
 	
-	PresentationTimerViewController *presentationTimerVC;
+    PresentationTimerViewController *presentationTimerVC;
 }
 
 @property(nonatomic,assign) int editingItem;

@@ -1,8 +1,8 @@
-// -*-  Mode:ObjC; c-basic-offset:4; tab-width:4; indent-tabs-mode:t -*-
+// -*-  Mode:ObjC; c-basic-offset:4; tab-width:8; indent-tabs-mode:nil -*-
 /*
   Presentation Timer for iPhone
 
-  Copyright (c) 2008, Takuya Murakami, All rights reserved.
+  Copyright (c) 2008-2010, Takuya Murakami, All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are
@@ -37,36 +37,37 @@
 #import "TimePickerViewController.h"
 
 @interface PresentationTimerViewController : UIViewController {
-	IBOutlet UILabel *timeLabel;
-	IBOutlet UIButton *bell1Button;
-	IBOutlet UIButton *bell2Button;
-	IBOutlet UIButton *bell3Button;
-	IBOutlet UIButton *startStopButton;
-	IBOutlet UIButton *resetButton;
+    IBOutlet UILabel *timeLabel;
+    IBOutlet UIButton *bell1Button;
+    IBOutlet UIButton *bell2Button;
+    IBOutlet UIButton *bell3Button;
+    IBOutlet UIButton *startStopButton;
+    IBOutlet UIButton *resetButton;
 
-	// Timer value                                                                                                                                        
-	int currentTime; // seconds                                                                                                                           
-	int bell1Time;
-	int bell2Time;
-	int bell3Time;
-	int countDownTarget;
-	BOOL isCountDown;
+    // Timer value                                                                                                                                        
+    int currentTime; // seconds                                                                                                                           
+    int bell1Time;
+    int bell2Time;
+    int bell3Time;
+    int countDownTarget;
+    BOOL isCountDown;
 	
-	UIColor *color0;
-	UIColor *color1;
-	UIColor *color2;
-	UIColor *color3;
+    UIColor *color0;
+    UIColor *color1;
+    UIColor *color2;
+    UIColor *color3;
 
-	NSTimer *timer;	
+    NSTimer *timer;
+    NSDate *suspendedTime;
 	
-	// Audio
-	SystemSoundID sound_bell1;
-	SystemSoundID sound_bell2;
-	SystemSoundID sound_bell3;
+    // Audio
+    SystemSoundID sound_bell1;
+    SystemSoundID sound_bell2;
+    SystemSoundID sound_bell3;
 	
-	// View
-	UINavigationController *timeNaviC;
-	TimePickerViewController *timePickerVC;
+    // View
+    UINavigationController *timeNaviC;
+    TimePickerViewController *timePickerVC;
 }
 
 @property(nonatomic,assign) int bell1Time;
@@ -88,5 +89,7 @@
 
 - (SystemSoundID)loadWav:(NSString*)name;
 
-@end
+- (void)appSuspended;
+- (void)appResumed;
 
+@end

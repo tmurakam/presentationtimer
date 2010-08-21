@@ -1,8 +1,8 @@
-// -*-  Mode:ObjC; c-basic-offset:4; tab-width:4; indent-tabs-mode:t -*-
+// -*-  Mode:ObjC; c-basic-offset:4; tab-width:8; indent-tabs-mode:nil -*-
 /*
   Presentation Timer for iPhone
 
-  Copyright (c) 2008, Takuya Murakami, All rights reserved.
+  Copyright (c) 2008-2010, Takuya Murakami, All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are
@@ -40,9 +40,7 @@
 @synthesize window;
 @synthesize viewController;
 
-
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
+- (void)applicationDidFinishLaunching:(UIApplication *)application {
     // Override point for customization after app launch    
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
@@ -54,7 +52,12 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    //
+    [viewController appSuspended];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [viewController appResumed];
 }
 
 - (void)dealloc {
@@ -62,6 +65,5 @@
     [window release];
     [super dealloc];
 }
-
 
 @end
