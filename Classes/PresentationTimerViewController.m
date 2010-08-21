@@ -174,6 +174,7 @@
 											   selector:@selector(timerHandler:) 
 											   userInfo:nil
 												repeats:YES];
+        [timer retain];
 		newTitle = NSLocalizedString(@"Pause", @"");
 		resetButton.enabled = NO;
                 [UIApplication sharedApplication].idleTimerDisabled = YES;
