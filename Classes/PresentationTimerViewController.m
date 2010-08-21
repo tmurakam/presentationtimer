@@ -33,6 +33,7 @@
 */
 
 #import "PresentationTimerViewController.h"
+#import "InfoVC.h"
 
 @implementation PresentationTimerViewController
 
@@ -268,8 +269,12 @@
 
 - (IBAction)showHelp:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:NSLocalizedString(@"HelpURL", @"")];
-    [[UIApplication sharedApplication] openURL:url];
+    //NSURL *url = [NSURL URLWithString:NSLocalizedString(@"HelpURL", @"")];
+    //[[UIApplication sharedApplication] openURL:url];
+    
+    InfoVC *vc = [[[InfoVC alloc] init] autorelease];
+    UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    [self presentModalViewController:nv animated:YES];
 }
 
 #pragma mark iOS4 support
