@@ -48,6 +48,14 @@
     [window makeKeyAndVisible];
 }
 
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    //
+}
 
 - (void)dealloc {
     [viewController release];
