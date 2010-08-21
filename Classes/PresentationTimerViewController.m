@@ -90,7 +90,10 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-	
+}
+
+- (void)saveDefaults
+{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[NSNumber numberWithInt:bell1Time] forKey:@"bell1Time"];
     [defaults setObject:[NSNumber numberWithInt:bell2Time] forKey:@"bell2Time"];

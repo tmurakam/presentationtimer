@@ -82,6 +82,7 @@
 - (IBAction)showHelp:(id)sender;
 - (IBAction)invertCountDown:(id)sender;
 
+- (void)saveDefaults;
 - (void)updateButtonTitle;
 - (void)updateTimeLabel;
 - (NSString*)timeText:(int)n;

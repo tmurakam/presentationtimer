@@ -85,6 +85,7 @@
             presentationTimerVC.bell3Time = seconds;
             break;
     }
+    [presentationTimerVC saveDefaults];
     [presentationTimerVC updateButtonTitle];
 	
     [self dismissModalViewControllerAnimated:YES];
@@ -98,6 +99,7 @@
 - (IBAction)onSetCountdownTarget:(id)sender
 {
     presentationTimerVC.countDownTarget = editingItem;
+    [presentationTimerVC saveDefaults];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
