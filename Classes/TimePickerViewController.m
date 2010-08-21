@@ -62,7 +62,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	picker.datePickerMode = UIDatePickerModeCountDownTimer;
+	//picker.datePickerMode = UIDatePickerModeCountDownTimer;
 	
 	self.title = @"Set Time";
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel

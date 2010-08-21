@@ -41,6 +41,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
+						<int key="IBUIDatePickerMode">3</int>
 						<object class="NSLocale" key="IBUILocale">
 							<string key="NS.identifier">en_US</string>
 						</object>
