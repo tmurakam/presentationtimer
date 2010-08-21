@@ -33,7 +33,7 @@
 					<object class="IBUIImageView" id="169907643">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">293</int>
-						<string key="NSFrame">{{131, 20}, {57, 57}}</string>
+						<string key="NSFrame">{{120, 40}, {80, 80}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -42,13 +42,13 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">bell40w.png</string>
+							<string key="NSResourceName">icon-blackbg.png</string>
 						</object>
 					</object>
 					<object class="IBUILabel" id="959586379">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">293</int>
-						<string key="NSFrame">{{32, 100}, {264, 37}}</string>
+						<string key="NSFrame">{{0, 146}, {320, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -60,11 +60,11 @@
 							<double key="NSSize">31</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<object class="NSColor" key="IBUITextColor" id="27362213">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
+						<object class="NSColor" key="IBUITextColor" id="830156375">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MQA</bytes>
 						</object>
-						<nil key="IBUIHighlightedColor"/>
+						<reference key="IBUIHighlightedColor" ref="830156375"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">12</float>
 						<int key="IBUITextAlignment">1</int>
@@ -72,22 +72,28 @@
 					<object class="IBUILabel" id="338173572">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">293</int>
-						<string key="NSFrame">{{114, 136}, {101, 22}}</string>
+						<string key="NSFrame">{{0, 196}, {320, 29}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Version 1.1</string>
-						<reference key="IBUITextColor" ref="27362213"/>
-						<nil key="IBUIHighlightedColor"/>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">18</double>
+							<int key="NSfFlags">16</int>
+						</object>
+						<reference key="IBUITextColor" ref="830156375"/>
+						<reference key="IBUIHighlightedColor" ref="830156375"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUITextAlignment">1</int>
 					</object>
 					<object class="IBUILabel" id="7075274">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">293</int>
-						<string key="NSFrame">{{16, 193}, {289, 22}}</string>
+						<string key="NSFrame">{{0, 263}, {320, 22}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -99,8 +105,8 @@
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<reference key="IBUITextColor" ref="27362213"/>
-						<nil key="IBUIHighlightedColor"/>
+						<reference key="IBUITextColor" ref="830156375"/>
+						<reference key="IBUIHighlightedColor" ref="830156375"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 						<float key="IBUIMinimumFontSize">8</float>
@@ -108,7 +114,7 @@
 					</object>
 					<object class="IBUIButton" id="805751871">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">293</int>
+						<int key="NSvFlags">301</int>
 						<string key="NSFrame">{{57, 338}, {206, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -134,7 +140,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MyAwLjMwOTgwMzkzIDAuNTIxNTY4NjYAA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleShadowColor">
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="346041113">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MAA</bytes>
 						</object>
@@ -142,10 +148,7 @@
 				</array>
 				<string key="NSFrameSize">{320, 416}</string>
 				<reference key="NSSuperview"/>
-				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MQA</bytes>
-				</object>
+				<reference key="IBUIBackgroundColor" ref="346041113"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">
 					<bool key="IBUIPrompted">NO</bool>
@@ -201,11 +204,11 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="7075274"/>
-							<reference ref="169907643"/>
-							<reference ref="338173572"/>
 							<reference ref="805751871"/>
+							<reference ref="169907643"/>
+							<reference ref="7075274"/>
 							<reference ref="959586379"/>
+							<reference ref="338173572"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -271,21 +274,11 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="doneAction:">id</string>
-						<string key="purchaseStandardVersion">id</string>
-						<string key="sendSupportMail">id</string>
 						<string key="webButtonTapped">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="doneAction:">
 							<string key="name">doneAction:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="purchaseStandardVersion">
-							<string key="name">purchaseStandardVersion</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="sendSupportMail">
-							<string key="name">sendSupportMail</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="webButtonTapped">
@@ -295,17 +288,12 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="nameLabel">UILabel</string>
-						<string key="purchaseButton">UIButton</string>
 						<string key="versionLabel">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="nameLabel">
 							<string key="name">nameLabel</string>
 							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="purchaseButton">
-							<string key="name">purchaseButton</string>
-							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="versionLabel">
 							<string key="name">versionLabel</string>
@@ -558,8 +546,8 @@
 		<string key="IBDocument.LastKnownRelativeProjectPath">../PresentationTimer.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">bell40w.png</string>
-			<string key="NS.object.0">{42, 40}</string>
+			<string key="NS.key.0">icon-blackbg.png</string>
+			<string key="NS.object.0">{72, 72}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">117</string>
 	</data>
