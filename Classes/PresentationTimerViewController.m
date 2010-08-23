@@ -39,6 +39,9 @@
 
 @synthesize bell1Time, bell2Time, bell3Time, countDownTarget;
 
+/**
+   initialize
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -55,7 +58,7 @@
     if (bell3Time == 0) bell3Time = 20*60;
     if (countDownTarget == 0) countDownTarget = 2;
     isCountDown = NO;
-	
+
     color0 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     color1 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:0.0 alpha:1.0];
     color2 = [[UIColor alloc] initWithRed:1.0 green:0.2 blue:0.8 alpha:1.0];
@@ -74,7 +77,6 @@
     [resetButton setTitle:title forState:UIControlStateNormal];
     [resetButton setTitle:title forState:UIControlStateHighlighted];
     [resetButton setTitle:title forState:UIControlStateDisabled];
-	
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -89,6 +91,9 @@
     [super viewWillDisappear:animated];
 }
 
+/**
+   Save default values
+*/
 - (void)saveDefaults
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -99,6 +104,9 @@
     [defaults synchronize];
 }
 
+/**
+   load WAV file from resource
+*/
 - (SystemSoundID)loadWav:(NSString*)name
 {
     SystemSoundID sid;
@@ -107,6 +115,9 @@
     return sid;
 }
 
+/**
+   Update values of time buttons
+*/
 - (void)updateButtonTitle
 {
     [bell1Button setTitle:[self timeText:bell1Time] forState:UIControlStateNormal];
@@ -118,29 +129,27 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
     return YES;
-    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
     // Release anything that's not essential, such as cached data
 }
 
-
 - (void)dealloc {
     [super dealloc];
 }
 
-///
-
+/**
+   Start or stop timer (toggle)
+*/
 - (IBAction)startStopTimer:(id)sender
 {
     NSString *newTitle;
 	
     if (timer == nil) {
+        // start timer
         timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                          target:self 
                          selector:@selector(timerHandler:) 
@@ -149,31 +158,45 @@
         [timer retain];
         newTitle = NSLocalizedString(@"Pause", @"");
         resetButton.enabled = NO;
+
+        // Disable auto lock when timer is running
         [UIApplication sharedApplication].idleTimerDisabled = YES;
     } else {
+        // stop timer
         [timer invalidate];
         [timer release];
         timer = nil;
 
         newTitle = NSLocalizedString(@"Start", @"");
         resetButton.enabled = YES;
+
+        // Enable auto lock
         [UIApplication sharedApplication].idleTimerDisabled = NO;
     }
     [startStopButton setTitle:newTitle forState:UIControlStateNormal];
     [startStopButton setTitle:newTitle forState:UIControlStateHighlighted];
 }
 
+/**
+   Reset timer value
+*/
 - (IBAction)resetTimer:(id)sender
 {
     currentTime = 0;
     [self updateTimeLabel];
 }
 
+/**
+   Ring bell manually
+*/
 - (IBAction)manualBell:(id)sender
 {
     AudioServicesPlaySystemSound(sound_bell1);
 }
 
+/**
+   Called when time buttons are tapped
+*/
 - (IBAction)bellButtonTapped:(id)sender
 {
     int sec;
@@ -198,12 +221,18 @@
     [self presentModalViewController:nv animated:YES];
 }
 
+/**
+   Toggle count down mode
+*/
 - (IBAction)invertCountDown:(id)sender
 {
     isCountDown = !isCountDown;
     [self updateTimeLabel];
 }
 
+/**
+   Timer handler : called for each 1 second.
+*/
 - (void)timerHandler:(NSTimer*)theTimer
 {
     currentTime ++;
@@ -221,6 +250,9 @@
     [self updateTimeLabel];
 }
 
+/**
+   Update time label
+*/
 - (void)updateTimeLabel
 {
     int t;
