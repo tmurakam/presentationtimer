@@ -32,38 +32,17 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#import "PresentationTimerAppDelegate.h"
-#import "PresentationTimerViewController.h"
+#import <UIKit/UIKit.h>
 
-@implementation PresentationTimerAppDelegate
+@class PresentationTimerViewController;
 
-@synthesize window;
-@synthesize viewController;
-
-- (void)applicationDidFinishLaunching:(UIApplication *)application {
-    // Override point for customization after app launch    
-    [window addSubview:viewController.view];
-    [window makeKeyAndVisible];
+@interface AppDelegate : NSObject <UIApplicationDelegate> {
+    UIWindow *window;
+    PresentationTimerViewController *viewController;
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    [viewController appSuspended];
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    [viewController appResumed];
-}
-
-- (void)dealloc {
-    [viewController release];
-    [window release];
-    [super dealloc];
-}
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet PresentationTimerViewController *viewController;
 
 @end
+
