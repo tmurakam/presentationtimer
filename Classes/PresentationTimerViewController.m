@@ -56,11 +56,6 @@
     if (countDownTarget == 0) countDownTarget = 2;
     isCountDown = NO;
 	
-    timePickerVC = [[TimePickerViewController alloc] initWithNibName:@"TimePickerViewController" bundle:[NSBundle mainBundle]];
-    timeNaviC = [[UINavigationController alloc] initWithRootViewController:timePickerVC];
-
-    timePickerVC.presentationTimerVC = self;
-
     color0 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     color1 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:0.0 alpha:1.0];
     color2 = [[UIColor alloc] initWithRed:1.0 green:0.2 blue:0.8 alpha:1.0];
@@ -86,6 +81,7 @@
 {
     [super viewWillAppear:animated];
     [self updateButtonTitle];
+    [self updateTimeLabel];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -193,10 +189,13 @@
         editingItem = 3;
     }
 
-    timePickerVC.seconds = sec;
-    timePickerVC.editingItem = editingItem;
+    TimerPickerViewController *vc = [[[TimePickerViewController alloc] init] autorelease];
+    vc.presentationTimerVC = self;
+    vc.seconds = sec;
+    vc.editingItem = editingItem;
 
-    [self presentModalViewController:timeNaviC animated:YES];
+    UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    [self presentModalViewController:nv animated:YES];
 }
 
 - (IBAction)invertCountDown:(id)sender

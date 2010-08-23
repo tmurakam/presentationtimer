@@ -42,6 +42,12 @@
 @synthesize editingItem;
 @synthesize presentationTimerVC;
 
+- (id)init
+{
+    self = [super initWithNibName:@"TimePickerViewController" bundle:nil];
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	

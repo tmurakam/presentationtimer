@@ -64,10 +64,6 @@
     SystemSoundID sound_bell1;
     SystemSoundID sound_bell2;
     SystemSoundID sound_bell3;
-	
-    // View
-    UINavigationController *timeNaviC;
-    TimePickerViewController *timePickerVC;
 }
 
 @property(nonatomic,assign) int bell1Time;
