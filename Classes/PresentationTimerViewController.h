@@ -36,7 +36,9 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "TimePickerViewController.h"
 
-@interface PresentationTimerViewController : UIViewController {
+@interface PresentationTimerViewController : UIViewController
+  <TimePickerViewDelegate>
+{
     IBOutlet UILabel *timeLabel;
     IBOutlet UIButton *bell1Button;
     IBOutlet UIButton *bell2Button;
@@ -60,16 +62,13 @@
     NSTimer *timer;
     NSDate *suspendedTime;
 	
+    int editingItem;
+
     // Audio
     SystemSoundID sound_bell1;
     SystemSoundID sound_bell2;
     SystemSoundID sound_bell3;
 }
-
-@property(nonatomic,assign) int bell1Time;
-@property(nonatomic,assign) int bell2Time;
-@property(nonatomic,assign) int bell3Time;
-@property(nonatomic,assign) int countDownTarget;
 
 - (IBAction)startStopTimer:(id)sender;
 - (IBAction)resetTimer:(id)sender;

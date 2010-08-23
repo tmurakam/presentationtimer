@@ -34,21 +34,24 @@
 
 #import <UIKit/UIKit.h>
 
-@class PresentationTimerViewController;
+@class TimePickerViewController;
+
+@protocol TimePickerViewDelegate
+- (void)timePickerViewSetTime:(int)seconds;
+- (void)timePickerViewSetCountdownTarget;
+@end
 
 @interface TimePickerViewController : UIViewController {
     IBOutlet UIDatePicker *picker;
     IBOutlet UIButton *cdtButton;
 	
-    int editingItem;
     int seconds;
-	
-    PresentationTimerViewController *presentationTimerVC;
+
+    id<TimePickerViewDelegate> delegate;
 }
 
-@property(nonatomic,assign) int editingItem;
 @property(nonatomic,assign) int seconds;
-@property(nonatomic,assign) PresentationTimerViewController* presentationTimerVC;
+@property(nonatomic,assign) id<TimePickerViewDelegate> delegate;
 
 - (IBAction)onDone:(id)sender;
 - (IBAction)onCancel:(id)sender;

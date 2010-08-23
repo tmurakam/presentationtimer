@@ -37,8 +37,6 @@
 
 @implementation PresentationTimerViewController
 
-@synthesize bell1Time, bell2Time, bell3Time, countDownTarget;
-
 /**
    initialize
  */
@@ -200,7 +198,6 @@
 - (IBAction)bellButtonTapped:(id)sender
 {
     int sec;
-    int editingItem;
     if (sender == bell1Button) {
         sec = bell1Time;
         editingItem = 1;
@@ -213,9 +210,8 @@
     }
 
     TimerPickerViewController *vc = [[[TimePickerViewController alloc] init] autorelease];
-    vc.presentationTimerVC = self;
+    vc.delegate = self;
     vc.seconds = sec;
-    vc.editingItem = editingItem;
 
     UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:nv animated:YES];
@@ -306,6 +302,35 @@
     InfoVC *vc = [[[InfoVC alloc] init] autorelease];
     UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
     [self presentModalViewController:nv animated:YES];
+}
+
+#pragma mark TimePickerViewDelegate
+
+- (void)timePickerViewSetTime:(int)seconds
+{
+    if (seconds > 99*60) {
+        seconds = 99*60;
+    }
+    seconds -= (seconds % 60); // for safety
+    switch (editingItem) {
+        case 1:
+            bell1Time = seconds;
+            break;
+        case 2:
+            bell2Time = seconds;
+            break;
+        case 3:
+            bell3Time = seconds;
+            break;
+    }
+    [self saveDefaults];
+    [self updateButtonTitle];
+}
+
+- (void)timePickerViewSetCountdownTarget
+{
+    countDownTarget = editingItem;
+    [self saveDefaults];
 }
 
 #pragma mark iOS4 support

@@ -33,14 +33,11 @@
 */
 
 #import "TimePickerViewController.h"
-#import "PresentationTimerViewController.h"
-
 
 @implementation TimePickerViewController
 
 @synthesize seconds;
-@synthesize editingItem;
-@synthesize presentationTimerVC;
+@synthesize delegate;
 
 - (id)init
 {
@@ -76,24 +73,7 @@
 - (IBAction)onDone:(id)sender
 {
     seconds = (int)picker.countDownDuration;
-    if (seconds > 99*60) {
-        seconds = 99*60;
-    }
-    seconds -= (seconds % 60); // for safety
-    switch (editingItem) {
-        case 1:
-            presentationTimerVC.bell1Time = seconds;
-            break;
-        case 2:
-            presentationTimerVC.bell2Time = seconds;
-            break;
-        case 3:
-            presentationTimerVC.bell3Time = seconds;
-            break;
-    }
-    [presentationTimerVC saveDefaults];
-    [presentationTimerVC updateButtonTitle];
-	
+    [delegate timePickerViewSetTime:seconds];
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -104,8 +84,7 @@
 
 - (IBAction)onSetCountdownTarget:(id)sender
 {
-    presentationTimerVC.countDownTarget = editingItem;
-    [presentationTimerVC saveDefaults];
+    [delegate timePickerViewSetCountdownTarget];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
