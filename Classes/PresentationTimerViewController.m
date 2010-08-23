@@ -33,6 +33,7 @@
 */
 
 #import "PresentationTimerViewController.h"
+#import "TimePickerViewController.h"
 #import "InfoVC.h"
 
 @implementation PresentationTimerViewController
@@ -208,8 +209,8 @@
         sec = bell3Time;
         editingItem = 3;
     }
-
-    TimerPickerViewController *vc = [[[TimePickerViewController alloc] init] autorelease];
+    
+    TimePickerViewController *vc = [[[TimePickerViewController alloc] init] autorelease];
     vc.delegate = self;
     vc.seconds = sec;
 
