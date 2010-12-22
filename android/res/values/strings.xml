@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, MainActivity!</string>
     <string name="app_name">Presentation Timer</string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
+    <string name="reset">Reset</string>
+    <string name="use_as_end_time">Use as presentation end time</string>
+    <string name="help_url">http://android.tmurakam.org/presentationTimer/index.html</string>
 </resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">プレゼンタイマ</string>
+    <string name="start">開始</string>
+    <string name="pause">停止</string>
+    <string name="reset">リセット</string>
+    <string name="use_as_end_time">プレゼン終了時刻として使用</string>
+    <string name="help_url">http://android.tmurakam.org/presentationTimer/index-ja.html</string>
+</resources>
