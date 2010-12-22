@@ -6,17 +6,18 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 
-public class PrefActivity extends PreferenceActivity implements
-        SharedPreferences.OnSharedPreferenceChangeListener {
+public class PrefActivity extends PreferenceActivity {
     private static final String TAG = "presentationTimer";
 
-    //private EditTextPreference m;
+    private Prefs mPrefs;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.pref);
+
+        mPrefs = new Prefs(this);
         
         PreferenceScreen ps;
         Intent intent;
@@ -35,20 +36,22 @@ public class PrefActivity extends PreferenceActivity implements
     @Override
     public void onResume() {
         super.onResume();
-        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(
-                this);
-    }
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         updateUi();
     }
 
     private void updateUi() {
-        // ここで summary を変更する
+        PreferenceScreen ps;
+
+        for (int i = 1; i <= 3; i++) {
+            ps = (PreferenceScreen)findPreference("_" + i + "bell");
+            assert(ps != null);
+            
+            int time = mPrefs.getBellTime(i);
+            String s = String.format("%02d:%02d", time / 3600, (time / 60) % 60);
+            if (i == mPrefs.getCountDownTarget()) {
+                s += " (*)";
+            }
+            ps.setSummary(s);
+        }
     }
 }
