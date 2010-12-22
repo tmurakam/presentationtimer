@@ -262,20 +262,11 @@ public class MainActivity extends Activity {
                 return true;
 
             case R.id.menu_help:
-                showHelp();
+                intent = new Intent(this, InfoActivity.class);
+                startActivity(intent);
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void showHelp() {
-        // TODO: 未実装
-        /*
-         * InfoVC *vc = [[[InfoVC alloc] init] autorelease];
-         * UINavigationController *nv = [[[UINavigationController alloc]
-         * initWithRootViewController:vc] autorelease]; [self
-         * presentModalViewController:nv animated:YES];
-         */
     }
 }
