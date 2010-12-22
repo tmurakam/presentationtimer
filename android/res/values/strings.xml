@@ -12,4 +12,6 @@
 <string name="preferences">Preferences</string>
 <string name="help">Help</string>
 <string name="end_time">End time</string>
+<string name="hours">hours</string>
+<string name="minutes">minutes</string>
 </resources>

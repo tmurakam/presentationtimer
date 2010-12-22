@@ -47,7 +47,18 @@ public class PrefActivity extends PreferenceActivity {
             assert (ps != null);
 
             int time = mPrefs.getBellTime(i);
-            String s = String.format("%02d:%02d", time / 3600, (time / 60) % 60);
+            int hour = time / 3600;
+            int min = (time / 60) % 60;
+            
+            String s = "";
+            if (hour > 0) {
+                s += hour;
+                s += getResources().getString(R.string.hours);
+                s += " ";
+            }
+            s += min;
+            s += getResources().getString(R.string.minutes);
+
             if (i == mPrefs.getCountDownTarget()) {
                 s += ", ";
                 s += getResources().getString(R.string.end_time);

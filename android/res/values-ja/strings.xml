@@ -12,4 +12,6 @@
 <string name="preferences">設定</string>
 <string name="help">ヘルプ</string>
 <string name="end_time">終了時刻</string>
+<string name="hours">時間</string>
+<string name="minutes">分</string>
 </resources>
