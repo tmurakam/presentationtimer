@@ -1,3 +1,4 @@
+
 package org.tmurakam.presentationtimer;
 
 import android.content.Context;
@@ -11,14 +12,16 @@ import android.widget.TextView;
 public class FontFitTextView extends TextView {
 
     private Paint testPaint;
+
     private float minTextSize;
+
     private float maxTextSize;
-    
+
     public FontFitTextView(Context context) {
         super(context);
         initialize();
     }
-    
+
     public FontFitTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initialize();
@@ -27,7 +30,8 @@ public class FontFitTextView extends TextView {
     private void initialize() {
         testPaint = new Paint();
         testPaint.set(this.getPaint());
-        //max size defaults to the initially specified text size unless it is too small
+        // max size defaults to the initially specified text size unless it is
+        // too small
         maxTextSize = this.getTextSize();
         if (maxTextSize < 11) {
             maxTextSize = 20;
@@ -36,23 +40,26 @@ public class FontFitTextView extends TextView {
     }
 
     @Override
-    protected void onTextChanged(final CharSequence text, final int start, final int before, final int after) {
+    protected void onTextChanged(final CharSequence text, final int start, final int before,
+            final int after) {
         refitText(text.toString(), this.getWidth(), this.getHeight());
     }
 
     @Override
-    protected void onSizeChanged (int w, int h, int oldw, int oldh) {
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         if (w != oldw) {
             refitText(this.getText().toString(), w, h);
         }
     }
 
-    /* Re size the font so the specified text fits in the text box
-     * assuming the text box is the specified width.
+    /*
+     * Re size the font so the specified text fits in the text box assuming the
+     * text box is the specified width.
      */
     private void refitText(String text, int width, int height) {
-        if (width <= 0 || height <= 0) return;
-        
+        if (width <= 0 || height <= 0)
+            return;
+
         int availableWidth = width - this.getPaddingLeft() - this.getPaddingRight();
         int availableHeight = height - this.getPaddingTop() - this.getPaddingBottom();
         float trySize = maxTextSize;
@@ -60,10 +67,11 @@ public class FontFitTextView extends TextView {
         Rect bounds = new Rect();
         while (trySize > minTextSize) {
             testPaint.setTextSize(trySize);
-            testPaint.getTextBounds(text, 0, text.length()-1, bounds);
-            
-            if (bounds.width() < availableWidth && bounds.height() < availableHeight) break;
-            
+            testPaint.getTextBounds(text, 0, text.length() - 1, bounds);
+
+            if (bounds.width() < availableWidth && bounds.height() < availableHeight)
+                break;
+
             trySize -= 1.0;
             if (trySize <= minTextSize) {
                 trySize = minTextSize;
@@ -74,7 +82,7 @@ public class FontFitTextView extends TextView {
         this.setTextSize(trySize);
     }
 
-    //Getters and Setters
+    // Getters and Setters
     public float getMinTextSize() {
         return minTextSize;
     }

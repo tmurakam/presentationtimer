@@ -1,13 +1,12 @@
+
 package org.tmurakam.presentationtimer;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,24 +20,39 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends Activity {
+    //private final static String TAG = "PresenTimer";
+
+    private final static String KEY_CURRENT_TIME = "currentTime";
+
+    private final static String KEY_IS_COUNTDOWN = "isCountDown";
+
+    private final static String KEY_IS_TIMER_WORKING = "isTimerWorking";
+
+    private final static String KEY_SUSPENDED_TIME = "suspendedTime";
+
+    /** 現在時刻(秒) */
     private int mCurrentTime = 0;
-    
-    //private Date suspendedTime;
-    
+
+    /** 表示モード:カウントダウンモードなら真 */
     private boolean mIsCountDown = false;
 
+    /** プリファレンス　 */
+    private Prefs mPrefs;
+
+    /** 音声データ */
     private MediaPlayer mBell1, mBell2, mBell3;
-    
-    private int mBell1Time, mBell2Time, mBell3Time;
-    private int mCountDownTarget;
-    
-    private Handler mTimerHandler;
-    
-    private TextView mTextView;
-    
-    private Button mStartStopButton, mResetButton;
-    
+
+    /** タイマ */
     private Timer mTimer;
+
+    /** タイマハンドラ */
+    private Handler mTimerHandler;
+
+    /** 現在時間表示ビュー */
+    private TextView mTextView;
+
+    /** ボタン */
+    private Button mStartStopButton, mResetButton;
 
     /** Called when the activity is first created. */
     @Override
@@ -46,114 +60,136 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
-        
+
         mTextView = (TextView)findViewById(R.id.timeView);
         mStartStopButton = (Button)findViewById(R.id.startStop);
         mResetButton = (Button)findViewById(R.id.reset);
-        
-        updateUiStates();
-    
+
         mTimerHandler = new Handler();
-        
+
+        mPrefs = new Prefs(this);
+
         mBell1 = MediaPlayer.create(this, R.raw.bell1);
         mBell2 = MediaPlayer.create(this, R.raw.bell2);
         mBell3 = MediaPlayer.create(this, R.raw.bell3);
 
-        /*
-        color0 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-        color1 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:0.0 alpha:1.0];
-        color2 = [[UIColor alloc] initWithRed:1.0 green:0.2 blue:0.8 alpha:1.0];
-        color3 = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-        */
+        if (savedInstanceState != null) {
+            restoreInstanceState(savedInstanceState);
+        }
+        updateTimeLabel();
+        updateUiStates();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle st) {
+        st.putInt(KEY_CURRENT_TIME, mCurrentTime);
+        st.putBoolean(KEY_IS_COUNTDOWN, mIsCountDown);
+        st.putBoolean(KEY_IS_TIMER_WORKING, mTimer != null);
+
+        st.putLong(KEY_SUSPENDED_TIME, System.currentTimeMillis());
+    }
+
+    private void restoreInstanceState(Bundle st) {
+        mCurrentTime = st.getInt(KEY_CURRENT_TIME);
+        mIsCountDown = st.getBoolean(KEY_IS_COUNTDOWN);
+
+        boolean isTimeWorking = st.getBoolean(KEY_IS_TIMER_WORKING);
+        if (isTimeWorking) {
+            long suspendedTime = st.getLong(KEY_SUSPENDED_TIME);
+            long elapsed = (System.currentTimeMillis() - suspendedTime) / 1000;
+
+            mCurrentTime += elapsed;
+
+            startTimer();
+        }
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
-        Prefs prefs = new Prefs(this);
-        mBell1Time = prefs.getBellTime(1);
-        mBell2Time = prefs.getBellTime(2);
-        mBell3Time = prefs.getBellTime(3);
-        mCountDownTarget = prefs.getCountDownTarget();
-
         updateTimeLabel();
     }
 
     /**
-       Start or stop timer (toggle)
-    */
+     * Start or stop timer (toggle)
+     */
     public void onClickStartStop(View v) {
         if (mTimer == null) {
-            // start timer
-            mTimer = new Timer(true);
-            TimerTask task = new TimerTask() {
-                @Override
-                public void run() {
-                    mTimerHandler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            timerHandler();
-                        }
-                    });
-                }
-            };
-            mTimer.schedule(task, 1000, 1000);
+            startTimer();
         } else {
-            // stop timer
-            mTimer.cancel();
-            mTimer.purge();
-            mTimer = null;
+            stopTimer();
         }
-        
         updateUiStates();
-    }     
+    }
+
+    private void startTimer() {
+        assert (mTimer == null);
+
+        mTimer = new Timer(true);
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                mTimerHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        timerHandler();
+                    }
+                });
+            }
+        };
+        mTimer.schedule(task, 1000, 1000);
+    }
+
+    private void stopTimer() {
+        assert (mTimer != null);
+        mTimer.cancel();
+        mTimer.purge();
+        mTimer = null;
+    }
 
     /**
-       Reset timer value
-    */
+     * Reset timer value
+     */
     public void onClickReset(View v) {
         mCurrentTime = 0;
         updateTimeLabel();
     }
 
     /**
-       Ring bell manually
-    */
+     * Ring bell manually
+     */
     public void onClickBell(View v) {
         mBell1.seekTo(0);
         mBell1.start();
     }
 
     /**
-       Toggle count down mode
-    */
+     * Toggle count down mode
+     */
     public void onClickTime() {
         mIsCountDown = !mIsCountDown;
         updateTimeLabel();
     }
 
     /**
-      Timer handler : called for each 1 second.
-    */
+     * Timer handler : called for each 1 second.
+     */
     private void timerHandler() {
-        mCurrentTime ++;
-	
+        mCurrentTime++;
+
         MediaPlayer p = null;
-        if (mCurrentTime == mBell1Time) {
+        if (mCurrentTime == mPrefs.getBellTime(1)) {
             p = mBell1;
-        }
-        else if (mCurrentTime == mBell2Time) {
+        } else if (mCurrentTime == mPrefs.getBellTime(2)) {
             p = mBell2;
-        }
-        else if (mCurrentTime == mBell3Time) {
+        } else if (mCurrentTime == mPrefs.getBellTime(3)) {
             p = mBell3;
         }
         if (p != null) {
             p.seekTo(0);
             p.start();
         }
-        
+
         updateTimeLabel();
     }
 
@@ -171,44 +207,34 @@ public class MainActivity extends Activity {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
     }
-    
+
     /**
-       Update time label
-    */
+     * Update time label
+     */
     private void updateTimeLabel() {
         int t;
         if (!mIsCountDown) {
             t = mCurrentTime;
         } else {
-            switch (mCountDownTarget)
-                {
-                case 1:
-                    t = mBell1Time - mCurrentTime;
-                    break;
-                case 2:
-                default:
-                    t = mBell2Time - mCurrentTime;
-                    break;
-                case 3:
-                    t = mBell3Time - mCurrentTime;
-                    break;
-                }
-            if (t < 0) t = -t;
+            int target = mPrefs.getBellTime(mPrefs.getCountDownTarget());
+            t = target - mCurrentTime;
+            if (t < 0)
+                t = -t;
         }
-        
+
         mTextView.setText(timeText(t));
-        
+
         int col;
-        if (mCurrentTime >= mBell3Time) {
+        if (mCurrentTime >= mPrefs.getBellTime(3)) {
             col = Color.RED; // 0xffff0000
-        } else if (mCurrentTime >= mBell2Time) {
+        } else if (mCurrentTime >= mPrefs.getBellTime(2)) {
             col = 0xffff33cc;
-        } else if (mCurrentTime >= mBell1Time) {
+        } else if (mCurrentTime >= mPrefs.getBellTime(1)) {
             col = Color.YELLOW; // 0xffffff00
         } else {
             col = Color.WHITE; // 0xffffffff
         }
-		mTextView.setTextColor(col);
+        mTextView.setTextColor(col);
     }
 
     private String timeText(int n) {
@@ -218,31 +244,6 @@ public class MainActivity extends Activity {
         return ts;
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle st) {
-        /*
-        if (timer == nil) return; // do nothing
-    
-        // timer working. remember current time
-        suspendedTime = [NSDate date];
-        [suspendedTime retain];
-        */
-    }
-
-    private void resumeInstanceState(Bundle st) {
-        /*
-        if (timer == nil) return; // do nothing
-    
-        if (suspendedTime == nil) return;
-    
-        // modify current time
-        NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:suspendedTime];
-        currentTime += interval;
-        [suspendedTime release];
-        suspendedTime = nil;
-        */
-    }
-    
     // --- Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -253,28 +254,28 @@ public class MainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
-        
+
         switch (item.getItemId()) {
             case R.id.menu_preferences:
                 intent = new Intent(this, PrefActivity.class);
                 startActivity(intent);
                 return true;
-                
+
             case R.id.menu_help:
                 showHelp();
                 return true;
         }
-        
+
         return super.onOptionsItemSelected(item);
     }
-    
+
     private void showHelp() {
+        // TODO: 未実装
         /*
-          InfoVC *vc = [[[InfoVC alloc] init] autorelease];
-          UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
-          [self presentModalViewController:nv animated:YES];
-        */
+         * InfoVC *vc = [[[InfoVC alloc] init] autorelease];
+         * UINavigationController *nv = [[[UINavigationController alloc]
+         * initWithRootViewController:vc] autorelease]; [self
+         * presentModalViewController:nv animated:YES];
+         */
     }
-
-
 }

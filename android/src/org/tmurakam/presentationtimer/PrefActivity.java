@@ -1,13 +1,13 @@
+
 package org.tmurakam.presentationtimer;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 
 public class PrefActivity extends PreferenceActivity {
-    private static final String TAG = "presentationTimer";
+    //private static final String TAG = "PresenTimer";
 
     private Prefs mPrefs;
 
@@ -18,18 +18,18 @@ public class PrefActivity extends PreferenceActivity {
         addPreferencesFromResource(R.xml.pref);
 
         mPrefs = new Prefs(this);
-        
+
         PreferenceScreen ps;
         Intent intent;
-        
+
         for (int i = 1; i <= 3; i++) {
             ps = (PreferenceScreen)findPreference("_" + i + "bell");
-            assert(ps != null);
+            assert (ps != null);
             intent = new Intent(this, TimeSetActivity.class);
             intent.putExtra("kind", i);
             ps.setIntent(intent);
         }
-        
+
         updateUi();
     }
 
@@ -44,12 +44,13 @@ public class PrefActivity extends PreferenceActivity {
 
         for (int i = 1; i <= 3; i++) {
             ps = (PreferenceScreen)findPreference("_" + i + "bell");
-            assert(ps != null);
-            
+            assert (ps != null);
+
             int time = mPrefs.getBellTime(i);
             String s = String.format("%02d:%02d", time / 3600, (time / 60) % 60);
             if (i == mPrefs.getCountDownTarget()) {
-                s += " (*)";
+                s += ", ";
+                s += getResources().getString(R.string.end_time);
             }
             ps.setSummary(s);
         }
