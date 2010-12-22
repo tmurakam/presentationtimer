@@ -166,7 +166,7 @@ public class MainActivity extends Activity {
     /**
      * Toggle count down mode
      */
-    public void onClickTime() {
+    public void onClickTime(View v) {
         mIsCountDown = !mIsCountDown;
         updateTimeLabel();
     }
