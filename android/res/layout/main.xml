@@ -4,9 +4,15 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
+<view class="org.tmurakam.presentationtimer.FontFitTextView"  
     android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" android:text="00:00" android:layout_weight="1" android:gravity="top|center_horizontal" android:textSize="50pt" android:id="@+id/timeView" android:onClick="onClickTime"/>
+    android:layout_height="wrap_content"
+    android:text="00:00"
+    android:layout_weight="1"
+    android:gravity="top|center_horizontal"
+    android:textSize="100pt"
+    android:id="@+id/timeView"
+    android:onClick="onClickTime"/>
 
 <LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center">
 <Button android:layout_width="100sp" android:layout_height="55sp" android:id="@+id/startStop" android:onClick="onClickStartStop" android:text="@string/start"/>

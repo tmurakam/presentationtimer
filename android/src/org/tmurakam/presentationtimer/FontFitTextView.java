@@ -5,11 +5,13 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.TextView;
 
 // http://stackoverflow.com/questions/2617266/how-to-adjust-text-font-size-to-fit-textview
 
 public class FontFitTextView extends TextView {
+    private final static String TAG = "PresenTimer";
 
     private Paint testPaint;
 
@@ -28,6 +30,8 @@ public class FontFitTextView extends TextView {
     }
 
     private void initialize() {
+        Log.d(TAG, "FontFitTextView: initialize");
+        
         testPaint = new Paint();
         testPaint.set(this.getPaint());
         // max size defaults to the initially specified text size unless it is
@@ -47,7 +51,7 @@ public class FontFitTextView extends TextView {
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        if (w != oldw) {
+        if (w != oldw || h != oldh) {
             refitText(this.getText().toString(), w, h);
         }
     }
@@ -56,32 +60,38 @@ public class FontFitTextView extends TextView {
      * Re size the font so the specified text fits in the text box assuming the
      * text box is the specified width.
      */
-    private void refitText(String text, int width, int height) {
+    final private void refitText(String text, int width, int height) {
         if (width <= 0 || height <= 0)
             return;
 
         int availableWidth = width - this.getPaddingLeft() - this.getPaddingRight();
         int availableHeight = height - this.getPaddingTop() - this.getPaddingBottom();
-        float trySize = maxTextSize;
 
-        Rect bounds = new Rect();
-        while (trySize > minTextSize) {
+        float max = maxTextSize;
+        float min = minTextSize;
+        Rect textBounds = new Rect();
+
+        // binary search an optimal font size
+        while (true) {
+            float trySize = (max + min) / 2;
+
             testPaint.setTextSize(trySize);
-            testPaint.getTextBounds(text, 0, text.length() - 1, bounds);
+            float textWidth = testPaint.measureText(text, 0, text.length());
+            testPaint.getTextBounds(text, 0, text.length(), textBounds);
 
-            if (bounds.width() < availableWidth && bounds.height() < availableHeight)
-                break;
+            if (textWidth < availableWidth && textBounds.height() < availableHeight) {
+                min = trySize;    
+            } else {
+                max = trySize;
+            }
 
-            trySize -= 1.0;
-            if (trySize <= minTextSize) {
-                trySize = minTextSize;
+            if (max - min < 1.0) {
+                this.setTextSize(min);
                 break;
             }
         }
-
-        this.setTextSize(trySize);
     }
-
+    
     // Getters and Setters
     public float getMinTextSize() {
         return minTextSize;
