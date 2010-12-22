@@ -1,5 +1,11 @@
 package org.tmurakam.presentationtimer;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceScreen;
+
 public class PrefActivity extends PreferenceActivity implements
         SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "presentationTimer";
@@ -11,7 +17,17 @@ public class PrefActivity extends PreferenceActivity implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.pref);
-
+        
+        PreferenceScreen ps;
+        Intent intent;
+        
+        for (int i = 0; i < 3; i++) {
+            ps = (PreferenceScreen)findPreference("_" + i + "bell");
+            intent = new Intent(this, TimeSetActivity.class);
+            intent.putExtra("kind", i);
+            ps.setIntent(intent);
+        }
+        
         updateUi();
     }
 

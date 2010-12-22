@@ -6,4 +6,7 @@
     <string name="reset">リセット</string>
     <string name="use_as_end_time">プレゼン終了時刻として使用</string>
     <string name="help_url">http://android.tmurakam.org/presentationTimer/index-ja.html</string>
+    <string name="_1bell_time">1鈴時間</string>
+    <string name="_2bells_time">2鈴時間</string>
+    <string name="_3bells_time">3鈴時間</string>
 </resources>

@@ -5,7 +5,11 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -24,6 +28,8 @@ public class MainActivity extends Activity {
     private int mBell1Time, mBell2Time, mBell3Time;
     private int mCountDownTarget;
     
+    private Handler mTimerHandler;
+    
     private TextView mTextView;
     
     private Button mStartStopButton, mResetButton;
@@ -34,13 +40,16 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
         
         mTextView = (TextView)findViewById(R.id.timeView);
         mStartStopButton = (Button)findViewById(R.id.startStop);
         mResetButton = (Button)findViewById(R.id.reset);
         
-        updateButtonStates();
+        updateUiStates();
+    
+        mTimerHandler = new Handler();
         
         mBell1 = MediaPlayer.create(this, R.raw.bell1);
         mBell2 = MediaPlayer.create(this, R.raw.bell2);
@@ -70,38 +79,36 @@ public class MainActivity extends Activity {
     /**
        Start or stop timer (toggle)
     */
-    public void onClickStartStop() {
+    public void onClickStartStop(View v) {
         if (mTimer == null) {
             // start timer
             mTimer = new Timer(true);
             TimerTask task = new TimerTask() {
                 @Override
                 public void run() {
-                    timerHandler();
+                    mTimerHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            timerHandler();
+                        }
+                    });
                 }
             };
             mTimer.schedule(task, 1000, 1000);
-
-            // Disable auto lock when timer is running
-            //[UIApplication sharedApplication].idleTimerDisabled = YES;
-            // TODO: Android での実装。画面を消さない。
         } else {
             // stop timer
             mTimer.cancel();
             mTimer.purge();
             mTimer = null;
-        
-            // Enable auto lock
-            // [UIApplication sharedApplication].idleTimerDisabled = NO;
         }
         
-        updateButtonStates();
+        updateUiStates();
     }     
 
     /**
        Reset timer value
     */
-    public void onClickReset() {
+    public void onClickReset(View v) {
         mCurrentTime = 0;
         updateTimeLabel();
     }
@@ -109,7 +116,7 @@ public class MainActivity extends Activity {
     /**
        Ring bell manually
     */
-    public void onClickBell() {
+    public void onClickBell(View v) {
         mBell1.seekTo(0);
         mBell1.start();
     }
@@ -149,13 +156,15 @@ public class MainActivity extends Activity {
     /**
      * Update button states
      */
-    private void updateButtonStates() {
+    private void updateUiStates() {
         if (mTimer == null) {
-            mStartStopButton.setText("Start");
+            mStartStopButton.setText(R.string.start);
             mResetButton.setEnabled(true);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         } else {
-            mStartStopButton.setText("Stop");
+            mStartStopButton.setText(R.string.pause);
             mResetButton.setEnabled(false);
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
     }
     
