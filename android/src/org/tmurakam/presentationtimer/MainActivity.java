@@ -1,101 +1,108 @@
 package org.tmurakam.presentationtimer;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends Activity {
-    private int currentTime = 0;
+    private int mCurrentTime = 0;
+    
     //private Date suspendedTime;
+    
+    private boolean mIsCountDown = false;
+
+    private MediaPlayer mBell1, mBell2, mBell3;
+    
+    private int mBell1Time, mBell2Time, mBell3Time;
+    private int mCountDownTarget;
+    
+    private TextView mTextView;
+    
+    private Button mStartStopButton, mResetButton;
+    
+    private Timer mTimer;
 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        mTextView = (TextView)findViewById(R.id.timeView);
+        mStartStopButton = (Button)findViewById(R.id.startStop);
+        mResetButton = (Button)findViewById(R.id.reset);
+        
+        updateButtonStates();
+        
+        mBell1 = MediaPlayer.create(this, R.raw.bell1);
+        mBell2 = MediaPlayer.create(this, R.raw.bell2);
+        mBell3 = MediaPlayer.create(this, R.raw.bell3);
 
         /*
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        bell1Time = [defaults integerForKey:@"bell1Time"];
-        bell2Time = [defaults integerForKey:@"bell2Time"];
-        bell3Time = [defaults integerForKey:@"bell3Time"];
-        countDownTarget = [defaults integerForKey:@"countDownTarget"];
-        if (bell1Time == 0) bell1Time = 13*60;
-        if (bell2Time == 0) bell2Time = 15*60;
-        if (bell3Time == 0) bell3Time = 20*60;
-        if (countDownTarget == 0) countDownTarget = 2;
-        isCountDown = NO;
-
         color0 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
         color1 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:0.0 alpha:1.0];
         color2 = [[UIColor alloc] initWithRed:1.0 green:0.2 blue:0.8 alpha:1.0];
         color3 = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-	
-        sound_bell1 = [self loadWav:@"1bell"];
-        sound_bell2 = [self loadWav:@"2bell"];
-        sound_bell3 = [self loadWav:@"3bell"];
         */
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        updateTimeLabel();
-    }
 
-    /**
-     * load WAV file from resource
-     */
-    private void loadWav(String name) {
-        /*
-        SystemSoundID sid;
-        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:name ofType:@"wav"]];
-        AudioServicesCreateSystemSoundID((CFURLRef)url, &sid);
-        return sid;
-        */
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        mBell1Time = prefs.getInt("bell1Time", 13*60);
+        mBell2Time = prefs.getInt("bell2Time", 15*60);
+        mBell3Time = prefs.getInt("bell3Time", 20*60);
+        mCountDownTarget = prefs.getInt("countDownTarget", 2);
+
+        updateTimeLabel();
     }
 
     /**
        Start or stop timer (toggle)
     */
-    private void onClickStartStop() {
-        /*
-          NSString *newTitle;
-	
-          if (timer == nil) {
-          // start timer
-          timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-          target:self 
-          selector:@selector(timerHandler:) 
-          userInfo:nil
-          repeats:YES];
-          [timer retain];
-          newTitle = NSLocalizedString(@"Pause", @"");
-          resetButton.enabled = NO;
+    public void onClickStartStop() {
+        if (mTimer == null) {
+            // start timer
+            mTimer = new Timer(true);
+            TimerTask task = new TimerTask() {
+                @Override
+                public void run() {
+                    timerHandler();
+                }
+            };
+            mTimer.schedule(task, 1000, 1000);
 
-          // Disable auto lock when timer is running
-          [UIApplication sharedApplication].idleTimerDisabled = YES;
-          } else {
-          // stop timer
-          [timer invalidate];
-          [timer release];
-          timer = nil;
-
-          newTitle = NSLocalizedString(@"Start", @"");
-          resetButton.enabled = YES;
-
-          // Enable auto lock
-          [UIApplication sharedApplication].idleTimerDisabled = NO;
-          }
-          [startStopButton setTitle:newTitle forState:UIControlStateNormal];
-          [startStopButton setTitle:newTitle forState:UIControlStateHighlighted];
-        */
+            // Disable auto lock when timer is running
+            //[UIApplication sharedApplication].idleTimerDisabled = YES;
+            // TODO: Android での実装。画面を消さない。
+        } else {
+            // stop timer
+            mTimer.cancel();
+            mTimer.purge();
+            mTimer = null;
+        
+            // Enable auto lock
+            // [UIApplication sharedApplication].idleTimerDisabled = NO;
+        }
+        
+        updateButtonStates();
     }     
 
     /**
        Reset timer value
     */
     public void onClickReset() {
-        currentTime = 0;
+        mCurrentTime = 0;
         updateTimeLabel();
     }
 
@@ -103,14 +110,15 @@ public class MainActivity extends Activity {
        Ring bell manually
     */
     public void onClickBell() {
-        // AudioServicesPlaySystemSound(sound_bell1);
+        mBell1.seekTo(0);
+        mBell1.start();
     }
 
     /**
        Toggle count down mode
     */
     public void onClickTime() {
-        isCountDown = !isCountDown;
+        mIsCountDown = !mIsCountDown;
         updateTimeLabel();
     }
 
@@ -118,58 +126,76 @@ public class MainActivity extends Activity {
       Timer handler : called for each 1 second.
     */
     private void timerHandler() {
-        currentTime ++;
+        mCurrentTime ++;
 	
-        if (currentTime == bell1Time) {
-            //AudioServicesPlaySystemSound(sound_bell1);
+        MediaPlayer p = null;
+        if (mCurrentTime == mBell1Time) {
+            p = mBell1;
         }
-        else if (currentTime == bell2Time) {
-            //AudioServicesPlaySystemSound(sound_bell2);
+        else if (mCurrentTime == mBell2Time) {
+            p = mBell2;
         }
-        else if (currentTime == bell3Time) {
-            //AudioServicesPlaySystemSound(sound_bell3);
+        else if (mCurrentTime == mBell3Time) {
+            p = mBell3;
+        }
+        if (p != null) {
+            p.seekTo(0);
+            p.start();
         }
         
         updateTimeLabel();
     }
 
     /**
+     * Update button states
+     */
+    private void updateButtonStates() {
+        if (mTimer == null) {
+            mStartStopButton.setText("Start");
+            mResetButton.setEnabled(true);
+        } else {
+            mStartStopButton.setText("Stop");
+            mResetButton.setEnabled(false);
+        }
+    }
+    
+    /**
        Update time label
     */
     private void updateTimeLabel() {
         int t;
-        if (!isCountDown) {
-            t = currentTime;
+        if (!mIsCountDown) {
+            t = mCurrentTime;
         } else {
-            switch (countDownTarget)
+            switch (mCountDownTarget)
                 {
                 case 1:
-                    t = bell1Time - currentTime;
+                    t = mBell1Time - mCurrentTime;
                     break;
                 case 2:
                 default:
-                    t = bell2Time - currentTime;
+                    t = mBell2Time - mCurrentTime;
                     break;
                 case 3:
-                    t = bell3Time - currentTime;
+                    t = mBell3Time - mCurrentTime;
                     break;
                 }
             if (t < 0) t = -t;
         }
-        timeLabel.text = [self timeText:t];
-
-        UIColor *col;
-        if (currentTime >= bell3Time) {
-            col = color3;
-        } else if (currentTime >= bell2Time) {
-            col = color2;
-        } else if (currentTime >= bell1Time) {
-            col = color1;
+        
+        mTextView.setText(timeText(t));
+        
+        int col;
+        if (mCurrentTime >= mBell3Time) {
+            col = Color.RED; // 0xffff0000
+        } else if (mCurrentTime >= mBell2Time) {
+            col = 0xffff33cc;
+        } else if (mCurrentTime >= mBell1Time) {
+            col = Color.YELLOW; // 0xffffff00
         } else {
-            col = color0;
+            col = Color.WHITE; // 0xffffffff
         }
-		
-        timeLabel.textColor = col;
+		mTextView.setTextColor(col);
     }
 
     private String timeText(int n) {
