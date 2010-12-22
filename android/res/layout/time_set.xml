@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:gravity="top|center_horizontal">
+<TimePicker android:id="@+id/TimePicker01" android:layout_width="wrap_content" android:layout_height="wrap_content"></TimePicker>
+<CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/CheckBox01" android:text="@string/use_as_end_time"/>
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="wrap_content">
+  <Button android:layout_width="wrap_content" android:id="@+id/Button01" android:layout_height="wrap_content" android:text="@+id/Button01"></Button>
+  <Button android:text="@+id/Button02" android:id="@+id/Button02" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+</LinearLayout>
+</LinearLayout>
