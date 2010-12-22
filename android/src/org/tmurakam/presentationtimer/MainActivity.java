@@ -1,12 +1,16 @@
 package org.tmurakam.presentationtimer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -67,11 +71,11 @@ public class MainActivity extends Activity {
     public void onResume() {
         super.onResume();
 
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        mBell1Time = prefs.getInt("bell1Time", 13*60);
-        mBell2Time = prefs.getInt("bell2Time", 15*60);
-        mBell3Time = prefs.getInt("bell3Time", 20*60);
-        mCountDownTarget = prefs.getInt("countDownTarget", 2);
+        Prefs prefs = new Prefs(this);
+        mBell1Time = prefs.getBellTime(1);
+        mBell2Time = prefs.getBellTime(2);
+        mBell3Time = prefs.getBellTime(3);
+        mCountDownTarget = prefs.getCountDownTarget();
 
         updateTimeLabel();
     }
@@ -214,14 +218,6 @@ public class MainActivity extends Activity {
         return ts;
     }
 
-    private void showHelp() {
-        /*
-          InfoVC *vc = [[[InfoVC alloc] init] autorelease];
-          UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
-          [self presentModalViewController:nv animated:YES];
-        */
-    }
-
     @Override
     public void onSaveInstanceState(Bundle st) {
         /*
@@ -245,5 +241,40 @@ public class MainActivity extends Activity {
         [suspendedTime release];
         suspendedTime = nil;
         */
-    }       
+    }
+    
+    // --- Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        new MenuInflater(getApplication()).inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        
+        switch (item.getItemId()) {
+            case R.id.menu_preferences:
+                intent = new Intent(this, PrefActivity.class);
+                startActivity(intent);
+                return true;
+                
+            case R.id.menu_help:
+                showHelp();
+                return true;
+        }
+        
+        return super.onOptionsItemSelected(item);
+    }
+    
+    private void showHelp() {
+        /*
+          InfoVC *vc = [[[InfoVC alloc] init] autorelease];
+          UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+          [self presentModalViewController:nv animated:YES];
+        */
+    }
+
+
 }

@@ -21,8 +21,9 @@ public class PrefActivity extends PreferenceActivity implements
         PreferenceScreen ps;
         Intent intent;
         
-        for (int i = 0; i < 3; i++) {
+        for (int i = 1; i <= 3; i++) {
             ps = (PreferenceScreen)findPreference("_" + i + "bell");
+            assert(ps != null);
             intent = new Intent(this, TimeSetActivity.class);
             intent.putExtra("kind", i);
             ps.setIntent(intent);

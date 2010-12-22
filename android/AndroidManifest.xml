@@ -11,9 +11,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-	<activity android:name=".PrefActivity"/>
-	<activity android:name=".TimeSetActivity"/>
+	    <activity android:name=".PrefActivity"/>
+	    <activity android:name=".TimeSetActivity" android:label="Set time" android:theme="@android:style/Theme.Dialog"/>
     </application>
     <uses-sdk android:minSdkVersion="4" />
-
 </manifest> 

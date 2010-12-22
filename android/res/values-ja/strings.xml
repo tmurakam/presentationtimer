@@ -9,4 +9,6 @@
     <string name="_1bell_time">1鈴時間</string>
     <string name="_2bells_time">2鈴時間</string>
     <string name="_3bells_time">3鈴時間</string>
+<string name="preferences">設定</string>
+<string name="help">ヘルプ</string>
 </resources>

@@ -9,4 +9,6 @@
     <string name="_1bell_time">1 bell time</string>
     <string name="_2bells_time">2 bells time</string>
     <string name="_3bells_time">3 bells time</string>
+<string name="preferences">Preferences</string>
+<string name="help">Help</string>
 </resources>

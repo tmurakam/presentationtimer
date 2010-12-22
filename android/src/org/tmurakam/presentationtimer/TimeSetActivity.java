@@ -11,36 +11,56 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimeSetActivity extends Activity {
     private int mKind;
-    private int mTime;
-    private int mCountDownTarget;
+
+    private TimePicker mTimePicker;
+    private CheckBox mCheckIsEndTime;
+    private Prefs mPrefs;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        setTheme(android.R.style.Theme_Dialog);
         setContentView(R.layout.time_set);
         
-        mKind = getIntent().getIntExtra("key", 1);
+        mTimePicker = (TimePicker)findViewById(R.id.TimePicker);
+        mCheckIsEndTime = (CheckBox)findViewById(R.id.CheckUseAsEndTime);
         
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        mKind = getIntent().getIntExtra("kind", 1);
+    
+        mPrefs = new Prefs(this);
+        int time = mPrefs.getBellTime(mKind);
+        int hour = time / 3600;
+        int min = (time / 60) % 60;
 
-        switch (mKind) {
-            case 1:
-                mTime = prefs.getInt("bell1Time", 13*60); //TODO: default value?
-                break;
-            case 2:
-                mTime = prefs.getInt("bell2Time", 15*60);
-                break;
-            case 3:
-                mTime = prefs.getInt("bell3Time", 20*60);
-                break;
+        mTimePicker.setCurrentHour(hour);
+        mTimePicker.setCurrentMinute(min);
+        mTimePicker.setIs24HourView(true);
+        
+        mCheckIsEndTime.setChecked(mKind == mPrefs.getCountDownTarget());
+    }
+    
+    public void onClickOk(View v) {
+        int hour = mTimePicker.getCurrentHour();
+        int min = mTimePicker.getCurrentMinute();
+        
+        mPrefs.setBellTime(mKind, hour * 3600 + min * 60);
+        if (mCheckIsEndTime.isChecked()) {
+            mPrefs.setCountDownTarget(mKind);
         }
-        mCountDownTarget = prefs.getInt("countDownTarget", 2);
+        finish();
+    }
+    
+    public void onClickCancel(View v) {
+        finish();
     }
 }
