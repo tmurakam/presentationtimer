@@ -9,15 +9,16 @@
     android:layout_height="wrap_content"
     android:text="00:00"
     android:layout_weight="1"
-    android:gravity="top|center_horizontal"
+    android:includeFontPadding="false"
+    android:gravity="center_vertical|center_horizontal"
     android:textSize="300pt"
     android:id="@+id/timeView"
     android:onClick="onClickTime" android:clickable="true"/>
 
 <LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center">
-<Button android:layout_height="55sp" android:id="@+id/startStop" android:onClick="onClickStartStop" android:text="@string/start" android:layout_weight="1" android:layout_marginLeft="20sp" android:layout_marginRight="5sp" android:layout_width="0sp"/>
-<ImageButton android:layout_gravity="bottom|center_horizontal" android:src="@drawable/bell32" android:scaleType="center" android:layout_height="55sp" android:onClick="onClickBell" android:layout_weight="1" android:layout_width="0sp"/>
-<Button android:layout_height="55sp" android:onClick="onClickReset" android:id="@+id/reset" android:text="@string/reset" android:layout_weight="1" android:layout_marginRight="20sp" android:layout_marginLeft="5sp" android:layout_width="0sp"></Button>
+<Button android:id="@+id/startStop" android:onClick="onClickStartStop" android:text="@string/start" android:layout_weight="1" android:layout_marginLeft="20sp" android:layout_marginRight="5sp" android:layout_width="0sp" android:layout_height="48sp"/>
+<ImageButton android:layout_gravity="bottom|center_horizontal" android:src="@drawable/bell32" android:scaleType="center" android:onClick="onClickBell" android:layout_weight="1" android:layout_width="0sp" android:layout_height="48sp"/>
+<Button android:onClick="onClickReset" android:id="@+id/reset" android:text="@string/reset" android:layout_weight="1" android:layout_marginRight="20sp" android:layout_marginLeft="5sp" android:layout_width="0sp" android:layout_height="48sp"></Button>
 </LinearLayout>
 
 </LinearLayout>
