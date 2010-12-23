@@ -7,7 +7,7 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
+//import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,12 +17,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends Activity {
-    private final static String TAG = "PresenTimer";
+    //private final static String TAG = "PresenTimer";
 
     private final static String KEY_CURRENT_TIME = "currentTime";
 
