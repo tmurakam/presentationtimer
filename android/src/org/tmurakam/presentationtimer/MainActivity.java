@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,11 +17,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends Activity {
-    //private final static String TAG = "PresenTimer";
+    private final static String TAG = "PresenTimer";
 
     private final static String KEY_CURRENT_TIME = "currentTime";
 
@@ -72,7 +74,7 @@ public class MainActivity extends Activity {
         mBell1 = MediaPlayer.create(this, R.raw.bell1);
         mBell2 = MediaPlayer.create(this, R.raw.bell2);
         mBell3 = MediaPlayer.create(this, R.raw.bell3);
-
+        
         if (savedInstanceState != null) {
             restoreInstanceState(savedInstanceState);
         }
@@ -110,6 +112,18 @@ public class MainActivity extends Activity {
         updateTimeLabel();
     }
 
+    @Override
+    public void onDestroy() {
+        if (mTimer != null) {
+            mTimer.cancel();
+        }
+        mBell1.release();
+        mBell2.release();
+        mBell3.release();
+
+        super.onDestroy();
+    }
+    
     /**
      * Start or stop timer (toggle)
      */
@@ -130,7 +144,6 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 mTimerHandler.post(new Runnable() {
-                    @Override
                     public void run() {
                         timerHandler();
                     }
@@ -200,11 +213,11 @@ public class MainActivity extends Activity {
         if (mTimer == null) {
             mStartStopButton.setText(R.string.start);
             mResetButton.setEnabled(true);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         } else {
             mStartStopButton.setText(R.string.pause);
             mResetButton.setEnabled(false);
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
     }
 
