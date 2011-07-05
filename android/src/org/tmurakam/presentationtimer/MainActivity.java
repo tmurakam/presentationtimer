@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 //import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -43,6 +44,10 @@ public class MainActivity extends Activity {
     /** 音声データ */
     private MediaPlayer mBell1, mBell2, mBell3;
 
+    /** バイブレータ */
+    private Vibrator mVibrator;
+    private long[][] mVibratorPattern;
+
     /** タイマ */
     private Timer mTimer;
 
@@ -73,7 +78,13 @@ public class MainActivity extends Activity {
         mBell1 = MediaPlayer.create(this, R.raw.bell1);
         mBell2 = MediaPlayer.create(this, R.raw.bell2);
         mBell3 = MediaPlayer.create(this, R.raw.bell3);
-        
+
+	mVibrator = (Vibrator)getSystemService(VIBRATOR_SERVICE);
+	mVibratorPattern = new long[3][];
+	mVibratorPattern[0] = new long[] { 0, 500 };
+	mVibratorPattern[1] = new long[] { 0, 500, 200, 500 };
+	mVibratorPattern[2] = new long[] { 0, 500, 200, 500, 200, 500 };
+
         if (savedInstanceState != null) {
             restoreInstanceState(savedInstanceState);
         }
@@ -190,17 +201,25 @@ public class MainActivity extends Activity {
         mCurrentTime++;
 
         MediaPlayer p = null;
+	long[] v = null;
+
         if (mCurrentTime == mPrefs.getBellTime(1)) {
             p = mBell1;
+	    v = mVibratorPattern[0];
         } else if (mCurrentTime == mPrefs.getBellTime(2)) {
             p = mBell2;
+	    v = mVibratorPattern[1];
         } else if (mCurrentTime == mPrefs.getBellTime(3)) {
             p = mBell3;
+	    v = mVibratorPattern[2];
         }
         if (p != null) {
             p.seekTo(0);
             p.start();
         }
+	if (v != null) {
+	    mVibrator.vibrate(v, -1);
+	}
 
         updateTimeLabel();
     }
