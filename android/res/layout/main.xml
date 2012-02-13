@@ -1,24 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-<view class="org.tmurakam.presentationtimer.FontFitTextView"  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content"
-    android:text="00:00"
-    android:layout_weight="1"
-    android:includeFontPadding="false"
-    android:gravity="center_vertical|center_horizontal"
-    android:textSize="300pt"
-    android:id="@+id/timeView"
-    android:onClick="onClickTime" android:clickable="true"/>
+    android:orientation="vertical" >
 
-<LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center">
-<Button android:id="@+id/startStop" android:onClick="onClickStartStop" android:text="@string/start" android:layout_weight="1" android:layout_marginLeft="20sp" android:layout_marginRight="5sp" android:layout_width="0sp" android:layout_height="48sp"/>
-<ImageButton android:layout_gravity="bottom|center_horizontal" android:src="@drawable/bell32" android:scaleType="center" android:onClick="onClickBell" android:layout_weight="1" android:layout_width="0sp" android:layout_height="48sp"/>
-<Button android:onClick="onClickReset" android:id="@+id/reset" android:text="@string/reset" android:layout_weight="1" android:layout_marginRight="20sp" android:layout_marginLeft="5sp" android:layout_width="0sp" android:layout_height="48sp"></Button>
-</LinearLayout>
+    <view
+        android:id="@+id/timeView"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        class="org.tmurakam.presentationtimer.FontFitTextView"
+        android:clickable="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:includeFontPadding="false"
+        android:onClick="onClickTime"
+        android:text="00:00"
+        android:textSize="30sp"
+        android:textColor="#fff"/>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/startStop"
+            android:layout_width="0sp"
+            android:layout_height="48sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="5sp"
+            android:layout_weight="1"
+            android:onClick="onClickStartStop"
+            android:text="@string/start" />
+
+        <ImageButton
+            android:layout_width="0sp"
+            android:layout_height="48sp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_weight="1"
+            android:onClick="onClickBell"
+            android:scaleType="center"
+            android:src="@drawable/bell32" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="0sp"
+            android:layout_height="48sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="20sp"
+            android:layout_weight="1"
+            android:onClick="onClickReset"
+            android:text="@string/reset" >
+        </Button>
+    </LinearLayout>
 
 </LinearLayout>
