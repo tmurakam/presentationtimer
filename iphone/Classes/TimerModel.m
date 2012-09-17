@@ -51,6 +51,7 @@
 @property (nonatomic) AVAudioPlayer *soundBell;
 
 - (void)playBell;
+- (void)playBellAtTime:(NSTimeInterval)time;
 - (void)stopBell;
 @end
 
@@ -69,6 +70,11 @@
 - (void)playBell
 {
     [soundBell play];
+}
+
+- (void)playBellAtTime:(NSTimeInterval)time
+{
+    [soundBell playAtTime:time];
 }
 
 @end
