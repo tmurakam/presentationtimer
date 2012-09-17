@@ -36,10 +36,11 @@ public class FontFitTextView extends TextView {
         testPaint.set(this.getPaint());
         // max size defaults to the initially specified text size unless it is
         // too small
-        maxTextSize = this.getTextSize();
+        /*maxTextSize = this.getTextSize();
         if (maxTextSize < 11) {
             maxTextSize = 20;
-        }
+        }*/
+        maxTextSize = 300;
         minTextSize = 10;
     }
 
@@ -86,6 +87,7 @@ public class FontFitTextView extends TextView {
             }
 
             if (max - min < 1.0) {
+                Log.d(TAG, "font size = "+ min);
                 this.setTextSize(min);
                 break;
             }

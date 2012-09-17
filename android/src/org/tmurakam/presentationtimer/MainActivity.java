@@ -4,6 +4,7 @@ package org.tmurakam.presentationtimer;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,7 +43,7 @@ public class MainActivity extends Activity {
     private Prefs mPrefs;
 
     /** 音声データ */
-    private MediaPlayer mBell1, mBell2, mBell3;
+    private MediaPlayer[] mBells;
 
     /** バイブレータ */
     private Vibrator mVibrator;
@@ -66,6 +67,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
+        
+        // 音量ボタンで、Media ボリュームが変わるようにする
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
         mTextView = (TextView)findViewById(R.id.timeView);
         mStartStopButton = (Button)findViewById(R.id.startStop);
@@ -75,10 +79,14 @@ public class MainActivity extends Activity {
 
         mPrefs = new Prefs(this);
 
-        mBell1 = MediaPlayer.create(this, R.raw.bell1);
-        mBell2 = MediaPlayer.create(this, R.raw.bell2);
-        mBell3 = MediaPlayer.create(this, R.raw.bell3);
-
+        mBells = new MediaPlayer[3];
+        mBells[0] = MediaPlayer.create(this, R.raw.bell1);
+        mBells[1] = MediaPlayer.create(this, R.raw.bell2);
+        mBells[2] = MediaPlayer.create(this, R.raw.bell3);
+        for (MediaPlayer p : mBells) {
+            p.setVolume(1.0f, 1.0f);
+        }
+        
 	mVibrator = (Vibrator)getSystemService(VIBRATOR_SERVICE);
 	mVibratorPattern = new long[3][];
 	mVibratorPattern[0] = new long[] { 0, 500 };
@@ -127,10 +135,10 @@ public class MainActivity extends Activity {
         if (mTimer != null) {
             mTimer.cancel();
         }
-        mBell1.release();
-        mBell2.release();
-        mBell3.release();
-
+        for (MediaPlayer p : mBells) {
+            p.release();
+        }
+        
         super.onDestroy();
     }
     
@@ -182,8 +190,8 @@ public class MainActivity extends Activity {
      * Ring bell manually
      */
     public void onClickBell(View v) {
-        mBell1.seekTo(0);
-        mBell1.start();
+        mBells[0].seekTo(0);
+        mBells[0].start();
     }
 
     /**
@@ -204,13 +212,13 @@ public class MainActivity extends Activity {
 	long[] v = null;
 
         if (mCurrentTime == mPrefs.getBellTime(1)) {
-            p = mBell1;
+            p = mBells[0];
 	    v = mVibratorPattern[0];
         } else if (mCurrentTime == mPrefs.getBellTime(2)) {
-            p = mBell2;
+            p = mBells[1];
 	    v = mVibratorPattern[1];
         } else if (mCurrentTime == mPrefs.getBellTime(3)) {
-            p = mBell3;
+            p = mBells[2];
 	    v = mVibratorPattern[2];
         }
         if (p != null) {
