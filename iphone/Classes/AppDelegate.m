@@ -52,12 +52,12 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [viewController appSuspended];
+    [self.viewController appSuspended];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    [viewController appResumed];
+    [self.viewController appResumed];
 }
 
 
