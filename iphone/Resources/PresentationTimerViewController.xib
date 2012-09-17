@@ -55,7 +55,7 @@
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
-						<float key="IBUIMinimumFontSize">90</float>
+						<float key="IBUIMinimumFontSize">50</float>
 						<int key="IBUITextAlignment">1</int>
 						<int key="IBUILineBreakMode">2</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
