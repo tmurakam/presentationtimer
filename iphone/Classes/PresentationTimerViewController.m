@@ -110,7 +110,7 @@
 {
     SystemSoundID sid;
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:name ofType:@"wav"]];
-    AudioServicesCreateSystemSoundID((CFURLRef)url, &sid);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &sid);
     return sid;
 }
 
