@@ -146,9 +146,6 @@
     // Release anything that's not essential, such as cached data
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 /**
    Start or stop timer (toggle)
@@ -164,7 +161,6 @@
                          selector:@selector(timerHandler:) 
                          userInfo:nil
                          repeats:YES];
-        [timer retain];
         newTitle = NSLocalizedString(@"Pause", @"");
         resetButton.enabled = NO;
 
@@ -173,7 +169,6 @@
     } else {
         // stop timer
         [timer invalidate];
-        [timer release];
         timer = nil;
 
         newTitle = NSLocalizedString(@"Start", @"");
@@ -220,11 +215,11 @@
         editingItem = 3;
     }
     
-    TimePickerViewController *vc = [[[TimePickerViewController alloc] init] autorelease];
+    TimePickerViewController *vc = [[TimePickerViewController alloc] init];
     vc.delegate = self;
     vc.seconds = sec;
 
-    UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentModalViewController:nv animated:YES];
 }
 
@@ -310,8 +305,8 @@
     //NSURL *url = [NSURL URLWithString:NSLocalizedString(@"HelpURL", @"")];
     //[[UIApplication sharedApplication] openURL:url];
     
-    InfoVC *vc = [[[InfoVC alloc] init] autorelease];
-    UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    InfoVC *vc = [[InfoVC alloc] init];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentModalViewController:nv animated:YES];
 }
 
@@ -352,7 +347,6 @@
     
     // timer working. remember current time
     suspendedTime = [NSDate date];
-    [suspendedTime retain];
 }
 
 - (void)appResumed
@@ -364,7 +358,6 @@
     // modify current time
     NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:suspendedTime];
     currentTime += interval;
-    [suspendedTime release];
     suspendedTime = nil;
 }
 

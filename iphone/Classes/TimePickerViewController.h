@@ -47,11 +47,11 @@
 	
     int seconds;
 
-    id<TimePickerViewDelegate> delegate;
+    id<TimePickerViewDelegate> __unsafe_unretained delegate;
 }
 
 @property(nonatomic,assign) int seconds;
-@property(nonatomic,assign) id<TimePickerViewDelegate> delegate;
+@property(nonatomic,unsafe_unretained) id<TimePickerViewDelegate> delegate;
 
 - (IBAction)onDone:(id)sender;
 - (IBAction)onCancel:(id)sender;
