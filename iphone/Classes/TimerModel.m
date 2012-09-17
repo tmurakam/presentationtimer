@@ -55,6 +55,8 @@
 
 @interface TimerModel()
 {
+    id<TimerModelDelegate> mDelegate;
+    
     // Timer value
     int mCurrentTime; // seconds
     
@@ -84,7 +86,9 @@
 
 @implementation TimerModel
 
-@synthesize delegate;
+@synthesize delegate = mDelegate;
+@synthesize countDownTarget = mCountDownTarget;
+@synthesize isCountDown = mIsCountDown;
 
 /**
    initialize
@@ -144,6 +148,19 @@
     }
     [defaults setObject:[NSNumber numberWithInt:mCountDownTarget] forKey:@"countDownTarget"];
     [defaults synchronize];
+}
+
+/**
+ get timer value
+ */
+- (int)bellTime:(int)index
+{
+    return mTimerInfo[index].bellTime;
+}
+
+- (void)setBellTime:(int)time index:(int)index
+{
+    mTimerInfo[index].bellTime = time;
 }
 
 /**
