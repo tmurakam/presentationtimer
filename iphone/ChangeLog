@@ -1,3 +1,13 @@
+2012/9/17 : Takuya Murakami
+	* ver 3.0
+	* iPhone5 4inch display 対応
+	* ARC対応
+	* iOS 4.2.1以下サポート終了
+	* リファクタリング
+	* Retina アイコン追加
+	* Landscape でボタンが表示されるように UI 変更
+	* 音量調整
+
 2010/8/21 : Takuya Murakami
 	* ver 2.1
 	* iOS 4 対応 : サスペンドに対応
