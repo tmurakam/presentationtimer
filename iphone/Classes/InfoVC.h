@@ -34,12 +34,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfoVC : UIViewController {
-    IBOutlet UILabel *nameLabel;
-    IBOutlet UILabel *versionLabel;
-}
-
-- (void)doneAction:(id)sender;
-- (IBAction)webButtonTapped;
-
+@interface InfoVC : UIViewController
 @end

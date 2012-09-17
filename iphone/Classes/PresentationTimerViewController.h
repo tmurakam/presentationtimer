@@ -36,56 +36,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "TimePickerViewController.h"
 
-@interface PresentationTimerViewController : UIViewController
-  <TimePickerViewDelegate>
-{
-    IBOutlet UILabel *timeLabel;
-    IBOutlet UIButton *bell1Button;
-    IBOutlet UIButton *bell2Button;
-    IBOutlet UIButton *bell3Button;
-    IBOutlet UIButton *startStopButton;
-    IBOutlet UIButton *resetButton;
-
-    // Timer value                                                                                                                                        
-    int currentTime; // seconds                                                                                                                           
-    int bell1Time;
-    int bell2Time;
-    int bell3Time;
-    int countDownTarget;
-    BOOL isCountDown;
-	
-    UIColor *color0;
-    UIColor *color1;
-    UIColor *color2;
-    UIColor *color3;
-
-    NSTimer *timer;
-    NSDate *suspendedTime;
-	
-    int editingItem;
-
-    // Audio
-    SystemSoundID sound_bell1;
-    SystemSoundID sound_bell2;
-    SystemSoundID sound_bell3;
-}
-
-- (IBAction)startStopTimer:(id)sender;
-- (IBAction)resetTimer:(id)sender;
-- (IBAction)bellButtonTapped:(id)sender;
-- (IBAction)manualBell:(id)sender;
-- (IBAction)showHelp:(id)sender;
-- (IBAction)invertCountDown:(id)sender;
-
-- (void)saveDefaults;
-- (void)updateButtonTitle;
-- (void)updateTimeLabel;
-- (NSString*)timeText:(int)n;
-- (void)timerHandler:(NSTimer*)theTimer;
-
-- (SystemSoundID)loadWav:(NSString*)name;
-
+@interface PresentationTimerViewController : UIViewController <TimePickerViewDelegate>
 - (void)appSuspended;
 - (void)appResumed;
-
 @end
