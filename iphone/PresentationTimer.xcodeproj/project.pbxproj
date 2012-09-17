@@ -17,6 +17,7 @@
 		28D7ACF80DDB3853001CB0EB /* PresentationTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* PresentationTimerViewController.m */; };
 		3E0E24D60E7BE5F500CA7AC4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0E24D50E7BE5F500CA7AC4 /* AudioToolbox.framework */; };
 		3E55F3FD0E7BAA0C008D9D4B /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */; };
+		3E59EAAD160705CD00FE0BC3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E59EAAC160705CD00FE0BC3 /* AVFoundation.framework */; };
 		3E5A8ED30EAF5B3200118C3C /* TimePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */; };
 		3E6FCF3911573A320078B23E /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6FCF3811573A320078B23E /* MainWindow-iPad.xib */; };
 		3E6FCF3E11573A6F0078B23E /* PresentationTimerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6FCF3D11573A6F0078B23E /* PresentationTimerViewController-iPad.xib */; };
@@ -63,6 +64,7 @@
 		3E55F3FB0E7BAA0C008D9D4B /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
 		3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimePickerViewController.xib; sourceTree = "<group>"; };
+		3E59EAAC160705CD00FE0BC3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3E6FCF3811573A320078B23E /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		3E6FCF3D11573A6F0078B23E /* PresentationTimerViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PresentationTimerViewController-iPad.xib"; sourceTree = "<group>"; };
 		3E8A45C61606D895000D6975 /* bell40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell40.png; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E59EAAD160705CD00FE0BC3 /* AVFoundation.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -136,6 +139,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				3E59EAAC160705CD00FE0BC3 /* AVFoundation.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,

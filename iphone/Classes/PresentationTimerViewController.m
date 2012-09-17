@@ -32,6 +32,8 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#import <AVFoundation/AVFoundation.h>
+
 #import "PresentationTimerViewController.h"
 #import "TimePickerViewController.h"
 #import "InfoVC.h"
@@ -64,9 +66,8 @@
     int mEditingItem;
     
     // Audio
-    SystemSoundID mSoundBell1;
-    SystemSoundID mSoundBell2;
-    SystemSoundID mSoundBell3;
+    AVAudioPlayer *mSoundBell[3];
+    int mLastPlayBell;
 }
 
 - (IBAction)startStopTimer:(id)sender;
@@ -82,7 +83,7 @@
 - (NSString*)timeText:(int)n;
 - (void)timerHandler:(NSTimer*)theTimer;
 
-- (SystemSoundID)loadWav:(NSString*)name;
+- (AVAudioPlayer *)loadWav:(NSString*)name;
 
 @end
 
@@ -113,9 +114,11 @@
     mColor2 = [[UIColor alloc] initWithRed:1.0 green:0.2 blue:0.8 alpha:1.0];
     mColor3 = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
 	
-    mSoundBell1 = [self loadWav:@"1bell"];
-    mSoundBell2 = [self loadWav:@"2bell"];
-    mSoundBell3 = [self loadWav:@"3bell"];
+    
+    mSoundBell[0] = [self loadWav:@"1bell"];
+    mSoundBell[1] = [self loadWav:@"2bell"];
+    mSoundBell[2] = [self loadWav:@"3bell"];
+    mLastPlayBell = -1;
 	
     NSString *title;
     title = NSLocalizedString(@"Start", @"");
@@ -156,12 +159,15 @@
 /**
    load WAV file from resource
 */
-- (SystemSoundID)loadWav:(NSString*)name
+- (AVAudioPlayer *)loadWav:(NSString*)name
 {
-    SystemSoundID sid;
+    //SystemSoundID sid;
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:name ofType:@"wav"]];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &sid);
-    return sid;
+    //AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &sid);
+    //return sid;
+
+    AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    return audio;
 }
 
 /**
@@ -245,7 +251,7 @@
 */
 - (IBAction)manualBell:(id)sender
 {
-    AudioServicesPlaySystemSound(mSoundBell1);
+    [self playBell:0];
 }
 
 /**
@@ -290,16 +296,33 @@
     mCurrentTime ++;
 	
     if (mCurrentTime == mBell1Time) {
-        AudioServicesPlaySystemSound(mSoundBell1);
+        [self playBell:0];
     }
     else if (mCurrentTime == mBell2Time) {
-        AudioServicesPlaySystemSound(mSoundBell2);
+        [self playBell:1];
     }
     else if (mCurrentTime == mBell3Time) {
-        AudioServicesPlaySystemSound(mSoundBell3);
+        [self playBell:2];
     }
 			
     [self updateTimeLabel];
+}
+
+- (void)playBell:(int)n
+{
+    AVAudioPlayer *p;
+    
+    if (mLastPlayBell >= 0) {
+        p = mSoundBell[mLastPlayBell];
+        if ([p isPlaying]) {
+            [p stop];
+            p.currentTime = 0;
+        }
+    }
+    
+    p = mSoundBell[n];
+    [p play];
+    mLastPlayBell = n;
 }
 
 /**
