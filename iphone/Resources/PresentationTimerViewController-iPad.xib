@@ -94,8 +94,11 @@
 						</object>
 						<reference key="IBUIDisabledImage" ref="936206143"/>
 						<reference key="IBUISelectedImage" ref="936206143"/>
-						<reference key="IBUINormalImage" ref="936206143"/>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="147669245">
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">bell40.png</string>
+						</object>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="77602071">
 							<string key="name">Helvetica-Bold</string>
 							<string key="family">Helvetica</string>
 							<int key="traits">2</int>
@@ -131,7 +134,7 @@
 						<reference key="IBUISelectedTitleColor" ref="192102683"/>
 						<reference key="IBUINormalTitleColor" ref="192102683"/>
 						<reference key="IBUINormalTitleShadowColor" ref="173921919"/>
-						<reference key="IBUIFontDescription" ref="147669245"/>
+						<reference key="IBUIFontDescription" ref="77602071"/>
 						<reference key="IBUIFont" ref="670429979"/>
 					</object>
 					<object class="IBUIButton" id="63630909">
@@ -160,7 +163,7 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MyAwLjMwOTgwMzkzIDAuNTIxNTY4NjYAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="173921919"/>
-						<reference key="IBUIFontDescription" ref="147669245"/>
+						<reference key="IBUIFontDescription" ref="77602071"/>
 						<reference key="IBUIFont" ref="670429979"/>
 					</object>
 					<object class="IBUIButton" id="734546685">
@@ -182,7 +185,7 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MyAwLjMwOTgwMzkzIDAuNTIxNTY4NjYAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="173921919"/>
-						<reference key="IBUIFontDescription" ref="147669245"/>
+						<reference key="IBUIFontDescription" ref="77602071"/>
 						<reference key="IBUIFont" ref="670429979"/>
 					</object>
 					<object class="IBUIView" id="896671531">
@@ -211,7 +214,7 @@
 									<bytes key="NSRGB">MC42MDAwMDAwMiAwLjYwMDAwMDAyIDAAA</bytes>
 								</object>
 								<reference key="IBUINormalTitleShadowColor" ref="173921919"/>
-								<reference key="IBUIFontDescription" ref="147669245"/>
+								<reference key="IBUIFontDescription" ref="77602071"/>
 								<reference key="IBUIFont" ref="670429979"/>
 							</object>
 							<object class="IBUIButton" id="921337934">
@@ -233,7 +236,7 @@
 								<reference key="IBUIHighlightedTitleColor" ref="1028381940"/>
 								<reference key="IBUINormalTitleColor" ref="192102683"/>
 								<reference key="IBUINormalTitleShadowColor" ref="173921919"/>
-								<reference key="IBUIFontDescription" ref="147669245"/>
+								<reference key="IBUIFontDescription" ref="77602071"/>
 								<reference key="IBUIFont" ref="670429979"/>
 							</object>
 							<object class="IBUIImageView" id="748828441">
@@ -339,7 +342,7 @@
 									<bytes key="NSRGB">MSAwIDAuODAwMDAwMDEAA</bytes>
 								</object>
 								<reference key="IBUINormalTitleShadowColor" ref="173921919"/>
-								<reference key="IBUIFontDescription" ref="147669245"/>
+								<reference key="IBUIFontDescription" ref="77602071"/>
 								<reference key="IBUIFont" ref="670429979"/>
 							</object>
 						</array>
@@ -786,8 +789,9 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="bell28.png">{30, 28}</string>
-			<string key="bell40w.png">{42, 40}</string>
+			<string key="bell28.png">{28, 28}</string>
+			<string key="bell40.png">{40, 40}</string>
+			<string key="bell40w.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>
