@@ -41,8 +41,9 @@
 @interface TimerModel : NSObject
 
 @property id<TimerModelDelegate> delegate;
+
+@property int currentTime;
 @property int countDownTarget;
-@property BOOL isCountDown;
 
 + (NSString*)timeText:(int)n;
 

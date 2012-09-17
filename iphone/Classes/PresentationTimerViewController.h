@@ -35,8 +35,9 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "TimePickerViewController.h"
+#import "TimerModel.h"
 
-@interface PresentationTimerViewController : UIViewController <TimePickerViewDelegate>
+@interface PresentationTimerViewController : UIViewController <TimePickerViewDelegate, TimerModelDelegate>
 - (void)appSuspended;
 - (void)appResumed;
 @end

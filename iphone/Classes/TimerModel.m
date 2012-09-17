@@ -87,8 +87,8 @@
 @implementation TimerModel
 
 @synthesize delegate = mDelegate;
+@synthesize currentTime = mCurrentTime;
 @synthesize countDownTarget = mCountDownTarget;
-@synthesize isCountDown = mIsCountDown;
 
 /**
    initialize
@@ -227,14 +227,6 @@
 }
 
 /**
-   Toggle count down mode
-*/
-- (void)invertCountDown
-{
-    mIsCountDown = !mIsCountDown;
-}
-
-/**
    Timer handler : called for each 1 second.
 */
 - (void)timerHandler:(NSTimer*)theTimer
@@ -247,7 +239,7 @@
         }
     }
     
-    [delegate timerUpdated];
+    [mDelegate timerUpdated];
 }
 
 - (void)playBell:(int)n
@@ -262,7 +254,7 @@
         }
     }
     
-    p = mTimerInfo[mLastPlayBell].soundBell;
+    p = mTimerInfo[n].soundBell;
     [p play];
     mLastPlayBell = n;
 }
