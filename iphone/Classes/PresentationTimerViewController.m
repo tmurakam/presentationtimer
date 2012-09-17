@@ -342,11 +342,20 @@
     timeLabel.textColor = col;
 }
 
+// 秒を時分秒に変換する
 - (NSString*)timeText:(int)n
 {
-    int min = n / 60;
     int sec = n % 60;
-    NSString *ts = [NSString stringWithFormat:@"%02d:%02d", min, sec];
+    n = n / 60;
+    int min = n % 60;
+    int hour = n / 60;
+
+    NSString *ts;
+    if (hour > 0) {
+        ts = [NSString stringWithFormat:@"%d:%02d:%02d", hour, min, sec];
+    } else {
+        ts = [NSString stringWithFormat:@"%02d:%02d", min, sec];
+    }
     return ts;
 }
 
@@ -364,9 +373,6 @@
 
 - (void)timePickerViewSetTime:(int)seconds
 {
-    if (seconds > 99*60) {
-        seconds = 99*60;
-    }
     seconds -= (seconds % 60); // for safety
     switch (mEditingItem) {
         case 1:
