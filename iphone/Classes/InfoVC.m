@@ -86,4 +86,15 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
 }
+
+// iOS 6 later
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationPortrait;
+}
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
 @end

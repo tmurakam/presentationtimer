@@ -50,7 +50,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">icon-blackbg.png</string>
+							<string key="NSResourceName">bell80.png</string>
 						</object>
 					</object>
 					<object class="IBUILabel" id="959586379">
@@ -122,7 +122,7 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Copyright © 2008-2010, Takuya Murakami</string>
+						<string key="IBUIText">Copyright © 2008-2012, Takuya Murakami</string>
 						<reference key="IBUITextColor" ref="830156375"/>
 						<reference key="IBUIHighlightedColor" ref="830156375"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -355,8 +355,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">icon-blackbg.png</string>
-			<string key="NS.object.0">{72, 72}</string>
+			<string key="NS.key.0">bell80.png</string>
+			<string key="NS.object.0">{80, 80}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>
