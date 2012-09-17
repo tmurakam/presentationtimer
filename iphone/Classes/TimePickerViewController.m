@@ -34,6 +34,17 @@
 
 #import "TimePickerViewController.h"
 
+@interface TimePickerViewController()
+{
+    IBOutlet UIDatePicker *picker;
+    IBOutlet UIButton *cdtButton;
+	
+    int seconds;
+    
+    id<TimePickerViewDelegate> __unsafe_unretained delegate;
+}
+@end
+
 @implementation TimePickerViewController
 
 @synthesize seconds;
