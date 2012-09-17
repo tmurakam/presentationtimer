@@ -36,19 +36,19 @@
 
 @interface TimePickerViewController()
 {
-    IBOutlet UIDatePicker *picker;
-    IBOutlet UIButton *cdtButton;
+    IBOutlet UIDatePicker *mPicker;
+    IBOutlet UIButton *mCdtButton;
 	
-    int seconds;
+    int mSeconds;
     
-    id<TimePickerViewDelegate> __unsafe_unretained delegate;
+    id<TimePickerViewDelegate> __unsafe_unretained mDelegate;
 }
 @end
 
 @implementation TimePickerViewController
 
-@synthesize seconds;
-@synthesize delegate;
+@synthesize seconds = mSeconds;
+@synthesize delegate = mDelegate;
 
 - (id)init
 {
@@ -72,19 +72,19 @@
                                                       action:@selector(onDone:)];
 	
     NSString *title = NSLocalizedString(@"Use as presentation end time", @"");
-    [cdtButton setTitle:title forState:UIControlStateNormal];
-    [cdtButton setTitle:title forState:UIControlStateHighlighted];
+    [mCdtButton setTitle:title forState:UIControlStateNormal];
+    [mCdtButton setTitle:title forState:UIControlStateHighlighted];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    picker.countDownDuration = (double)seconds;
+    mPicker.countDownDuration = (double)mSeconds;
 }
 
 - (IBAction)onDone:(id)sender
 {
-    seconds = (int)picker.countDownDuration;
-    [delegate timePickerViewSetTime:seconds];
+    mSeconds = (int)mPicker.countDownDuration;
+    [mDelegate timePickerViewSetTime:mSeconds];
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -95,7 +95,7 @@
 
 - (IBAction)onSetCountdownTarget:(id)sender
 {
-    [delegate timePickerViewSetCountdownTarget];
+    [mDelegate timePickerViewSetCountdownTarget];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

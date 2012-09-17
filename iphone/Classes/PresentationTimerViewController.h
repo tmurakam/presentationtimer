@@ -36,19 +36,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "TimePickerViewController.h"
 
-@interface PresentationTimerViewController : UIViewController
-  <TimePickerViewDelegate>
-
-- (IBAction)startStopTimer:(id)sender;
-- (IBAction)resetTimer:(id)sender;
-- (IBAction)bellButtonTapped:(id)sender;
-- (IBAction)manualBell:(id)sender;
-- (IBAction)showHelp:(id)sender;
-- (IBAction)invertCountDown:(id)sender;
-
-
-
+@interface PresentationTimerViewController : UIViewController <TimePickerViewDelegate>
 - (void)appSuspended;
 - (void)appResumed;
-
 @end

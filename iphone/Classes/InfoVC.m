@@ -34,6 +34,16 @@
 
 #import "InfoVC.h"
 
+@interface InfoVC()
+{
+    IBOutlet UILabel *mNameLabel;
+    IBOutlet UILabel *mVersionLabel;
+}
+
+- (void)doneAction:(id)sender;
+- (IBAction)webButtonTapped;
+@end
+
 @implementation InfoVC
 
 - (id)init
@@ -61,7 +71,7 @@
       action:@selector(doneAction:)];
 
     NSString *version = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"];
-    [versionLabel setText:[NSString stringWithFormat:@"Version %@", version]];
+    [mVersionLabel setText:[NSString stringWithFormat:@"Version %@", version]];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -69,6 +69,13 @@
     SystemSoundID mSoundBell3;
 }
 
+- (IBAction)startStopTimer:(id)sender;
+- (IBAction)resetTimer:(id)sender;
+- (IBAction)bellButtonTapped:(id)sender;
+- (IBAction)manualBell:(id)sender;
+- (IBAction)showHelp:(id)sender;
+- (IBAction)invertCountDown:(id)sender;
+
 - (void)saveDefaults;
 - (void)updateButtonTitle;
 - (void)updateTimeLabel;
