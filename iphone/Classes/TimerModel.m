@@ -35,6 +35,9 @@
 #import "TimerModel.h"
 #import <AVFoundation/AVFoundation.h>
 
+/**
+ * タイマ情報　：ベル時刻およびベル音を管理
+ */
 @interface TimerInfo : NSObject
 {
     // ベル時刻
@@ -46,13 +49,33 @@
 
 @property (nonatomic) int bellTime;
 @property (nonatomic) AVAudioPlayer *soundBell;
+
+- (void)playBell;
+- (void)stopBell;
 @end
 
 @implementation TimerInfo
 @synthesize bellTime;
 @synthesize soundBell;
+
+- (void)stopBell
+{
+    if ([soundBell isPlaying]) {
+        [soundBell stop];
+        soundBell.currentTime = 0;
+    }
+}
+
+- (void)playBell
+{
+    [soundBell play];
+}
+
 @end
 
+/**
+ * タイマモデル
+ */
 @interface TimerModel()
 {
     id<TimerModelDelegate> mDelegate;
@@ -65,9 +88,6 @@
 
     // プレゼン終了時刻タイマのインデックス
     int mCountDownTarget;
-    
-    // カウントダウンモード
-    BOOL mIsCountDown;
     
     NSTimer *mTimer;
     NSDate *mSuspendedTime;
@@ -129,7 +149,6 @@
         }
         mCountDownTarget = [defaults integerForKey:@"countDownTarget"];
         if (mCountDownTarget == 0) mCountDownTarget = 2;
-        mIsCountDown = NO;
     
         mLastPlayBell = -1;
 	}
@@ -244,18 +263,10 @@
 
 - (void)playBell:(int)n
 {
-    AVAudioPlayer *p;
-    
     if (mLastPlayBell >= 0) {
-        p = mTimerInfo[mLastPlayBell].soundBell;
-        if ([p isPlaying]) {
-            [p stop];
-            p.currentTime = 0;
-        }
+        [mTimerInfo[mLastPlayBell] stopBell];
     }
-    
-    p = mTimerInfo[n].soundBell;
-    [p play];
+    [mTimerInfo[n] playBell];
     mLastPlayBell = n;
 }
 

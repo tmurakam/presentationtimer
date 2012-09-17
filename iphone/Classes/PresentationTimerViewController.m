@@ -297,6 +297,7 @@
 - (void)appResumed
 {
     [mTimer appResumed];
+    [self updateTimeLabel];
 }
 
 @end
