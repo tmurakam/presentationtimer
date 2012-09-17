@@ -52,18 +52,13 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [viewController appSuspended];
+    [self.viewController appSuspended];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    [viewController appResumed];
+    [self.viewController appResumed];
 }
 
-- (void)dealloc {
-    [viewController release];
-    [window release];
-    [super dealloc];
-}
 
 @end

@@ -36,6 +36,56 @@
 #import "TimePickerViewController.h"
 #import "InfoVC.h"
 
+@interface PresentationTimerViewController()
+{
+    IBOutlet UILabel *timeLabel;
+    IBOutlet UIButton *bell1Button;
+    IBOutlet UIButton *bell2Button;
+    IBOutlet UIButton *bell3Button;
+    IBOutlet UIButton *startStopButton;
+    IBOutlet UIButton *resetButton;
+    
+    // Timer value
+    int mCurrentTime; // seconds
+    int mBell1Time;
+    int mBell2Time;
+    int mBell3Time;
+    int mCountDownTarget;
+    BOOL mIsCountDown;
+	
+    UIColor *mColor0;
+    UIColor *mColor1;
+    UIColor *mColor2;
+    UIColor *mColor3;
+    
+    NSTimer *mTimer;
+    NSDate *mSuspendedTime;
+	
+    int mEditingItem;
+    
+    // Audio
+    SystemSoundID mSoundBell1;
+    SystemSoundID mSoundBell2;
+    SystemSoundID mSoundBell3;
+}
+
+- (IBAction)startStopTimer:(id)sender;
+- (IBAction)resetTimer:(id)sender;
+- (IBAction)bellButtonTapped:(id)sender;
+- (IBAction)manualBell:(id)sender;
+- (IBAction)showHelp:(id)sender;
+- (IBAction)invertCountDown:(id)sender;
+
+- (void)saveDefaults;
+- (void)updateButtonTitle;
+- (void)updateTimeLabel;
+- (NSString*)timeText:(int)n;
+- (void)timerHandler:(NSTimer*)theTimer;
+
+- (SystemSoundID)loadWav:(NSString*)name;
+
+@end
+
 @implementation PresentationTimerViewController
 
 /**
@@ -44,28 +94,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    currentTime = 0;
-    suspendedTime = nil;
+    mCurrentTime = 0;
+    mSuspendedTime = nil;
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    bell1Time = [defaults integerForKey:@"bell1Time"];
-    bell2Time = [defaults integerForKey:@"bell2Time"];
-    bell3Time = [defaults integerForKey:@"bell3Time"];
-    countDownTarget = [defaults integerForKey:@"countDownTarget"];
-    if (bell1Time == 0) bell1Time = 13*60;
-    if (bell2Time == 0) bell2Time = 15*60;
-    if (bell3Time == 0) bell3Time = 20*60;
-    if (countDownTarget == 0) countDownTarget = 2;
-    isCountDown = NO;
+    mBell1Time = [defaults integerForKey:@"bell1Time"];
+    mBell2Time = [defaults integerForKey:@"bell2Time"];
+    mBell3Time = [defaults integerForKey:@"bell3Time"];
+    mCountDownTarget = [defaults integerForKey:@"countDownTarget"];
+    if (mBell1Time == 0) mBell1Time = 13*60;
+    if (mBell2Time == 0) mBell2Time = 15*60;
+    if (mBell3Time == 0) mBell3Time = 20*60;
+    if (mCountDownTarget == 0) mCountDownTarget = 2;
+    mIsCountDown = NO;
 
-    color0 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-    color1 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:0.0 alpha:1.0];
-    color2 = [[UIColor alloc] initWithRed:1.0 green:0.2 blue:0.8 alpha:1.0];
-    color3 = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
+    mColor0 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    mColor1 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:0.0 alpha:1.0];
+    mColor2 = [[UIColor alloc] initWithRed:1.0 green:0.2 blue:0.8 alpha:1.0];
+    mColor3 = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
 	
-    sound_bell1 = [self loadWav:@"1bell"];
-    sound_bell2 = [self loadWav:@"2bell"];
-    sound_bell3 = [self loadWav:@"3bell"];
+    mSoundBell1 = [self loadWav:@"1bell"];
+    mSoundBell2 = [self loadWav:@"2bell"];
+    mSoundBell3 = [self loadWav:@"3bell"];
 	
     NSString *title;
     title = NSLocalizedString(@"Start", @"");
@@ -96,10 +146,10 @@
 - (void)saveDefaults
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[NSNumber numberWithInt:bell1Time] forKey:@"bell1Time"];
-    [defaults setObject:[NSNumber numberWithInt:bell2Time] forKey:@"bell2Time"];
-    [defaults setObject:[NSNumber numberWithInt:bell3Time] forKey:@"bell3Time"];
-    [defaults setObject:[NSNumber numberWithInt:countDownTarget] forKey:@"countDownTarget"];
+    [defaults setObject:[NSNumber numberWithInt:mBell1Time] forKey:@"bell1Time"];
+    [defaults setObject:[NSNumber numberWithInt:mBell2Time] forKey:@"bell2Time"];
+    [defaults setObject:[NSNumber numberWithInt:mBell3Time] forKey:@"bell3Time"];
+    [defaults setObject:[NSNumber numberWithInt:mCountDownTarget] forKey:@"countDownTarget"];
     [defaults synchronize];
 }
 
@@ -110,7 +160,7 @@
 {
     SystemSoundID sid;
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:name ofType:@"wav"]];
-    AudioServicesCreateSystemSoundID((CFURLRef)url, &sid);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &sid);
     return sid;
 }
 
@@ -119,12 +169,12 @@
 */
 - (void)updateButtonTitle
 {
-    [bell1Button setTitle:[self timeText:bell1Time] forState:UIControlStateNormal];
-    [bell1Button setTitle:[self timeText:bell1Time] forState:UIControlStateHighlighted];
-    [bell2Button setTitle:[self timeText:bell2Time] forState:UIControlStateNormal];
-    [bell2Button setTitle:[self timeText:bell2Time] forState:UIControlStateHighlighted];
-    [bell3Button setTitle:[self timeText:bell3Time] forState:UIControlStateNormal];
-    [bell3Button setTitle:[self timeText:bell3Time] forState:UIControlStateHighlighted];
+    [bell1Button setTitle:[self timeText:mBell1Time] forState:UIControlStateNormal];
+    [bell1Button setTitle:[self timeText:mBell1Time] forState:UIControlStateHighlighted];
+    [bell2Button setTitle:[self timeText:mBell2Time] forState:UIControlStateNormal];
+    [bell2Button setTitle:[self timeText:mBell2Time] forState:UIControlStateHighlighted];
+    [bell3Button setTitle:[self timeText:mBell3Time] forState:UIControlStateNormal];
+    [bell3Button setTitle:[self timeText:mBell3Time] forState:UIControlStateHighlighted];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -146,9 +196,6 @@
     // Release anything that's not essential, such as cached data
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 /**
    Start or stop timer (toggle)
@@ -157,14 +204,13 @@
 {
     NSString *newTitle;
 	
-    if (timer == nil) {
+    if (mTimer == nil) {
         // start timer
-        timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+        mTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
                          target:self 
                          selector:@selector(timerHandler:) 
                          userInfo:nil
                          repeats:YES];
-        [timer retain];
         newTitle = NSLocalizedString(@"Pause", @"");
         resetButton.enabled = NO;
 
@@ -172,9 +218,8 @@
         [UIApplication sharedApplication].idleTimerDisabled = YES;
     } else {
         // stop timer
-        [timer invalidate];
-        [timer release];
-        timer = nil;
+        [mTimer invalidate];
+        mTimer = nil;
 
         newTitle = NSLocalizedString(@"Start", @"");
         resetButton.enabled = YES;
@@ -191,7 +236,7 @@
 */
 - (IBAction)resetTimer:(id)sender
 {
-    currentTime = 0;
+    mCurrentTime = 0;
     [self updateTimeLabel];
 }
 
@@ -200,7 +245,7 @@
 */
 - (IBAction)manualBell:(id)sender
 {
-    AudioServicesPlaySystemSound(sound_bell1);
+    AudioServicesPlaySystemSound(mSoundBell1);
 }
 
 /**
@@ -210,21 +255,21 @@
 {
     int sec;
     if (sender == bell1Button) {
-        sec = bell1Time;
-        editingItem = 1;
+        sec = mBell1Time;
+        mEditingItem = 1;
     } else if (sender == bell2Button) {
-        sec = bell2Time;
-        editingItem = 2;
+        sec = mBell2Time;
+        mEditingItem = 2;
     } else {
-        sec = bell3Time;
-        editingItem = 3;
+        sec = mBell3Time;
+        mEditingItem = 3;
     }
     
-    TimePickerViewController *vc = [[[TimePickerViewController alloc] init] autorelease];
+    TimePickerViewController *vc = [[TimePickerViewController alloc] init];
     vc.delegate = self;
     vc.seconds = sec;
 
-    UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentModalViewController:nv animated:YES];
 }
 
@@ -233,7 +278,7 @@
 */
 - (IBAction)invertCountDown:(id)sender
 {
-    isCountDown = !isCountDown;
+    mIsCountDown = !mIsCountDown;
     [self updateTimeLabel];
 }
 
@@ -242,16 +287,16 @@
 */
 - (void)timerHandler:(NSTimer*)theTimer
 {
-    currentTime ++;
+    mCurrentTime ++;
 	
-    if (currentTime == bell1Time) {
-        AudioServicesPlaySystemSound(sound_bell1);
+    if (mCurrentTime == mBell1Time) {
+        AudioServicesPlaySystemSound(mSoundBell1);
     }
-    else if (currentTime == bell2Time) {
-        AudioServicesPlaySystemSound(sound_bell2);
+    else if (mCurrentTime == mBell2Time) {
+        AudioServicesPlaySystemSound(mSoundBell2);
     }
-    else if (currentTime == bell3Time) {
-        AudioServicesPlaySystemSound(sound_bell3);
+    else if (mCurrentTime == mBell3Time) {
+        AudioServicesPlaySystemSound(mSoundBell3);
     }
 			
     [self updateTimeLabel];
@@ -263,20 +308,20 @@
 - (void)updateTimeLabel
 {
     int t;
-    if (!isCountDown) {
-        t = currentTime;
+    if (!mIsCountDown) {
+        t = mCurrentTime;
     } else {
-        switch (countDownTarget)
+        switch (mCountDownTarget)
             {
             case 1:
-                t = bell1Time - currentTime;
+                t = mBell1Time - mCurrentTime;
                 break;
             case 2:
             default:
-                t = bell2Time - currentTime;
+                t = mBell2Time - mCurrentTime;
                 break;
             case 3:
-                t = bell3Time - currentTime;
+                t = mBell3Time - mCurrentTime;
                 break;
             }
         if (t < 0) t = -t;
@@ -284,14 +329,14 @@
     timeLabel.text = [self timeText:t];
 
     UIColor *col;
-    if (currentTime >= bell3Time) {
-        col = color3;
-    } else if (currentTime >= bell2Time) {
-        col = color2;
-    } else if (currentTime >= bell1Time) {
-        col = color1;
+    if (mCurrentTime >= mBell3Time) {
+        col = mColor3;
+    } else if (mCurrentTime >= mBell2Time) {
+        col = mColor2;
+    } else if (mCurrentTime >= mBell1Time) {
+        col = mColor1;
     } else {
-        col = color0;
+        col = mColor0;
     }
 		
     timeLabel.textColor = col;
@@ -310,8 +355,8 @@
     //NSURL *url = [NSURL URLWithString:NSLocalizedString(@"HelpURL", @"")];
     //[[UIApplication sharedApplication] openURL:url];
     
-    InfoVC *vc = [[[InfoVC alloc] init] autorelease];
-    UINavigationController *nv = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+    InfoVC *vc = [[InfoVC alloc] init];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentModalViewController:nv animated:YES];
 }
 
@@ -323,15 +368,15 @@
         seconds = 99*60;
     }
     seconds -= (seconds % 60); // for safety
-    switch (editingItem) {
+    switch (mEditingItem) {
         case 1:
-            bell1Time = seconds;
+            mBell1Time = seconds;
             break;
         case 2:
-            bell2Time = seconds;
+            mBell2Time = seconds;
             break;
         case 3:
-            bell3Time = seconds;
+            mBell3Time = seconds;
             break;
     }
     [self saveDefaults];
@@ -340,7 +385,7 @@
 
 - (void)timePickerViewSetCountdownTarget
 {
-    countDownTarget = editingItem;
+    mCountDownTarget = mEditingItem;
     [self saveDefaults];
 }
 
@@ -348,24 +393,22 @@
 
 - (void)appSuspended
 {
-    if (timer == nil) return; // do nothing
+    if (mTimer == nil) return; // do nothing
     
     // timer working. remember current time
-    suspendedTime = [NSDate date];
-    [suspendedTime retain];
+    mSuspendedTime = [NSDate date];
 }
 
 - (void)appResumed
 {
-    if (timer == nil) return; // do nothing
+    if (mTimer == nil) return; // do nothing
     
-    if (suspendedTime == nil) return;
+    if (mSuspendedTime == nil) return;
     
     // modify current time
-    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:suspendedTime];
-    currentTime += interval;
-    [suspendedTime release];
-    suspendedTime = nil;
+    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:mSuspendedTime];
+    mCurrentTime += interval;
+    mSuspendedTime = nil;
 }
 
 @end

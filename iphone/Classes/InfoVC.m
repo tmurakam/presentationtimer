@@ -34,6 +34,16 @@
 
 #import "InfoVC.h"
 
+@interface InfoVC()
+{
+    IBOutlet UILabel *mNameLabel;
+    IBOutlet UILabel *mVersionLabel;
+}
+
+- (void)doneAction:(id)sender;
+- (IBAction)webButtonTapped;
+@end
+
 @implementation InfoVC
 
 - (id)init
@@ -55,22 +65,19 @@
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Info", @"");
     self.navigationItem.rightBarButtonItem =
-    [[[UIBarButtonItem alloc]
+    [[UIBarButtonItem alloc]
       initWithBarButtonSystemItem:UIBarButtonSystemItemDone
       target:self
-      action:@selector(doneAction:)] autorelease];
+      action:@selector(doneAction:)];
 
     NSString *version = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"];
-    [versionLabel setText:[NSString stringWithFormat:@"Version %@", version]];
+    [mVersionLabel setText:[NSString stringWithFormat:@"Version %@", version]];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 - (void)doneAction:(id)sender
 {

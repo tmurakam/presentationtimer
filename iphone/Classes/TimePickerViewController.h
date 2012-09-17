@@ -41,17 +41,10 @@
 - (void)timePickerViewSetCountdownTarget;
 @end
 
-@interface TimePickerViewController : UIViewController {
-    IBOutlet UIDatePicker *picker;
-    IBOutlet UIButton *cdtButton;
-	
-    int seconds;
-
-    id<TimePickerViewDelegate> delegate;
-}
+@interface TimePickerViewController : UIViewController
 
 @property(nonatomic,assign) int seconds;
-@property(nonatomic,assign) id<TimePickerViewDelegate> delegate;
+@property(nonatomic,unsafe_unretained) id<TimePickerViewDelegate> delegate;
 
 - (IBAction)onDone:(id)sender;
 - (IBAction)onCancel:(id)sender;
