@@ -34,6 +34,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define NUM_BELLS 3
+
 @protocol TimerModelDelegate
 - (void)timerUpdated;
 @end

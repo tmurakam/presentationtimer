@@ -51,7 +51,7 @@
 @property (nonatomic) AVAudioPlayer *soundBell;
 
 - (void)playBell;
-- (void)playBellAtTime:(NSTimeInterval)time;
+- (void)playBellWithDelay:(NSTimeInterval)delay;
 - (void)stopBell;
 @end
 
@@ -72,9 +72,9 @@
     [soundBell play];
 }
 
-- (void)playBellAtTime:(NSTimeInterval)time
+- (void)playBellWithDelay:(NSTimeInterval)delay
 {
-    [soundBell playAtTime:time];
+    [soundBell playAtTime:soundBell.deviceCurrentTime + delay];
 }
 
 @end
@@ -89,8 +89,11 @@
     // Timer value
     int mCurrentTime; // seconds
     
+    // Background モードに入っているかどうか
+    BOOL mIsInBackground;
+    
     // ベル情報
-    TimerInfo *mTimerInfo[3];
+    TimerInfo *mTimerInfo[NUM_BELLS];
 
     // プレゼン終了時刻タイマのインデックス
     int mCountDownTarget;
@@ -105,7 +108,7 @@
 }
 
 - (void)timerHandler:(NSTimer*)theTimer;
-
+- (void)setBackgroundAudioEnable:(BOOL)enable;
 - (AVAudioPlayer *)loadWav:(NSString*)name;
 
 @end
@@ -125,11 +128,12 @@
     if (self) {
         mCurrentTime = 0;
         mSuspendedTime = nil;
+        mIsInBackground = NO;
         int i;
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < NUM_BELLS; i++) {
             mTimerInfo[i] = [TimerInfo new];
             
             int bellTime = [defaults integerForKey:[NSString stringWithFormat:@"bell%dTime", i+1]];
@@ -161,13 +165,26 @@
     return self;
 }
 
+// バックグランドで音がなるようにする
+- (void)setBackgroundAudioEnable:(BOOL)enable
+{
+    if (enable) {
+        AudioSessionInitialize(NULL, NULL, NULL, NULL);
+        UInt32 sessionCategory = kAudioSessionCategory_MediaPlayback;
+        AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(sessionCategory), &sessionCategory);
+        AudioSessionSetActive(YES);
+    } else {
+        AudioSessionSetActive(NO);
+    }
+}
+
 /**
    Save default values
 */
 - (void)saveDefaults
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < NUM_BELLS; i++) {
         NSString *key = [NSString stringWithFormat:@"bell%dTime", i+1];
         [defaults setObject:[NSNumber numberWithInt:mTimerInfo[i].bellTime] forKey:key];
     }
@@ -221,6 +238,8 @@
                                              repeats:YES];
     // Disable auto lock when timer is running
     [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
+    [self setBackgroundAudioEnable:YES];
 }
 
 - (void)stopTimer
@@ -233,6 +252,8 @@
 
     // Enable auto lock
     [UIApplication sharedApplication].idleTimerDisabled = NO;
+    
+    [self setBackgroundAudioEnable:NO];
 }
 
 /**
@@ -256,9 +277,14 @@
 */
 - (void)timerHandler:(NSTimer*)theTimer
 {
+    // バックグランド中はタイマイベントを無視する
+    // TBD: 本来は止めたほうがよい。。。
+    if (mIsInBackground) return;
+    
     mCurrentTime ++;
-	
-    for (int i = 0; i < 3; i++) {
+    NSLog(@"time: %d", mCurrentTime);
+          
+    for (int i = 0; i < NUM_BELLS; i++) {
         if (mCurrentTime == mTimerInfo[i].bellTime) {
             [self playBell:i];
         }
@@ -297,22 +323,44 @@
 
 - (void)appSuspended
 {
+    mIsInBackground = YES;
     if (mTimer == nil) return; // do nothing
     
     // timer working. remember current time
     mSuspendedTime = [NSDate date];
+    
+    // バックグランドで再生を行わせる
+    for (int i = 0; i < NUM_BELLS; i++) {
+        TimerInfo *ti = mTimerInfo[i];
+        float delay = ti.bellTime - mCurrentTime;
+        if (delay > 0) {
+            NSLog(@"suspend: set timer %d at delay %f", i+1, delay);
+            [ti playBellWithDelay:delay];
+        }
+    }
 }
 
 - (void)appResumed
 {
+    mIsInBackground = NO;
+    
     if (mTimer == nil) return; // do nothing
     
     if (mSuspendedTime == nil) return;
     
+    NSDate *now = [NSDate date];
+
     // modify current time
-    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:mSuspendedTime];
+    NSTimeInterval interval = [now timeIntervalSinceDate:mSuspendedTime];
+    NSLog(@"resumed : suspended %@, now %@, interval %f", mSuspendedTime, now, interval);
+          
     mCurrentTime += interval;
     mSuspendedTime = nil;
+    
+    // stop all bells
+    for (int i = 0; i < NUM_BELLS; i++) {
+        [mTimerInfo[i] stopBell];
+    }
 }
 
 @end
