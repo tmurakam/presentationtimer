@@ -20,8 +20,16 @@
 		3E5A8ED30EAF5B3200118C3C /* TimePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */; };
 		3E6FCF3911573A320078B23E /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6FCF3811573A320078B23E /* MainWindow-iPad.xib */; };
 		3E6FCF3E11573A6F0078B23E /* PresentationTimerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6FCF3D11573A6F0078B23E /* PresentationTimerViewController-iPad.xib */; };
+		3E8A45C71606D895000D6975 /* bell40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45C61606D895000D6975 /* bell40.png */; };
+		3E8A45C91606D91F000D6975 /* bell40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45C81606D91F000D6975 /* bell40@2x.png */; };
+		3E8A45CB1606D988000D6975 /* bell28@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45CA1606D988000D6975 /* bell28@2x.png */; };
+		3E8A45CE1606DEE7000D6975 /* bell80.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45CC1606DEE7000D6975 /* bell80.png */; };
+		3E8A45CF1606DEE7000D6975 /* bell80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45CD1606DEE7000D6975 /* bell80@2x.png */; };
+		3E8A45D11606E018000D6975 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45D01606E018000D6975 /* icon@2x.png */; };
+		3E8A45F71606E0AE000D6975 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45E41606E0AE000D6975 /* Default-568h@2x.png */; };
+		3E8A45FF1606E35A000D6975 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45FD1606E35A000D6975 /* Default.png */; };
+		3E8A46001606E35A000D6975 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45FE1606E35A000D6975 /* Default@2x.png */; };
 		3EA9808F115744C700526A21 /* bell28.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9807E115744C700526A21 /* bell28.png */; };
-		3EA98091115744C700526A21 /* bell40w.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA98080115744C700526A21 /* bell40w.png */; };
 		3EA98092115744C700526A21 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA98081115744C700526A21 /* icon.png */; };
 		3EA9809F1157451300526A21 /* 1bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809A1157451300526A21 /* 1bell.wav */; };
 		3EA980A01157451300526A21 /* 2bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809B1157451300526A21 /* 2bell.wav */; };
@@ -53,8 +61,16 @@
 		3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimePickerViewController.xib; sourceTree = "<group>"; };
 		3E6FCF3811573A320078B23E /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		3E6FCF3D11573A6F0078B23E /* PresentationTimerViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PresentationTimerViewController-iPad.xib"; sourceTree = "<group>"; };
+		3E8A45C61606D895000D6975 /* bell40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell40.png; sourceTree = "<group>"; };
+		3E8A45C81606D91F000D6975 /* bell40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell40@2x.png"; sourceTree = "<group>"; };
+		3E8A45CA1606D988000D6975 /* bell28@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell28@2x.png"; sourceTree = "<group>"; };
+		3E8A45CC1606DEE7000D6975 /* bell80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell80.png; sourceTree = "<group>"; };
+		3E8A45CD1606DEE7000D6975 /* bell80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell80@2x.png"; sourceTree = "<group>"; };
+		3E8A45D01606E018000D6975 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		3E8A45E41606E0AE000D6975 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3E8A45FD1606E35A000D6975 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3E8A45FE1606E35A000D6975 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3EA9807E115744C700526A21 /* bell28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell28.png; sourceTree = "<group>"; };
-		3EA98080115744C700526A21 /* bell40w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell40w.png; sourceTree = "<group>"; };
 		3EA98081115744C700526A21 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		3EA9809A1157451300526A21 /* 1bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1bell.wav; sourceTree = "<group>"; };
 		3EA9809B1157451300526A21 /* 2bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2bell.wav; sourceTree = "<group>"; };
@@ -162,10 +178,18 @@
 		3EA98076115744C700526A21 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3E8A45FD1606E35A000D6975 /* Default.png */,
+				3E8A45FE1606E35A000D6975 /* Default@2x.png */,
+				3E8A45E41606E0AE000D6975 /* Default-568h@2x.png */,
+				3E8A45C61606D895000D6975 /* bell40.png */,
+				3E8A45C81606D91F000D6975 /* bell40@2x.png */,
 				3ED31AE0121FE4AF0012B9A0 /* icon-blackbg.png */,
 				3EA9807E115744C700526A21 /* bell28.png */,
-				3EA98080115744C700526A21 /* bell40w.png */,
+				3E8A45CA1606D988000D6975 /* bell28@2x.png */,
+				3E8A45CC1606DEE7000D6975 /* bell80.png */,
+				3E8A45CD1606DEE7000D6975 /* bell80@2x.png */,
 				3EA98081115744C700526A21 /* icon.png */,
+				3E8A45D01606E018000D6975 /* icon@2x.png */,
 				3EA9812411574D9500526A21 /* icon-ipad.png */,
 			);
 			path = Images;
@@ -208,7 +232,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PresentationTimer" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,7 +259,6 @@
 				3E6FCF3911573A320078B23E /* MainWindow-iPad.xib in Resources */,
 				3E6FCF3E11573A6F0078B23E /* PresentationTimerViewController-iPad.xib in Resources */,
 				3EA9808F115744C700526A21 /* bell28.png in Resources */,
-				3EA98091115744C700526A21 /* bell40w.png in Resources */,
 				3EA98092115744C700526A21 /* icon.png in Resources */,
 				3EA9809F1157451300526A21 /* 1bell.wav in Resources */,
 				3EA980A01157451300526A21 /* 2bell.wav in Resources */,
@@ -239,6 +266,15 @@
 				3EA9812511574D9500526A21 /* icon-ipad.png in Resources */,
 				3ED31ABA121FE1F60012B9A0 /* InfoView.xib in Resources */,
 				3ED31AE1121FE4AF0012B9A0 /* icon-blackbg.png in Resources */,
+				3E8A45C71606D895000D6975 /* bell40.png in Resources */,
+				3E8A45C91606D91F000D6975 /* bell40@2x.png in Resources */,
+				3E8A45CB1606D988000D6975 /* bell28@2x.png in Resources */,
+				3E8A45CE1606DEE7000D6975 /* bell80.png in Resources */,
+				3E8A45CF1606DEE7000D6975 /* bell80@2x.png in Resources */,
+				3E8A45D11606E018000D6975 /* icon@2x.png in Resources */,
+				3E8A45F71606E0AE000D6975 /* Default-568h@2x.png in Resources */,
+				3E8A45FF1606E35A000D6975 /* Default.png in Resources */,
+				3E8A46001606E35A000D6975 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,11 +329,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = PresentationTimer;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -311,27 +344,25 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = PresentationTimer;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		3ED0D5F00E7BEFEC005152C2 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Takuya Murakami";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PREBINDING = NO;
 				PRODUCT_NAME = PresentationTimer;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36445685-ABEE-451E-9D59-A667A375ADD1";
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
 		};
@@ -345,44 +376,42 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = PresentationTimer;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Takuya Murakami";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PREBINDING = NO;
 				PRODUCT_NAME = PresentationTimer;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EFF1F2D2-2B0E-49F3-9453-96FD5CB1960C";
-				SDKROOT = iphoneos3.2;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Takuya Murakami";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PREBINDING = NO;
 				PRODUCT_NAME = PresentationTimer;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0617463E-539A-40EB-9782-964BADBD4EA5";
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
