@@ -282,7 +282,7 @@
     if (mIsInBackground) return;
     
     mCurrentTime ++;
-    NSLog(@"time: %d", mCurrentTime);
+    //NSLog(@"time: %d", mCurrentTime);
           
     for (int i = 0; i < NUM_BELLS; i++) {
         if (mCurrentTime == mTimerInfo[i].bellTime) {

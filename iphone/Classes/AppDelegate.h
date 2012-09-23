@@ -36,13 +36,10 @@
 
 @class PresentationTimerViewController;
 
-@interface AppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-    PresentationTimerViewController *viewController;
-}
+@interface AppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, strong) IBOutlet UIWindow *window;
-@property (nonatomic, strong) IBOutlet PresentationTimerViewController *viewController;
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) PresentationTimerViewController *viewController;
 
 @end
 

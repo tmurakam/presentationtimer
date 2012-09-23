@@ -37,13 +37,19 @@
 
 @implementation AppDelegate
 
-@synthesize window;
-@synthesize viewController;
-
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-    //[window addSubview:viewController.view];
-    [window setRootViewController:viewController];
-    [window makeKeyAndVisible];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    NSString *nibName;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        nibName = @"PresentationTimerViewController";
+    } else {
+        nibName = @"PresentationTimerViewController-iPad";
+    }
+    self.viewController = [[PresentationTimerViewController alloc] initWithNibName:nibName bundle:nil];
+    
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -59,6 +65,5 @@
 {
     [self.viewController appResumed];
 }
-
 
 @end
