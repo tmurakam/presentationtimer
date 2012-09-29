@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Presentation Timer</string>
     <string name="start">Start</string>
     <string name="pause">Pause</string>
     <string name="reset">Reset</string>
     <string name="use_as_end_time">Use as presentation end time</string>
-    <string name="help_url">http://android.tmurakam.org/presentationTimer/index.html</string>
+    <string name="help_url">http://apps.tmurakam.org/presentationTimer/index.en.html</string>
     <string name="_1bell_time">1 bell time</string>
     <string name="_2bells_time">2 bells time</string>
     <string name="_3bells_time">3 bells time</string>
-<string name="preferences">Preferences</string>
-<string name="help">Help</string>
-<string name="end_time">End time</string>
-<string name="hours">hours</string>
-<string name="minutes">minutes</string>
+    <string name="preferences">Preferences</string>
+    <string name="help">Help</string>
+    <string name="end_time">End time</string>
+    <string name="hours">hours</string>
+    <string name="minutes">minutes</string>
+
 </resources>
