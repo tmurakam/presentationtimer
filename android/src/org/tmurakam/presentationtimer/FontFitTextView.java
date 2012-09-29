@@ -40,7 +40,7 @@ public class FontFitTextView extends TextView {
         if (maxTextSize < 11) {
             maxTextSize = 20;
         }*/
-        maxTextSize = 600;
+        maxTextSize = 900;
         minTextSize = 10;
     }
 
