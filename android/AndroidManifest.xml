@@ -15,6 +15,7 @@
         android:resizeable="true"
         android:smallScreens="true" >
     </supports-screens>
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:icon="@drawable/icon"
