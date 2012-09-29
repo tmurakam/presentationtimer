@@ -33,9 +33,9 @@ public class TimeSetActivity extends Activity {
         int hour = time / 3600;
         int min = (time / 60) % 60;
 
+        mTimePicker.setIs24HourView(true);
         mTimePicker.setCurrentHour(hour);
         mTimePicker.setCurrentMinute(min);
-        mTimePicker.setIs24HourView(true);
 
         mCheckIsEndTime.setChecked(mKind == mPrefs.getCountDownTarget());
     }
