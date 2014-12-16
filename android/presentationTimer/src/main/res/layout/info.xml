@@ -39,7 +39,7 @@
         android:id="@+id/TextView02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Copyright (C) 2008-2012, Takuya Murakami"
+        android:text="Copyright (C) 2008-2014, Takuya Murakami"
         android:textColor="#000"
         android:textSize="6pt" >
     </TextView>

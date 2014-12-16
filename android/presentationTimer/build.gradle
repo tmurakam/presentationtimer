@@ -31,13 +31,12 @@ android {
     }
 
     defaultConfig {
-        versionCode = 2
-        versionName = "1.1"
+        applicationId "org.tmurakam.presentationtimer"
+        versionCode 2
+        versionName "1.1"
 
         minSdkVersion 7
         targetSdkVersion 21
-
-        applicationId = "org.tmurakam.presentationtimer"
     }
 }
 

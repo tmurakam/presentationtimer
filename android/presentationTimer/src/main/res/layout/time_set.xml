@@ -3,10 +3,10 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" android:gravity="top|center_horizontal">
-<TimePicker android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TimePicker"></TimePicker>
-<CheckBox android:layout_width="wrap_content" android:text="@string/use_as_end_time" android:id="@+id/CheckUseAsEndTime" android:layout_height="wrap_content"/>
-<LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="wrap_content">
-  <Button android:id="@+id/Button01" android:layout_height="wrap_content" android:text="OK" android:layout_width="100sp" android:onClick="onClickOk"></Button>
-  <Button android:id="@+id/Button02" android:layout_height="wrap_content" android:text="Cancel" android:layout_width="100sp" android:onClick="onClickCancel"></Button>
-</LinearLayout>
+    <TimePicker android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TimePicker" />
+    <CheckBox android:layout_width="wrap_content" android:text="@string/use_as_end_time" android:id="@+id/CheckUseAsEndTime" android:layout_height="wrap_content"/>
+    <LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="wrap_content">
+        <Button android:id="@+id/Button02" android:layout_height="wrap_content" android:text="Cancel" android:layout_width="100sp" android:onClick="onClickCancel" />
+        <Button android:id="@+id/Button01" android:layout_height="wrap_content" android:text="OK" android:layout_width="100sp" android:onClick="onClickOk" />
+    </LinearLayout>
 </LinearLayout>
