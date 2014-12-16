@@ -10,21 +10,3 @@ buildscript {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.2.1'
 }
-
-apply plugin: 'com.android.application'
-
-dependencies {
-}
-
-android {
-    compileSdkVersion 21
-    buildToolsVersion '21.1.1'
-
-    sourceSets {
-        main {
-            manifest.srcFile "AndroidManifest.xml"
-            java.srcDirs = ['src']
-            res.srcDirs = ['res']
-        }
-    }
-}
