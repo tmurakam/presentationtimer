@@ -25,7 +25,7 @@ public class Prefs {
     public void setBellTime(int kind, int secs) {
         SharedPreferences.Editor editor = mPrefs.edit();
         editor.putInt("bell" + kind + "Time", secs);
-        editor.commit();
+        editor.apply();
     }
 
     public int getCountDownTarget() {
@@ -35,6 +35,6 @@ public class Prefs {
     public void setCountDownTarget(int kind) {
         SharedPreferences.Editor editor = mPrefs.edit();
         editor.putInt("countDownTarget", kind);
-        editor.commit();
+        editor.apply();
     }
 }

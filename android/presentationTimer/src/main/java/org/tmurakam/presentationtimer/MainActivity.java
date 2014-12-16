@@ -183,9 +183,7 @@ public class MainActivity extends Activity {
         };
         mTimer.schedule(task, 1000, 1000);
 
-        if (mActionBar != null) {
-            mActionBar.hide();
-        }
+        setFullscreenMode(true);
     }
 
     private void stopTimer() {
@@ -194,8 +192,21 @@ public class MainActivity extends Activity {
         mTimer.purge();
         mTimer = null;
 
+        setFullscreenMode(false);
+    }
+
+    private void setFullscreenMode(boolean isFullscreen) {
+        Window window = getWindow();
         if (mActionBar != null) {
-            mActionBar.show();
+            if (isFullscreen) {
+                mActionBar.hide();
+                //window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                //window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+            } else {
+                mActionBar.show();
+                //window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                //window.getDecorView().setSystemUiVisibility(0);
+            }
         }
     }
 
