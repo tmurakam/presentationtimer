@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.tmurakam.presentationtimer"
-    android:versionCode="2"
-    android:versionName="1.1" >
-
-    <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="17" />
+    tools:replace="versionCode,versionName">
 
     <supports-screens
         android:anyDensity="false"
-        android:largeScreens="true"
+        android:smallScreens="true"
         android:normalScreens="true"
-        android:resizeable="true"
-        android:smallScreens="true" >
-    </supports-screens>
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:resizeable="true" />
+
     <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application

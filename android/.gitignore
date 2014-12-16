@@ -6,4 +6,5 @@ build/
 
 .gradle/
 .idea/
+*.iml
 
