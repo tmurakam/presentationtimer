@@ -1,11 +1,13 @@
 
 package org.tmurakam.presentationtimer;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
@@ -61,11 +63,22 @@ public class MainActivity extends Activity {
     /** ボタン */
     private Button mStartStopButton, mResetButton;
 
+    /** ActionBar */
+    private ActionBar mActionBar;
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= 11) {
+            mActionBar = getActionBar();
+            //mActionBar.hide();
+        } else {
+            // Android 2.x : ActionBar なし、タイトルバーなし
+            // Menu は menu ボタンから開く
+            mActionBar = null;
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+        }
         setContentView(R.layout.main);
 
         // 音量ボタンで、Media ボリュームが変わるようにする
@@ -169,6 +182,10 @@ public class MainActivity extends Activity {
             }
         };
         mTimer.schedule(task, 1000, 1000);
+
+        if (mActionBar != null) {
+            mActionBar.hide();
+        }
     }
 
     private void stopTimer() {
@@ -176,6 +193,10 @@ public class MainActivity extends Activity {
         mTimer.cancel();
         mTimer.purge();
         mTimer = null;
+
+        if (mActionBar != null) {
+            mActionBar.show();
+        }
     }
 
     /**
@@ -286,7 +307,7 @@ public class MainActivity extends Activity {
     // --- Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        new MenuInflater(getApplication()).inflate(R.menu.main_menu, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
