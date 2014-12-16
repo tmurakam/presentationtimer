@@ -67,13 +67,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
-        
+
         // 音量ボタンで、Media ボリュームが変わるようにする
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        mTextView = (TextView)findViewById(R.id.timeView);
-        mStartStopButton = (Button)findViewById(R.id.startStop);
-        mResetButton = (Button)findViewById(R.id.reset);
+        mTextView = (TextView) findViewById(R.id.timeView);
+        mStartStopButton = (Button) findViewById(R.id.startStop);
+        mResetButton = (Button) findViewById(R.id.reset);
 
         mTimerHandler = new Handler();
 
@@ -86,12 +86,12 @@ public class MainActivity extends Activity {
         for (MediaPlayer p : mBells) {
             p.setVolume(1.0f, 1.0f);
         }
-        
-	mVibrator = (Vibrator)getSystemService(VIBRATOR_SERVICE);
-	mVibratorPattern = new long[3][];
-	mVibratorPattern[0] = new long[] { 0, 500 };
-	mVibratorPattern[1] = new long[] { 0, 500, 200, 500 };
-	mVibratorPattern[2] = new long[] { 0, 500, 200, 500, 200, 500 };
+
+        mVibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        mVibratorPattern = new long[3][];
+        mVibratorPattern[0] = new long[]{0, 500};
+        mVibratorPattern[1] = new long[]{0, 500, 200, 500};
+        mVibratorPattern[2] = new long[]{0, 500, 200, 500, 200, 500};
 
         if (savedInstanceState != null) {
             restoreInstanceState(savedInstanceState);
@@ -209,25 +209,25 @@ public class MainActivity extends Activity {
         mCurrentTime++;
 
         MediaPlayer p = null;
-	long[] v = null;
+        long[] v = null;
 
         if (mCurrentTime == mPrefs.getBellTime(1)) {
             p = mBells[0];
-	    v = mVibratorPattern[0];
+            v = mVibratorPattern[0];
         } else if (mCurrentTime == mPrefs.getBellTime(2)) {
             p = mBells[1];
-	    v = mVibratorPattern[1];
+            v = mVibratorPattern[1];
         } else if (mCurrentTime == mPrefs.getBellTime(3)) {
             p = mBells[2];
-	    v = mVibratorPattern[2];
+            v = mVibratorPattern[2];
         }
         if (p != null) {
             p.seekTo(0);
             p.start();
         }
-	if (v != null) {
-	    mVibrator.vibrate(v, -1);
-	}
+        if (v != null) {
+            mVibrator.vibrate(v, -1);
+        }
 
         updateTimeLabel();
     }
