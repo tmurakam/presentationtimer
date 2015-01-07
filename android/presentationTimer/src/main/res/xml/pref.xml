@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-<PreferenceScreen android:title="@string/_1bell_time" android:key="_1bell"/>
-<PreferenceScreen android:title="@string/_2bells_time" android:key="_2bell"/>
-<PreferenceScreen android:title="@string/_3bells_time" android:key="_3bell"/>
-</PreferenceScreen>
