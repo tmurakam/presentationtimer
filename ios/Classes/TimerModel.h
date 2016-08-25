@@ -52,7 +52,7 @@
 - (int)bellTime:(int)n;
 - (void)setBellTime:(int)time index:(int)n;
 
-- (BOOL)isTimerRunning;
+@property (NS_NONATOMIC_IOSONLY, getter=isTimerRunning, readonly) BOOL timerRunning;
 - (void)startTimer;
 - (void)stopTimer;
 - (void)resetTimer;

@@ -61,7 +61,7 @@
 
 - (void)stopBell
 {
-    if ([soundBell isPlaying]) {
+    if (soundBell.playing) {
         [soundBell stop];
         soundBell.currentTime = 0;
     }
@@ -122,7 +122,7 @@
 /**
    initialize
  */
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {
@@ -186,9 +186,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     for (int i = 0; i < NUM_BELLS; i++) {
         NSString *key = [NSString stringWithFormat:@"bell%dTime", i+1];
-        [defaults setObject:[NSNumber numberWithInt:mTimerInfo[i].bellTime] forKey:key];
+        [defaults setObject:@(mTimerInfo[i].bellTime) forKey:key];
     }
-    [defaults setObject:[NSNumber numberWithInt:mCountDownTarget] forKey:@"countDownTarget"];
+    [defaults setObject:@(mCountDownTarget) forKey:@"countDownTarget"];
     [defaults synchronize];
 }
 

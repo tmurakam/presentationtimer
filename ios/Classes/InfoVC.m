@@ -46,7 +46,7 @@
 
 @implementation InfoVC
 
-- (id)init
+- (instancetype)init
 {
     if (self = [super initWithNibName:@"InfoView" bundle:nil]) {
     }
@@ -70,8 +70,8 @@
       target:self
       action:@selector(doneAction:)];
 
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"];
-    [mVersionLabel setText:[NSString stringWithFormat:@"Version %@", version]];
+    NSString *version = [[NSBundle mainBundle].infoDictionary valueForKey:@"CFBundleVersion"];
+    mVersionLabel.text = [NSString stringWithFormat:@"Version %@", version];
 }
 
 - (void)didReceiveMemoryWarning {

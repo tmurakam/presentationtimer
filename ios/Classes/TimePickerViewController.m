@@ -50,7 +50,7 @@
 @synthesize seconds = mSeconds;
 @synthesize delegate = mDelegate;
 
-- (id)init
+- (instancetype)init
 {
     self = [super initWithNibName:@"TimePickerViewController" bundle:nil];
     return self;
