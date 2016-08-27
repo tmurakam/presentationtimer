@@ -36,13 +36,13 @@
 @class TimePickerViewController;
 
 @protocol TimePickerViewDelegate
-- (void)timePickerViewSetTime:(int)seconds;
+- (void)timePickerViewSetTime:(NSInteger)seconds;
 - (void)timePickerViewSetCountdownTarget;
 @end
 
 @interface TimePickerViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property(nonatomic,assign) int seconds;
+@property(nonatomic,assign) NSInteger seconds;
 @property(nonatomic,unsafe_unretained) id<TimePickerViewDelegate> delegate;
 
 - (IBAction)onDone:(id)sender;

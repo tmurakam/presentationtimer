@@ -39,7 +39,7 @@
     IBOutlet UIPickerView *mPickerView;
     IBOutlet UIButton *mCdtButton;
 	
-    int mSeconds;
+    NSInteger mSeconds;
     
     id<TimePickerViewDelegate> __unsafe_unretained mDelegate;
 }

@@ -43,13 +43,13 @@
 
 @property id<TimerModelDelegate> delegate;
 
-@property int currentTime;
-@property int countDownTarget;
+@property NSInteger currentTime;
+@property NSInteger countDownTarget;
 
-+ (NSString*)timeText:(int)n;
++ (NSString*)timeText:(NSInteger)n;
 
-- (int)bellTime:(int)n;
-- (void)setBellTime:(int)time index:(int)n;
+- (NSInteger)bellTime:(NSInteger)n;
+- (void)setBellTime:(NSInteger)time index:(NSInteger)n;
 
 @property (NS_NONATOMIC_IOSONLY, getter=isTimerRunning, readonly) BOOL timerRunning;
 - (void)startTimer;

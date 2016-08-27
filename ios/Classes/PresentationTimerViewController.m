@@ -56,7 +56,7 @@
     UIColor *mColor2;
     UIColor *mColor3;
     
-    int mEditingItem;
+    NSInteger mEditingItem;
 }
 
 - (IBAction)startStopTimer:(id)sender;
@@ -137,14 +137,14 @@
 */
 - (void)updateButtonTitle
 {
-    for (int i = 0; i < 3; i++) {
+    for (NSInteger i = 0; i < 3; i++) {
         UIButton *button;
         switch (i) {
             case 0: button = bell1Button; break;
             case 1: button = bell2Button; break;
             case 2: button = bell3Button; break;
         }
-        int time = [mTimer bellTime:i];
+        NSInteger time = [mTimer bellTime:i];
         NSString *timeText = [TimerModel timeText:time];
         [button setTitle:timeText forState:UIControlStateNormal];
         [button setTitle:timeText forState:UIControlStateHighlighted];
@@ -215,7 +215,7 @@
 */
 - (IBAction)bellButtonTapped:(id)sender
 {
-    int sec;
+    NSInteger sec;
     if (sender == bell1Button) {
         mEditingItem = 1;
     } else if (sender == bell2Button) {
@@ -263,11 +263,11 @@
 */
 - (void)updateTimeLabel
 {
-    int t;
+    NSInteger t;
     if (!mIsCountDown) {
         t = mTimer.currentTime;
     } else {
-        int cdt = mTimer.countDownTarget;
+        NSInteger cdt = mTimer.countDownTarget;
         if (cdt < 1 || 3 < cdt) {
             cdt = 2;
         }
@@ -297,12 +297,12 @@
     
     InfoVC *vc = [[InfoVC alloc] init];
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentModalViewController:nv animated:YES];
+    [self presentViewController:nv animated:YES completion:nil];
 }
 
 #pragma mark TimePickerViewDelegate
 
-- (void)timePickerViewSetTime:(int)seconds
+- (void)timePickerViewSetTime:(NSInteger)seconds
 {
     [mTimer setBellTime:seconds index:mEditingItem-1];
     [mTimer saveDefaults];

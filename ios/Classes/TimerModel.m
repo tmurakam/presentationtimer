@@ -40,13 +40,13 @@
 @interface TimerInfo : NSObject
 {
     // ベル時刻
-    int bellTime;
+    NSInteger bellTime;
     
     // ベル音
     AVAudioPlayer *soundBell;
 }
 
-@property (nonatomic) int bellTime;
+@property (nonatomic) NSInteger bellTime;
 @property (nonatomic) AVAudioPlayer *soundBell;
 
 - (void)playBell;
@@ -86,7 +86,7 @@
     id<TimerModelDelegate> mDelegate;
     
     // Timer value
-    int mCurrentTime; // seconds
+    NSInteger mCurrentTime; // seconds
     
     // Background モードに入っているかどうか
     BOOL mIsInBackground;
@@ -95,15 +95,15 @@
     TimerInfo *mTimerInfo[NUM_BELLS];
 
     // プレゼン終了時刻タイマのインデックス
-    int mCountDownTarget;
+    NSInteger mCountDownTarget;
     
     NSTimer *mTimer;
     NSDate *mSuspendedTime;
 	
-    int mEditingItem;
-    
+    NSInteger mEditingItem;
+
     // 最後に鳴らしたベルのインデックス
-    int mLastPlayBell;
+    NSInteger mLastPlayBell;
 }
 
 - (void)timerHandler:(NSTimer*)theTimer;
@@ -128,14 +128,14 @@
         mCurrentTime = 0;
         mSuspendedTime = nil;
         mIsInBackground = NO;
-        int i;
+        NSInteger i;
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
         for (i = 0; i < NUM_BELLS; i++) {
             mTimerInfo[i] = [TimerInfo new];
             
-            int bellTime = [defaults integerForKey:[NSString stringWithFormat:@"bell%dTime", i+1]];
+            NSInteger bellTime = [defaults integerForKey:[NSString stringWithFormat:@"bell%dTime", i+1]];
             if (bellTime == 0) {
                 switch (i) {
                     case 0:
@@ -188,7 +188,7 @@
 - (void)saveDefaults
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    for (int i = 0; i < NUM_BELLS; i++) {
+    for (NSInteger i = 0; i < NUM_BELLS; i++) {
         NSString *key = [NSString stringWithFormat:@"bell%dTime", i+1];
         [defaults setObject:@(mTimerInfo[i].bellTime) forKey:key];
     }
@@ -199,12 +199,12 @@
 /**
  get timer value
  */
-- (int)bellTime:(int)index
+- (NSInteger)bellTime:(NSInteger)index
 {
     return mTimerInfo[index].bellTime;
 }
 
-- (void)setBellTime:(int)time index:(int)index
+- (void)setBellTime:(NSInteger)time index:(NSInteger)index
 {
     mTimerInfo[index].bellTime = time;
 }
@@ -288,7 +288,7 @@
     mCurrentTime ++;
     //NSLog(@"time: %d", mCurrentTime);
           
-    for (int i = 0; i < NUM_BELLS; i++) {
+    for (NSInteger i = 0; i < NUM_BELLS; i++) {
         if (mCurrentTime == mTimerInfo[i].bellTime) {
             [self playBell:i];
         }
@@ -297,7 +297,7 @@
     [mDelegate timerUpdated];
 }
 
-- (void)playBell:(int)n
+- (void)playBell:(NSInteger)n
 {
     if (mLastPlayBell >= 0) {
         [mTimerInfo[mLastPlayBell] stopBell];
@@ -307,12 +307,12 @@
 }
 
 // 秒を時分秒に変換する
-+ (NSString*)timeText:(int)n
++ (NSString *)timeText:(NSInteger)n
 {
-    int sec = n % 60;
+    NSInteger sec = n % 60;
     n = n / 60;
-    int min = n % 60;
-    int hour = n / 60;
+    NSInteger min = n % 60;
+    NSInteger hour = n / 60;
 
     NSString *ts;
     if (hour > 0) {
@@ -334,7 +334,7 @@
     mSuspendedTime = [NSDate date];
     
     // バックグランドで再生を行わせる
-    for (int i = 0; i < NUM_BELLS; i++) {
+    for (NSInteger i = 0; i < NUM_BELLS; i++) {
         TimerInfo *ti = mTimerInfo[i];
         float delay = ti.bellTime - mCurrentTime;
         if (delay > 0) {
@@ -362,7 +362,7 @@
     mSuspendedTime = nil;
     
     // stop all bells
-    for (int i = 0; i < NUM_BELLS; i++) {
+    for (NSInteger i = 0; i < NUM_BELLS; i++) {
         [mTimerInfo[i] stopBell];
     }
 }

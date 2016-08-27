@@ -39,18 +39,19 @@
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Fabric
     [Fabric with:@[[Crashlytics class]]];
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
-    NSString *nibName;
-    nibName = @"PresentationTimerViewController";
+    NSString *nibName = @"PresentationTimerViewController";
     self.viewController = [[PresentationTimerViewController alloc] initWithNibName:nibName bundle:nil];
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+
+    return YES;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
