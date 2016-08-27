@@ -104,6 +104,9 @@
     timeLabel.userInteractionEnabled = YES;
     timeLabel.tag = 100; // dummy tag
     
+    // timeLabel: フォントサイズを over 300 に設定する
+    timeLabel.font = [UIFont fontWithName:@"Helvetica" size:500];
+    
     [self setButtonBorder:bellButton];
     [self setButtonBorder:startStopButton];
     [self setButtonBorder:resetButton];
