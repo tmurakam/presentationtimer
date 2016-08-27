@@ -1,3 +1,8 @@
+2016/8/28 : Takuya Murakami
+	* 秒指定対応
+	* iOS 8 以上必須
+	* デザイン修正 (AutoLayout)
+
 2012/9/17 : Takuya Murakami
 	* ver 3.0
 	* iPhone5 4inch display 対応
