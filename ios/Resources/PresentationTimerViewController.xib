@@ -19,13 +19,15 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="00:00" textAlignment="center" lineBreakMode="clip" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="8">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                    <rect key="frame" x="0.0" y="0.0" width="736" height="200"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="6O8-00-jpv">
+                            <variation key="heightClass=compact" constant="300"/>
+                            <variation key="heightClass=compact-widthClass=regular" constant="300"/>
                             <variation key="heightClass=regular-widthClass=regular" constant="446"/>
                         </constraint>
                     </constraints>
@@ -34,7 +36,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21">
-                    <rect key="frame" x="111" y="482" width="98" height="42"/>
+                    <rect key="frame" x="319" y="328" width="98" height="42"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="0p8-jN-RAM">
                             <variation key="heightClass=regular-widthClass=regular" constant="64"/>
@@ -57,7 +59,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25">
-                    <rect key="frame" x="283" y="534" width="22" height="22"/>
+                    <rect key="frame" x="699" y="380" width="22" height="22"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal">
                         <color key="titleColor" red="0.19607843" green="0.30980393000000001" blue="0.52156866000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,7 +73,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZG-52-tVT">
-                    <rect key="frame" x="50" y="254" width="220" height="128"/>
+                    <rect key="frame" x="258" y="100" width="220" height="128"/>
                     <subviews>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28" translatesAutoresizingMaskIntoConstraints="NO" id="69">
                             <rect key="frame" x="48" y="0.0" width="28" height="28"/>
@@ -163,7 +165,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                    <rect key="frame" x="217" y="482" width="98" height="42"/>
+                    <rect key="frame" x="425" y="328" width="98" height="42"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal" title="Reset">
                         <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,7 +181,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22">
-                    <rect key="frame" x="5" y="482" width="98" height="42"/>
+                    <rect key="frame" x="213" y="328" width="98" height="42"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal" title="Start">
                         <color key="titleColor" red="0.98431372549019602" green="0.0078431372549019607" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -219,7 +221,9 @@
                 <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="ZQu-UL-WBc"/>
                 <constraint firstItem="bZG-52-tVT" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="drJ-QM-gVM"/>
                 <constraint firstItem="21" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="iOs-tf-VUu"/>
-                <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="44" id="iX4-yV-lpi"/>
+                <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="44" id="iX4-yV-lpi">
+                    <variation key="heightClass=compact" constant="16"/>
+                </constraint>
                 <constraint firstItem="8" firstAttribute="top" secondItem="6" secondAttribute="top" id="nz2-hK-VLT"/>
                 <constraint firstAttribute="bottom" secondItem="25" secondAttribute="bottom" constant="12" id="p7N-Wt-aox"/>
                 <constraint firstItem="23" firstAttribute="leading" secondItem="21" secondAttribute="trailing" constant="8" id="vwg-us-eDB">
@@ -227,7 +231,8 @@
                     <variation key="widthClass=regular" constant="64"/>
                 </constraint>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <variation key="heightClass=regular-widthClass=regular">
                 <mask key="constraints">
                     <include reference="0s1-MW-aYh"/>
