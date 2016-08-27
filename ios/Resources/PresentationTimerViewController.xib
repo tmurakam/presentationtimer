@@ -44,7 +44,7 @@
                             <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                         </constraint>
                     </constraints>
-                    <state key="normal" image="bell40.png">
+                    <state key="normal" image="bell40">
                         <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="disabled" image="bell40.png"/>
@@ -73,7 +73,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZG-52-tVT">
                     <rect key="frame" x="50" y="254" width="220" height="128"/>
                     <subviews>
-                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="69">
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28" translatesAutoresizingMaskIntoConstraints="NO" id="69">
                             <rect key="frame" x="48" y="0.0" width="28" height="28"/>
                         </imageView>
                         <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36">
@@ -92,10 +92,10 @@
                                 <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="63"/>
                             </connections>
                         </button>
-                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="70">
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28" translatesAutoresizingMaskIntoConstraints="NO" id="70">
                             <rect key="frame" x="32" y="36" width="28" height="28"/>
                         </imageView>
-                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="72">
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28" translatesAutoresizingMaskIntoConstraints="NO" id="72">
                             <rect key="frame" x="64" y="36" width="28" height="28"/>
                         </imageView>
                         <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37">
@@ -114,13 +114,13 @@
                                 <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="64"/>
                             </connections>
                         </button>
-                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="71">
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28" translatesAutoresizingMaskIntoConstraints="NO" id="71">
                             <rect key="frame" x="16" y="72" width="28" height="28"/>
                         </imageView>
-                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="73">
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28" translatesAutoresizingMaskIntoConstraints="NO" id="73">
                             <rect key="frame" x="48" y="72" width="28" height="28"/>
                         </imageView>
-                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="74">
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28" translatesAutoresizingMaskIntoConstraints="NO" id="74">
                             <rect key="frame" x="80" y="72" width="28" height="28"/>
                         </imageView>
                         <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38">
@@ -199,7 +199,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="21" firstAttribute="height" secondItem="22" secondAttribute="height" id="0s1-MW-aYh"/>
                 <constraint firstItem="21" firstAttribute="top" secondItem="bZG-52-tVT" secondAttribute="bottom" constant="100" id="4eb-6g-aaH">
@@ -242,7 +242,8 @@
         </view>
     </objects>
     <resources>
-        <image name="bell28.png" width="28" height="28"/>
-        <image name="bell40.png" width="40" height="40"/>
+        <image name="bell28" width="28" height="28"/>
+        <image name="bell40" width="40" height="40"/>
+        <image name="bell40.png" width="80" height="80"/>
     </resources>
 </document>

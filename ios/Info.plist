@@ -46,6 +46,8 @@
 	<array>
 		<string>audio</string>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreeen</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>

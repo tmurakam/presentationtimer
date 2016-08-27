@@ -62,7 +62,7 @@
                         <action selector="webButtonTapped" destination="-1" eventType="touchUpInside" id="10"/>
                     </connections>
                 </button>
-                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell80.png" translatesAutoresizingMaskIntoConstraints="NO" id="3">
+                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell80" translatesAutoresizingMaskIntoConstraints="NO" id="3">
                     <rect key="frame" x="120" y="120" width="80" height="80"/>
                 </imageView>
             </subviews>
@@ -101,6 +101,6 @@
         </view>
     </objects>
     <resources>
-        <image name="bell80.png" width="80" height="80"/>
+        <image name="bell80" width="80" height="80"/>
     </resources>
 </document>
