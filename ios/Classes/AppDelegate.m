@@ -34,9 +34,15 @@
 #import "AppDelegate.h"
 #import "PresentationTimerViewController.h"
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
+    // Fabric
+    [Fabric with:@[[Crashlytics class]]];
+
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
     NSString *nibName;

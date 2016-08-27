@@ -43,7 +43,7 @@
 		3ED31AC6121FE2470012B9A0 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED31AC5121FE2470012B9A0 /* InfoVC.m */; };
 		3EE2B7B50E7BF2D0003F9362 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7B40E7BF2D0003F9362 /* Localizable.strings */; };
 		3EE2B7C70E7BF363003F9362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7C60E7BF363003F9362 /* InfoPlist.strings */; };
-		CB80B728C6F60C0AA1E03E6B /* libPods-PresentationTimer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3467CFF5734BD3D34885BCF6 /* libPods-PresentationTimer.a */; };
+		5BF43D5B6B3B0B84CEF2773E /* Pods_PresentationTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E642DCD8018ADC51476AFF10 /* Pods_PresentationTimer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +58,6 @@
 		28D7ACF70DDB3853001CB0EB /* PresentationTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationTimerViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PresentationTimer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationTimer_Prefix.pch; sourceTree = "<group>"; };
-		3467CFF5734BD3D34885BCF6 /* libPods-PresentationTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PresentationTimer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0E24D50E7BE5F500CA7AC4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
 		3E55F3FB0E7BAA0C008D9D4B /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		3EE2B7C80E7BF36A003F9362 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		9D872353124E934C086DAE2E /* Pods-PresentationTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PresentationTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		E642DCD8018ADC51476AFF10 /* Pods_PresentationTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PresentationTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9530BA1967AEB7CD972D0CC /* Pods-PresentationTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PresentationTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +108,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				3E0E24D60E7BE5F500CA7AC4 /* AudioToolbox.framework in Frameworks */,
-				CB80B728C6F60C0AA1E03E6B /* libPods-PresentationTimer.a in Frameworks */,
+				5BF43D5B6B3B0B84CEF2773E /* Pods_PresentationTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +194,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
-				3467CFF5734BD3D34885BCF6 /* libPods-PresentationTimer.a */,
+				E642DCD8018ADC51476AFF10 /* Pods_PresentationTimer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,6 +246,7 @@
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				83B791B44226343D81882946 /* [CP] Embed Pods Frameworks */,
 				CA8AE3E18EB185717E14E2D0 /* [CP] Copy Pods Resources */,
+				3E7763BB1D72051A006FD94B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -321,6 +322,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3E7763BB1D72051A006FD94B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 532ecad9ca165fccdfe2d04c731d6b7449375147 4a1b9ec5d0af491383edc13d851e0e4636e4845c4b8e468c5df8c445c1f917db";
+		};
 		49D1BF37C2383ADD48F32440 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
