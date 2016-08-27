@@ -1,8 +1,7 @@
-// -*-  Mode:ObjC; c-basic-offset:4; tab-width:8; indent-tabs-mode:nil -*-
 /*
-  Presentation Timer for iPhone
+  Presentation Timer for iOS
 
-  Copyright (c) 2008-2010, Takuya Murakami, All rights reserved.
+  Copyright (c) 2008-2016, Takuya Murakami, All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are
@@ -158,12 +157,12 @@
 
     mSeconds = hour * 3600 + min * 60 + sec;
     [mDelegate timePickerViewSetTime:mSeconds];
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)onCancel:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)onSetCountdownTarget:(id)sender

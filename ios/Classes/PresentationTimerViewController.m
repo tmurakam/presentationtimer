@@ -1,8 +1,7 @@
-// -*-  Mode:ObjC; c-basic-offset:4; tab-width:8; indent-tabs-mode:nil -*-
 /*
-  Presentation Timer for iPhone
+  Presentation Timer for iOS
 
-  Copyright (c) 2008-2010, Takuya Murakami, All rights reserved.
+  Copyright (c) 2008-2016, Takuya Murakami, All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are
@@ -209,7 +208,7 @@
     vc.seconds = sec;
 
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentModalViewController:nv animated:YES];
+    [self presentViewController:nv animated:YES completion:nil];
 }
 
 /**
