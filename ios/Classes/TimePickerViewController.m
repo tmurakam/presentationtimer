@@ -74,7 +74,9 @@
     NSString *title = NSLocalizedString(@"Use as presentation end time", @"");
     [mCdtButton setTitle:title forState:UIControlStateNormal];
     [mCdtButton setTitle:title forState:UIControlStateHighlighted];
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
     [self setupLabel:mPickerView];
 }
 
