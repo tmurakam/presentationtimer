@@ -10,6 +10,7 @@
                 <outlet property="bell1Button" destination="36" id="55"/>
                 <outlet property="bell2Button" destination="37" id="56"/>
                 <outlet property="bell3Button" destination="38" id="57"/>
+                <outlet property="bellButton" destination="21" id="xjy-hF-PnR"/>
                 <outlet property="resetButton" destination="23" id="59"/>
                 <outlet property="startStopButton" destination="22" id="58"/>
                 <outlet property="timeLabel" destination="8" id="54"/>
@@ -28,10 +29,9 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="21">
+                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="21">
                     <rect key="frame" x="293" y="874" width="180" height="64"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal" image="bell40.png">
                         <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>

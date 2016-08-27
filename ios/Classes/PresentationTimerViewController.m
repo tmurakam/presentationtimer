@@ -43,6 +43,8 @@
     IBOutlet UIButton *bell1Button;
     IBOutlet UIButton *bell2Button;
     IBOutlet UIButton *bell3Button;
+    
+    IBOutlet UIButton *bellButton;
     IBOutlet UIButton *startStopButton;
     IBOutlet UIButton *resetButton;
     
@@ -96,6 +98,18 @@
     [resetButton setTitle:title forState:UIControlStateNormal];
     [resetButton setTitle:title forState:UIControlStateHighlighted];
     [resetButton setTitle:title forState:UIControlStateDisabled];
+
+    [self setButtonBorder:bellButton];
+    [self setButtonBorder:startStopButton];
+    [self setButtonBorder:resetButton];
+}
+
+- (void)setButtonBorder:(UIButton *)button {
+    //button.layer.borderColor = [UIColor whiteColor].CGColor;
+    //button.layer.borderWidth = 1.0f;
+
+    button.layer.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f].CGColor;
+    button.layer.cornerRadius = 7.5f;
 }
 
 - (void)viewWillAppear:(BOOL)animated
