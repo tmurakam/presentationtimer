@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment version="2048" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -14,33 +14,41 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Presentation Timer" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="12" id="4">
-                    <rect key="frame" x="0.0" y="168" width="320" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Presentation Timer" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="4">
+                    <rect key="frame" x="0.0" y="224" width="768" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="ZYA-aV-Ib7"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="31"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Version 1.1" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="7">
-                    <rect key="frame" x="0.0" y="230" width="320" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Version 1.1" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7">
+                    <rect key="frame" x="0.0" y="286" width="768" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="29" id="Ujk-ob-P5t"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Copyright © 2008-2016, Takuya Murakami" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="8" adjustsFontSizeToFit="NO" id="8">
-                    <rect key="frame" x="0.0" y="292" width="320" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Copyright © 2008-2016, Takuya Murakami" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="8" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8">
+                    <rect key="frame" x="0.0" y="348" width="768" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="JO0-sc-XTS"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
-                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9">
-                    <rect key="frame" x="57" y="338" width="206" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                    <rect key="frame" x="57" y="939" width="654" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="4F8-9w-uUC"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal" title="Go to support site">
                         <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,14 +62,33 @@
                         <action selector="webButtonTapped" destination="-1" eventType="touchUpInside" id="10"/>
                     </connections>
                 </button>
-                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell80.png" id="3">
-                    <rect key="frame" x="120" y="80" width="80" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell80.png" translatesAutoresizingMaskIntoConstraints="NO" id="3">
+                    <rect key="frame" x="344" y="120" width="80" height="80"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8" firstAttribute="top" secondItem="7" secondAttribute="bottom" constant="33" id="2xh-39-0Wd"/>
+                <constraint firstAttribute="trailing" secondItem="9" secondAttribute="trailing" constant="57" id="FYk-O8-E5k"/>
+                <constraint firstItem="3" firstAttribute="top" secondItem="1" secondAttribute="top" constant="120" id="KBf-Hx-ojR">
+                    <variation key="heightClass=regular-widthClass=regular" constant="240"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="PFV-b2-cDq"/>
+                <constraint firstItem="4" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="24" id="X5v-Ea-ecP"/>
+                <constraint firstItem="7" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="25" id="dzC-Am-MzU"/>
+                <constraint firstItem="9" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="57" id="gto-EL-SVp"/>
+                <constraint firstItem="8" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="jGb-TK-2ZR"/>
+                <constraint firstItem="7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="jmW-ff-yAV"/>
+                <constraint firstAttribute="trailing" secondItem="7" secondAttribute="trailing" id="jzq-0S-vj3"/>
+                <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="o8c-v2-zjI"/>
+                <constraint firstItem="4" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="rWx-mH-ZAC"/>
+                <constraint firstAttribute="bottom" secondItem="9" secondAttribute="bottom" constant="48" id="s0V-1g-9yO"/>
+                <constraint firstItem="3" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="xmU-Md-hu9"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="xzq-wY-BpD"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+            <point key="canvasLocation" x="519" y="535"/>
         </view>
     </objects>
     <resources>
