@@ -44,12 +44,19 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>4.0</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>532ecad9ca165fccdfe2d04c731d6b7449375147</string>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -57,10 +64,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>532ecad9ca165fccdfe2d04c731d6b7449375147</string>
-    </dict>
 </dict>
 </plist>

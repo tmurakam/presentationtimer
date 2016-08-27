@@ -77,10 +77,9 @@
     [super didReceiveMemoryWarning];
 }
 
-
 - (void)doneAction:(id)sender
 {
-    [self.navigationController dismissModalViewControllerAnimated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)webButtonTapped
@@ -89,18 +88,11 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
-}
-
-// iOS 6 later
-- (NSUInteger)supportedInterfaceOrientations
+/*
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationPortrait;
 }
-- (BOOL)shouldAutorotate
-{
-    return NO;
-}
+*/
 
 @end
