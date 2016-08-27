@@ -99,6 +99,11 @@
     [resetButton setTitle:title forState:UIControlStateHighlighted];
     [resetButton setTitle:title forState:UIControlStateDisabled];
 
+    // timeLabel に対するタッチイベントを有効にする。
+    // タッチイベントは touchesBegan で取る
+    timeLabel.userInteractionEnabled = YES;
+    timeLabel.tag = 100; // dummy tag
+    
     [self setButtonBorder:bellButton];
     [self setButtonBorder:startStopButton];
     [self setButtonBorder:resetButton];
@@ -223,6 +228,14 @@
 
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nv animated:YES completion:nil];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    if (touch.view.tag == timeLabel.tag) {
+        [self invertCountDown:timeLabel];
+    }
 }
 
 /**
