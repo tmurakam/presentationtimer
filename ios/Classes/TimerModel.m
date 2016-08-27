@@ -135,7 +135,7 @@
         for (i = 0; i < NUM_BELLS; i++) {
             mTimerInfo[i] = [TimerInfo new];
             
-            NSInteger bellTime = [defaults integerForKey:[NSString stringWithFormat:@"bell%ldTime", i+1]];
+            NSInteger bellTime = [defaults integerForKey:[NSString stringWithFormat:@"bell%dTime", i+1]];
             if (bellTime == 0) {
                 switch (i) {
                     case 0:
@@ -153,7 +153,7 @@
             }
             mTimerInfo[i].bellTime = bellTime;
 
-            AVAudioPlayer *avp = [self loadWav:[NSString stringWithFormat:@"%ldbell", i+1]];
+            AVAudioPlayer *avp = [self loadWav:[NSString stringWithFormat:@"%dbell", i+1]];
             mTimerInfo[i].soundBell = avp;
         }
         mCountDownTarget = [defaults integerForKey:@"countDownTarget"];
@@ -189,7 +189,7 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     for (NSInteger i = 0; i < NUM_BELLS; i++) {
-        NSString *key = [NSString stringWithFormat:@"bell%ldTime", i+1];
+        NSString *key = [NSString stringWithFormat:@"bell%dTime", i+1];
         [defaults setObject:@(mTimerInfo[i].bellTime) forKey:key];
     }
     [defaults setObject:@(mCountDownTarget) forKey:@"countDownTarget"];
@@ -316,9 +316,9 @@
 
     NSString *ts;
     if (hour > 0) {
-        ts = [NSString stringWithFormat:@"%ld:%02ld:%02ld", hour, min, sec];
+        ts = [NSString stringWithFormat:@"%d:%02d:%02d", hour, min, sec];
     } else {
-        ts = [NSString stringWithFormat:@"%02ld:%02ld", min, sec];
+        ts = [NSString stringWithFormat:@"%02d:%02d", min, sec];
     }
     return ts;
 }
@@ -338,7 +338,7 @@
         TimerInfo *ti = mTimerInfo[i];
         float delay = ti.bellTime - mCurrentTime;
         if (delay > 0) {
-            NSLog(@"suspend: set timer %ld at delay %f", i+1, delay);
+            NSLog(@"suspend: set timer %d at delay %f", i+1, delay);
             [ti playBellWithDelay:delay];
         }
     }
