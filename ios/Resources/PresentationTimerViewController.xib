@@ -40,6 +40,7 @@
                             <variation key="heightClass=regular-widthClass=regular" constant="64"/>
                         </constraint>
                         <constraint firstAttribute="width" constant="98" id="VXB-qu-yCm">
+                            <variation key="heightClass=compact" constant="140"/>
                             <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                         </constraint>
                     </constraints>
@@ -74,9 +75,6 @@
                     <subviews>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="69">
                             <rect key="frame" x="48" y="0.0" width="28" height="28"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-402" y="-432" width="28" height="28"/>
-                            </variation>
                         </imageView>
                         <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36">
                             <rect key="frame" x="137" y="0.0" width="39" height="30"/>
@@ -90,24 +88,15 @@
                             <state key="highlighted" title="10:00">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-402" y="-432" width="39" height="30"/>
-                            </variation>
                             <connections>
                                 <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="63"/>
                             </connections>
                         </button>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="70">
                             <rect key="frame" x="32" y="36" width="28" height="28"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-402" y="-432" width="28" height="28"/>
-                            </variation>
                         </imageView>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="72">
                             <rect key="frame" x="64" y="36" width="28" height="28"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-402" y="-432" width="28" height="28"/>
-                            </variation>
                         </imageView>
                         <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37">
                             <rect key="frame" x="137" y="36" width="39" height="30"/>
@@ -121,30 +110,18 @@
                             <state key="highlighted" title="15:00">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-402" y="-432" width="39" height="30"/>
-                            </variation>
                             <connections>
                                 <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="64"/>
                             </connections>
                         </button>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="71">
                             <rect key="frame" x="16" y="72" width="28" height="28"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-402" y="-432" width="28" height="28"/>
-                            </variation>
                         </imageView>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="73">
                             <rect key="frame" x="48" y="72" width="28" height="28"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-402" y="-432" width="28" height="28"/>
-                            </variation>
                         </imageView>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="74">
                             <rect key="frame" x="80" y="72" width="28" height="28"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-402" y="-432" width="28" height="28"/>
-                            </variation>
                         </imageView>
                         <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38">
                             <rect key="frame" x="137" y="72" width="39" height="30"/>
@@ -156,9 +133,6 @@
                             <state key="highlighted">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-402" y="-432" width="39" height="30"/>
-                            </variation>
                             <connections>
                                 <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="65"/>
                             </connections>
@@ -237,7 +211,8 @@
                 <constraint firstItem="23" firstAttribute="centerY" secondItem="21" secondAttribute="centerY" id="JEL-iq-NBR"/>
                 <constraint firstItem="23" firstAttribute="height" secondItem="21" secondAttribute="height" id="MsO-mY-iiJ"/>
                 <constraint firstItem="21" firstAttribute="leading" secondItem="22" secondAttribute="trailing" constant="8" id="SyA-DH-vPt">
-                    <variation key="heightClass=regular-widthClass=regular" constant="64"/>
+                    <variation key="heightClass=compact" constant="24"/>
+                    <variation key="widthClass=regular" constant="64"/>
                 </constraint>
                 <constraint firstItem="21" firstAttribute="width" secondItem="22" secondAttribute="width" id="T9l-Kc-Kv6"/>
                 <constraint firstItem="21" firstAttribute="centerY" secondItem="22" secondAttribute="centerY" id="XWo-le-D0e"/>
@@ -248,7 +223,8 @@
                 <constraint firstItem="8" firstAttribute="top" secondItem="6" secondAttribute="top" id="nz2-hK-VLT"/>
                 <constraint firstAttribute="bottom" secondItem="25" secondAttribute="bottom" constant="12" id="p7N-Wt-aox"/>
                 <constraint firstItem="23" firstAttribute="leading" secondItem="21" secondAttribute="trailing" constant="8" id="vwg-us-eDB">
-                    <variation key="heightClass=regular-widthClass=regular" constant="64"/>
+                    <variation key="heightClass=compact" constant="24"/>
+                    <variation key="widthClass=regular" constant="64"/>
                 </constraint>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
