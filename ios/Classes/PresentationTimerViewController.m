@@ -204,7 +204,7 @@
     }
     sec = [mTimer bellTime:mEditingItem-1];
     
-    TimePickerViewController *vc = [[TimePickerViewController alloc] init];
+    TimePickerViewController *vc = [TimePickerViewController new];
     vc.delegate = self;
     vc.seconds = sec;
 
@@ -275,7 +275,6 @@
 
 - (void)timePickerViewSetTime:(int)seconds
 {
-    seconds -= (seconds % 60); // for safety
     [mTimer setBellTime:seconds index:mEditingItem-1];
     [mTimer saveDefaults];
     [self updateButtonTitle];

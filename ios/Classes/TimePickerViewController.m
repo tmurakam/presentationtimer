@@ -36,7 +36,8 @@
 
 @interface TimePickerViewController()
 {
-    IBOutlet UIDatePicker *mPicker;
+    //IBOutlet UIDatePicker *mPicker;
+    IBOutlet UIPickerView *mPickerView;
     IBOutlet UIButton *mCdtButton;
 	
     int mSeconds;
@@ -74,16 +75,88 @@
     NSString *title = NSLocalizedString(@"Use as presentation end time", @"");
     [mCdtButton setTitle:title forState:UIControlStateNormal];
     [mCdtButton setTitle:title forState:UIControlStateHighlighted];
+    
+    [self setupLabel:mPickerView];
+}
+
+- (void)setupLabel:(UIPickerView *)picker
+{
+    NSString *titles[] = {@"hour", @"min", @"sec"};
+    CGSize size = picker.frame.size;
+    
+    for (NSInteger i = 0; i < 3; i++) {
+        CGRect rect = CGRectMake(42 + (size.width / 3) * i, size.height / 2 - 15, 75, 30);
+        UILabel *label = [[UILabel alloc] initWithFrame:rect];
+        label.text = titles[i];
+        [picker addSubview:label];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    mPicker.countDownDuration = (double)mSeconds;
+    //TODO:
+    //mPicker.countDownDuration = (double)mSeconds;
+    
+    NSInteger hour = mSeconds / 3600;
+    NSInteger min = (mSeconds / 60) % 60;
+    NSInteger sec = mSeconds % 60;
+    
+    [mPickerView selectRow:hour inComponent:0 animated:NO];
+    [mPickerView selectRow:min inComponent:1 animated:NO];
+    [mPickerView selectRow:sec inComponent:2 animated:NO];
 }
+
+#pragma mark - UIPickerViewDataSource
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 3;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    switch (component) {
+        case 0:
+            return 10;
+        default:
+            return 60;
+    }
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [NSString stringWithFormat:@"%ld", (long)row];
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *columnView = [[UILabel alloc] initWithFrame:CGRectMake(35, 0, self.view.frame.size.width/3 - 35, 30)];
+    columnView.text = [NSString stringWithFormat:@"%lu", (long) row];
+    columnView.textAlignment = NSTextAlignmentLeft;
+    
+    return columnView;
+}
+
+/*
+- (NSString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    switch (component) {
+        case 0:
+            return @"hour";
+        case 1:
+            return @"min";
+        case 2:
+        default:
+            return @"sec";
+    }
+}
+*/
 
 - (IBAction)onDone:(id)sender
 {
-    mSeconds = (int)mPicker.countDownDuration;
+    NSInteger hour = [mPickerView selectedRowInComponent:0];
+    NSInteger min = [mPickerView selectedRowInComponent:1];
+    NSInteger sec = [mPickerView selectedRowInComponent:2];
+
+    mSeconds = hour * 3600 + min * 60 + sec;
     [mDelegate timePickerViewSetTime:mSeconds];
     [self dismissModalViewControllerAnimated:YES];
 }
