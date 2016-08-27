@@ -40,11 +40,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
     NSString *nibName;
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
-        nibName = @"PresentationTimerViewController";
-    } else {
-        nibName = @"PresentationTimerViewController-iPad";
-    }
+    nibName = @"PresentationTimerViewController";
     self.viewController = [[PresentationTimerViewController alloc] initWithNibName:nibName bundle:nil];
     
     self.window.rootViewController = self.viewController;

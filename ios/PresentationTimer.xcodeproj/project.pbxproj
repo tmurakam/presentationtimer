@@ -18,7 +18,6 @@
 		3E55F3FD0E7BAA0C008D9D4B /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */; };
 		3E59EAAD160705CD00FE0BC3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E59EAAC160705CD00FE0BC3 /* AVFoundation.framework */; };
 		3E5A8ED30EAF5B3200118C3C /* TimePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */; };
-		3E6FCF3E11573A6F0078B23E /* PresentationTimerViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6FCF3D11573A6F0078B23E /* PresentationTimerViewController-iPad.xib */; };
 		3E76E5B0160761E2003FA881 /* TimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E76E5AF160761E2003FA881 /* TimerModel.m */; };
 		3E8A45C71606D895000D6975 /* bell40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45C61606D895000D6975 /* bell40.png */; };
 		3E8A45C91606D91F000D6975 /* bell40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8A45C81606D91F000D6975 /* bell40@2x.png */; };
@@ -63,7 +62,6 @@
 		3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
 		3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimePickerViewController.xib; sourceTree = "<group>"; };
 		3E59EAAC160705CD00FE0BC3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		3E6FCF3D11573A6F0078B23E /* PresentationTimerViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PresentationTimerViewController-iPad.xib"; sourceTree = "<group>"; };
 		3E76E5AE160761E2003FA881 /* TimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerModel.h; sourceTree = "<group>"; };
 		3E76E5AF160761E2003FA881 /* TimerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerModel.m; sourceTree = "<group>"; };
 		3E8A45C61606D895000D6975 /* bell40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell40.png; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				3EA980991157451300526A21 /* Sounds */,
 				3EA98076115744C700526A21 /* Images */,
 				2899E5210DE3E06400AC0155 /* PresentationTimerViewController.xib */,
-				3E6FCF3D11573A6F0078B23E /* PresentationTimerViewController-iPad.xib */,
 				3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */,
 				3ED31AB9121FE1F60012B9A0 /* InfoView.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -273,7 +270,6 @@
 				3E5A8ED30EAF5B3200118C3C /* TimePickerViewController.xib in Resources */,
 				3EE2B7B50E7BF2D0003F9362 /* Localizable.strings in Resources */,
 				3EE2B7C70E7BF363003F9362 /* InfoPlist.strings in Resources */,
-				3E6FCF3E11573A6F0078B23E /* PresentationTimerViewController-iPad.xib in Resources */,
 				3EA9808F115744C700526A21 /* bell28.png in Resources */,
 				3EA98092115744C700526A21 /* icon.png in Resources */,
 				3EA9809F1157451300526A21 /* 1bell.wav in Resources */,

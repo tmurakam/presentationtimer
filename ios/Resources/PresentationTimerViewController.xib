@@ -3,7 +3,6 @@
     <dependencies>
         <deployment version="2048" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentationTimerViewController">
@@ -23,87 +22,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.019999999552965164" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75">
-                    <rect key="frame" x="0.0" y="148" width="183" height="164"/>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                    <state key="normal">
-                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="invertCountDown:" destination="-1" eventType="touchUpInside" id="76"/>
-                    </connections>
-                </button>
-                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36">
-                    <rect key="frame" x="177" y="250" width="72" height="31"/>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                    <state key="normal" title="10:00">
-                        <color key="titleColor" red="0.60000001999999997" green="0.60000001999999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="disabled" title="10:00"/>
-                    <state key="selected" title="10:00"/>
-                    <state key="highlighted" title="10:00">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="63"/>
-                    </connections>
-                </button>
-                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37">
-                    <rect key="frame" x="177" y="285" width="72" height="31"/>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                    <state key="normal" title="15:00">
-                        <color key="titleColor" red="1" green="0.0" blue="0.80000000999999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="disabled" title="15:00"/>
-                    <state key="selected" title="15:00"/>
-                    <state key="highlighted" title="15:00">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="64"/>
-                    </connections>
-                </button>
-                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38">
-                    <rect key="frame" x="177" y="320" width="72" height="31"/>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                    <state key="normal" title="20:00">
-                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="disabled" title="20:00"/>
-                    <state key="selected" title="20:00"/>
-                    <state key="highlighted" title="20:00">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="65"/>
-                    </connections>
-                </button>
-                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="69">
-                    <rect key="frame" x="102" y="245" width="38" height="39"/>
-                </imageView>
-                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="70">
-                    <rect key="frame" x="88" y="280" width="38" height="39"/>
-                </imageView>
-                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="72">
-                    <rect key="frame" x="118" y="280" width="38" height="39"/>
-                </imageView>
-                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="71">
-                    <rect key="frame" x="131" y="315" width="38" height="39"/>
-                </imageView>
-                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="73">
-                    <rect key="frame" x="102" y="315" width="38" height="39"/>
-                </imageView>
-                <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="74">
-                    <rect key="frame" x="72" y="315" width="38" height="39"/>
-                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="00:00" textAlignment="center" lineBreakMode="clip" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="8">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="6O8-00-jpv">
+                            <variation key="heightClass=regular-widthClass=regular" constant="446"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="300"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22">
-                    <rect key="frame" x="21" y="482" width="89" height="42"/>
+                    <rect key="frame" x="14" y="482" width="89" height="42"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="XxK-zu-kB2"/>
                         <constraint firstAttribute="width" constant="89" id="xwq-RG-VIJ"/>
@@ -178,28 +109,99 @@
                         <action selector="showHelp:" destination="-1" eventType="touchUpInside" id="66"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="00:00" textAlignment="center" lineBreakMode="clip" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="8">
-                    <rect key="frame" x="0.0" y="16" width="320" height="127"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZG-52-tVT">
+                    <rect key="frame" x="50" y="254" width="220" height="128"/>
+                    <subviews>
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="69">
+                            <rect key="frame" x="48" y="16" width="38" height="39"/>
+                        </imageView>
+                        <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36">
+                            <rect key="frame" x="121" y="19" width="72" height="31"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                            <state key="normal" title="10:00">
+                                <color key="titleColor" red="0.60000001999999997" green="0.60000001999999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="disabled" title="10:00"/>
+                            <state key="selected" title="10:00"/>
+                            <state key="highlighted" title="10:00">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="63"/>
+                            </connections>
+                        </button>
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="70">
+                            <rect key="frame" x="32" y="48" width="38" height="39"/>
+                        </imageView>
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="72">
+                            <rect key="frame" x="64" y="48" width="38" height="39"/>
+                        </imageView>
+                        <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37">
+                            <rect key="frame" x="121" y="52" width="72" height="31"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                            <state key="normal" title="15:00">
+                                <color key="titleColor" red="1" green="0.0" blue="0.80000000999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="disabled" title="15:00"/>
+                            <state key="selected" title="15:00"/>
+                            <state key="highlighted" title="15:00">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="64"/>
+                            </connections>
+                        </button>
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="71">
+                            <rect key="frame" x="80" y="80" width="38" height="39"/>
+                        </imageView>
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="73">
+                            <rect key="frame" x="48" y="80" width="38" height="39"/>
+                        </imageView>
+                        <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" fixedFrame="YES" image="bell28.png" translatesAutoresizingMaskIntoConstraints="NO" id="74">
+                            <rect key="frame" x="16" y="80" width="38" height="39"/>
+                        </imageView>
+                        <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38">
+                            <rect key="frame" x="121" y="84" width="72" height="31"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                            <state key="normal" title="20:00">
+                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="disabled" title="20:00"/>
+                            <state key="selected" title="20:00"/>
+                            <state key="highlighted" title="20:00">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="bellButtonTapped:" destination="-1" eventType="touchUpInside" id="65"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="8" secondAttribute="height" multiplier="320:127" id="xIz-bx-jSQ"/>
+                        <constraint firstAttribute="height" constant="128" id="UCk-Z9-B5g"/>
+                        <constraint firstAttribute="width" constant="220" id="m8R-z7-SDq"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="300"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </view>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             <constraints>
+                <constraint firstItem="21" firstAttribute="top" secondItem="bZG-52-tVT" secondAttribute="bottom" constant="100" id="4eb-6g-aaH">
+                    <variation key="heightClass=compact" constant="1000"/>
+                </constraint>
                 <constraint firstItem="8" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="BfK-vk-fFt"/>
-                <constraint firstItem="21" firstAttribute="leading" secondItem="22" secondAttribute="trailing" constant="1" id="GO0-4z-hps"/>
+                <constraint firstItem="21" firstAttribute="leading" secondItem="22" secondAttribute="trailing" constant="8" id="GO0-4z-hps"/>
                 <constraint firstAttribute="trailing" secondItem="25" secondAttribute="trailing" constant="15" id="IZ9-wC-Gmq"/>
                 <constraint firstItem="23" firstAttribute="centerY" secondItem="21" secondAttribute="centerY" id="JEL-iq-NBR"/>
                 <constraint firstItem="23" firstAttribute="leading" secondItem="21" secondAttribute="trailing" constant="8" id="Rzp-Lw-spF"/>
                 <constraint firstItem="21" firstAttribute="centerY" secondItem="22" secondAttribute="centerY" id="XWo-le-D0e"/>
                 <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="ZQu-UL-WBc"/>
+                <constraint firstItem="bZG-52-tVT" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="drJ-QM-gVM"/>
                 <constraint firstItem="21" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="iOs-tf-VUu"/>
                 <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="44" id="iX4-yV-lpi"/>
-                <constraint firstItem="8" firstAttribute="top" secondItem="6" secondAttribute="top" constant="16" id="nz2-hK-VLT"/>
+                <constraint firstItem="8" firstAttribute="top" secondItem="6" secondAttribute="top" id="nz2-hK-VLT"/>
                 <constraint firstAttribute="bottom" secondItem="25" secondAttribute="bottom" constant="12" id="p7N-Wt-aox"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
