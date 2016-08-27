@@ -167,13 +167,18 @@
 // バックグランドで音がなるようにする
 - (void)setBackgroundAudioEnable:(BOOL)enable
 {
+    AVAudioSession *session = [AVAudioSession sharedInstance];
     if (enable) {
+        /*
         AudioSessionInitialize(NULL, NULL, NULL, NULL);
         UInt32 sessionCategory = kAudioSessionCategory_MediaPlayback;
         AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(sessionCategory), &sessionCategory);
         AudioSessionSetActive(YES);
+         */
+        [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [session setActive:YES error:nil];
     } else {
-        AudioSessionSetActive(NO);
+        [session setActive:NO error:nil];
     }
 }
 
