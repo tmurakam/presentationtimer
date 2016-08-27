@@ -15,6 +15,8 @@
 		2899E5220DE3E06400AC0155 /* PresentationTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* PresentationTimerViewController.xib */; };
 		28D7ACF80DDB3853001CB0EB /* PresentationTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* PresentationTimerViewController.m */; };
 		3E0E24D60E7BE5F500CA7AC4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0E24D50E7BE5F500CA7AC4 /* AudioToolbox.framework */; };
+		3E359C411D721DF1003477BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E359C3F1D721DF1003477BE /* Localizable.strings */; };
+		3E359C451D721E11003477BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E359C431D721E11003477BE /* InfoPlist.strings */; };
 		3E55F3FD0E7BAA0C008D9D4B /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */; };
 		3E59EAAD160705CD00FE0BC3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E59EAAC160705CD00FE0BC3 /* AVFoundation.framework */; };
 		3E5A8ED30EAF5B3200118C3C /* TimePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */; };
@@ -26,8 +28,6 @@
 		3EA980A11157451300526A21 /* 3bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809C1157451300526A21 /* 3bell.wav */; };
 		3ED31ABA121FE1F60012B9A0 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ED31AB9121FE1F60012B9A0 /* InfoView.xib */; };
 		3ED31AC6121FE2470012B9A0 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED31AC5121FE2470012B9A0 /* InfoVC.m */; };
-		3EE2B7B50E7BF2D0003F9362 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7B40E7BF2D0003F9362 /* Localizable.strings */; };
-		3EE2B7C70E7BF363003F9362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2B7C60E7BF363003F9362 /* InfoPlist.strings */; };
 		5BF43D5B6B3B0B84CEF2773E /* Pods_PresentationTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E642DCD8018ADC51476AFF10 /* Pods_PresentationTimer.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +44,10 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PresentationTimer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationTimer_Prefix.pch; sourceTree = "<group>"; };
 		3E0E24D50E7BE5F500CA7AC4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		3E359C401D721DF1003477BE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3E359C421D721DFA003477BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3E359C441D721E11003477BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3E359C461D721E17003477BE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E55F3FB0E7BAA0C008D9D4B /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
 		3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimePickerViewController.xib; sourceTree = "<group>"; };
@@ -58,10 +62,6 @@
 		3ED31AB9121FE1F60012B9A0 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		3ED31AC4121FE2470012B9A0 /* InfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoVC.h; sourceTree = "<group>"; };
 		3ED31AC5121FE2470012B9A0 /* InfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoVC.m; sourceTree = "<group>"; };
-		3EE2B7B20E7BF2C5003F9362 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3EE2B7B60E7BF2D8003F9362 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3EE2B7C40E7BF350003F9362 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3EE2B7C80E7BF36A003F9362 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		9D872353124E934C086DAE2E /* Pods-PresentationTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PresentationTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		E642DCD8018ADC51476AFF10 /* Pods_PresentationTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PresentationTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,8 +151,8 @@
 				3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */,
 				3ED31AB9121FE1F60012B9A0 /* InfoView.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
-				3EE2B7B40E7BF2D0003F9362 /* Localizable.strings */,
-				3EE2B7C60E7BF363003F9362 /* InfoPlist.strings */,
+				3E359C3F1D721DF1003477BE /* Localizable.strings */,
+				3E359C431D721E11003477BE /* InfoPlist.strings */,
 				3E7763BE1D7210FE006FD94B /* LaunchScreeen.storyboard */,
 			);
 			path = Resources;
@@ -231,6 +231,7 @@
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				en,
+				ja,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -248,14 +249,14 @@
 			files = (
 				2899E5220DE3E06400AC0155 /* PresentationTimerViewController.xib in Resources */,
 				3E5A8ED30EAF5B3200118C3C /* TimePickerViewController.xib in Resources */,
-				3EE2B7B50E7BF2D0003F9362 /* Localizable.strings in Resources */,
 				3E7763BD1D720C0F006FD94B /* Images.xcassets in Resources */,
-				3EE2B7C70E7BF363003F9362 /* InfoPlist.strings in Resources */,
 				3EA9809F1157451300526A21 /* 1bell.wav in Resources */,
+				3E359C411D721DF1003477BE /* Localizable.strings in Resources */,
 				3EA980A01157451300526A21 /* 2bell.wav in Resources */,
 				3EA980A11157451300526A21 /* 3bell.wav in Resources */,
 				3ED31ABA121FE1F60012B9A0 /* InfoView.xib in Resources */,
 				3E7763BF1D7210FE006FD94B /* LaunchScreeen.storyboard in Resources */,
+				3E359C451D721E11003477BE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,20 +340,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3EE2B7B40E7BF2D0003F9362 /* Localizable.strings */ = {
+		3E359C3F1D721DF1003477BE /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3EE2B7B20E7BF2C5003F9362 /* English */,
-				3EE2B7B60E7BF2D8003F9362 /* Japanese */,
+				3E359C401D721DF1003477BE /* ja */,
+				3E359C421D721DFA003477BE /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		3EE2B7C60E7BF363003F9362 /* InfoPlist.strings */ = {
+		3E359C431D721E11003477BE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3EE2B7C40E7BF350003F9362 /* English */,
-				3EE2B7C80E7BF36A003F9362 /* Japanese */,
+				3E359C441D721E11003477BE /* en */,
+				3E359C461D721E17003477BE /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
