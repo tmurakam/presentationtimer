@@ -216,6 +216,7 @@
     vc.seconds = sec;
 
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
+    nv.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:nv animated:YES completion:nil];
 }
 
@@ -283,6 +284,7 @@
     
     InfoVC *vc = [[InfoVC alloc] init];
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
+    nv.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:nv animated:YES completion:nil];
 }
 
