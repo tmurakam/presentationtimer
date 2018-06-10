@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,24 +24,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="00:00" textAlignment="center" lineBreakMode="clip" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="8">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="200" id="6O8-00-jpv">
-                            <variation key="heightClass=compact" constant="300"/>
-                            <variation key="heightClass=compact-widthClass=regular" constant="300"/>
-                            <variation key="heightClass=regular-widthClass=regular" constant="446"/>
-                        </constraint>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="300"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21">
-                    <rect key="frame" x="138.5" y="581" width="98" height="42"/>
+                    <rect key="frame" x="138.66666666666666" y="726" width="98" height="42"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="0p8-jN-RAM">
                             <variation key="heightClass=regular-widthClass=regular" constant="64"/>
@@ -63,7 +51,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25">
-                    <rect key="frame" x="338" y="633" width="22" height="22"/>
+                    <rect key="frame" x="338" y="778" width="22" height="22"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal">
                         <color key="titleColor" red="0.19607843" green="0.30980393000000001" blue="0.52156866000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,7 +65,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZG-52-tVT">
-                    <rect key="frame" x="77.5" y="353" width="220" height="128"/>
+                    <rect key="frame" x="77.666666666666686" y="498" width="220" height="128"/>
                     <subviews>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28" translatesAutoresizingMaskIntoConstraints="NO" id="69">
                             <rect key="frame" x="48" y="0.0" width="28" height="28"/>
@@ -102,7 +90,7 @@
                             <rect key="frame" x="32" y="36" width="28" height="28"/>
                         </imageView>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28" translatesAutoresizingMaskIntoConstraints="NO" id="72">
-                            <rect key="frame" x="64" y="36" width="28" height="28"/>
+                            <rect key="frame" x="63.999999999999986" y="36" width="28" height="28"/>
                         </imageView>
                         <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37">
                             <rect key="frame" x="137" y="36" width="39" height="30"/>
@@ -127,7 +115,7 @@
                             <rect key="frame" x="48" y="72" width="28" height="28"/>
                         </imageView>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" image="bell28" translatesAutoresizingMaskIntoConstraints="NO" id="74">
-                            <rect key="frame" x="80" y="72" width="28" height="28"/>
+                            <rect key="frame" x="79.999999999999986" y="72" width="28" height="28"/>
                         </imageView>
                         <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38">
                             <rect key="frame" x="137" y="72" width="39" height="30"/>
@@ -169,7 +157,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                    <rect key="frame" x="244.5" y="581" width="98" height="42"/>
+                    <rect key="frame" x="244.66666666666663" y="726" width="98" height="42"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal" title="Reset">
                         <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -185,7 +173,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22">
-                    <rect key="frame" x="32.5" y="581" width="98" height="42"/>
+                    <rect key="frame" x="32.666666666666657" y="726" width="98" height="42"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal" title="Start">
                         <color key="titleColor" red="0.98431372549019602" green="0.0078431372549019607" blue="0.023529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -204,15 +192,29 @@
                         <action selector="startStopTimer:" destination="-1" eventType="touchUpInside" id="60"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="00:00" textAlignment="center" lineBreakMode="clip" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="8">
+                    <rect key="frame" x="0.0" y="44" width="375" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="6O8-00-jpv">
+                            <variation key="heightClass=compact" constant="300"/>
+                            <variation key="heightClass=compact-widthClass=regular" constant="300"/>
+                            <variation key="heightClass=regular-widthClass=regular" constant="446"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="300"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="8" firstAttribute="top" secondItem="ceB-rn-cWs" secondAttribute="top" id="0AH-dI-xhe"/>
                 <constraint firstItem="21" firstAttribute="height" secondItem="22" secondAttribute="height" id="0s1-MW-aYh"/>
                 <constraint firstItem="21" firstAttribute="top" secondItem="bZG-52-tVT" secondAttribute="bottom" constant="100" id="4eb-6g-aaH">
                     <variation key="heightClass=compact" constant="1000"/>
                 </constraint>
                 <constraint firstItem="23" firstAttribute="width" secondItem="21" secondAttribute="width" id="8IG-L3-eUL"/>
-                <constraint firstItem="8" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="BfK-vk-fFt"/>
+                <constraint firstItem="8" firstAttribute="leading" secondItem="ceB-rn-cWs" secondAttribute="leading" id="CK5-3H-D6s"/>
                 <constraint firstAttribute="trailing" secondItem="25" secondAttribute="trailing" constant="15" id="IZ9-wC-Gmq"/>
                 <constraint firstItem="23" firstAttribute="centerY" secondItem="21" secondAttribute="centerY" id="JEL-iq-NBR"/>
                 <constraint firstItem="23" firstAttribute="height" secondItem="21" secondAttribute="height" id="MsO-mY-iiJ"/>
@@ -222,19 +224,19 @@
                 </constraint>
                 <constraint firstItem="21" firstAttribute="width" secondItem="22" secondAttribute="width" id="T9l-Kc-Kv6"/>
                 <constraint firstItem="21" firstAttribute="centerY" secondItem="22" secondAttribute="centerY" id="XWo-le-D0e"/>
-                <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="ZQu-UL-WBc"/>
+                <constraint firstItem="ceB-rn-cWs" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="cZH-Yi-sSJ"/>
                 <constraint firstItem="bZG-52-tVT" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="drJ-QM-gVM"/>
                 <constraint firstItem="21" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="iOs-tf-VUu"/>
                 <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="44" id="iX4-yV-lpi">
                     <variation key="heightClass=compact" constant="16"/>
                 </constraint>
-                <constraint firstItem="8" firstAttribute="top" secondItem="6" secondAttribute="top" id="nz2-hK-VLT"/>
                 <constraint firstAttribute="bottom" secondItem="25" secondAttribute="bottom" constant="12" id="p7N-Wt-aox"/>
                 <constraint firstItem="23" firstAttribute="leading" secondItem="21" secondAttribute="trailing" constant="8" id="vwg-us-eDB">
                     <variation key="heightClass=compact" constant="24"/>
                     <variation key="widthClass=regular" constant="64"/>
                 </constraint>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="ceB-rn-cWs"/>
             <variation key="heightClass=regular-widthClass=regular">
                 <mask key="constraints">
                     <include reference="0s1-MW-aYh"/>
@@ -245,7 +247,7 @@
                     <include reference="vwg-us-eDB"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="264" y="532"/>
+            <point key="canvasLocation" x="264" y="531.5"/>
         </view>
     </objects>
     <resources>
