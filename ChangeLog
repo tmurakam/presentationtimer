@@ -1,7 +1,9 @@
 2018/06/10 : Takuya Murakami
 
-	* ver 4.1.0 (4.1.0.1) prepare
+	* ver 4.1.0 (4.1.0.1)
 	* iOS 9 以上必須
+	* iPhone X 対応追加、レイアウト修正
+	* Fabric/Crashlytics 最新化
 
 2016/08/28 : Takuya Murakami
 
