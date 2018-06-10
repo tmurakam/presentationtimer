@@ -1,7 +1,7 @@
 /*
   Presentation Timer for iOS
 
-  Copyright (c) 2008-2016, Takuya Murakami, All rights reserved.
+  Copyright (c) 2008-2018, Takuya Murakami, All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are
@@ -31,41 +31,14 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#import "AppDelegate.h"
-#import "PresentationTimerViewController.h"
+#import <UIKit/UIKit.h>
 
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
+@class PresentationTimerViewController;
 
-@implementation AppDelegate
+@interface AppDelegate : NSObject <UIApplicationDelegate>
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Fabric
-    [Fabric with:@[[Crashlytics class]]];
-
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
-    NSString *nibName = @"PresentationTimerViewController";
-    self.viewController = [[PresentationTimerViewController alloc] initWithNibName:nibName bundle:nil];
-    
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
-
-    return YES;
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    [self.viewController appSuspended];
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    [self.viewController appResumed];
-}
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) PresentationTimerViewController *viewController;
 
 @end
+

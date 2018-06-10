@@ -1,7 +1,7 @@
 /*
   Presentation Timer for iOS
 
-  Copyright (c) 2008-2016, Takuya Murakami, All rights reserved.
+  Copyright (c) 2008-2018, Takuya Murakami, All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are
@@ -172,8 +172,12 @@
     [mDelegate timePickerViewSetCountdownTarget];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotate {
     return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)didReceiveMemoryWarning {

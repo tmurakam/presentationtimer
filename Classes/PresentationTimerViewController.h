@@ -1,7 +1,7 @@
 /*
-  Presentation Timer for iPhone
+  Presentation Timer for iOS
 
-  Copyright (c) 2008-2016, Takuya Murakami, All rights reserved.
+  Copyright (c) 2008-2018, Takuya Murakami, All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are
@@ -32,21 +32,11 @@
 */
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import "TimePickerViewController.h"
+#import "TimerModel.h"
 
-@class TimePickerViewController;
-
-@protocol TimePickerViewDelegate
-- (void)timePickerViewSetTime:(NSInteger)seconds;
-- (void)timePickerViewSetCountdownTarget;
-@end
-
-@interface TimePickerViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
-
-@property(nonatomic,assign) NSInteger seconds;
-@property(nonatomic,unsafe_unretained) id<TimePickerViewDelegate> delegate;
-
-- (IBAction)onDone:(id)sender;
-- (IBAction)onCancel:(id)sender;
-- (IBAction)onSetCountdownTarget:(id)sender;
-
+@interface PresentationTimerViewController : UIViewController <TimePickerViewDelegate, TimerModelDelegate>
+- (void)appSuspended;
+- (void)appResumed;
 @end
