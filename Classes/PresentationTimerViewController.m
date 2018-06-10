@@ -50,7 +50,7 @@
     
     TimerModel *mTimer;
     BOOL mIsCountDown;
-	
+    
     UIColor *mColor0;
     UIColor *mColor1;
     UIColor *mColor2;
@@ -88,12 +88,12 @@
     mColor1 = [[UIColor alloc] initWithRed:1.0 green:1.0 blue:0.0 alpha:1.0];
     mColor2 = [[UIColor alloc] initWithRed:1.0 green:0.2 blue:0.8 alpha:1.0];
     mColor3 = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-	
+    
     NSString *title;
     title = NSLocalizedString(@"Start", @"");
     [startStopButton setTitle:title forState:UIControlStateNormal];
     [startStopButton setTitle:title forState:UIControlStateHighlighted];
-	
+    
     title = NSLocalizedString(@"Reset", @"");
     [resetButton setTitle:title forState:UIControlStateNormal];
     [resetButton setTitle:title forState:UIControlStateHighlighted];
@@ -163,8 +163,8 @@
 - (IBAction)startStopTimer:(id)sender
 {
     NSString *newTitle;
-	
-    if (![mTimer isTimerRunning]) {
+    
+    if (!mTimer.timerRunning) {
         // start timer
         [mTimer startTimer];
         newTitle = NSLocalizedString(@"Pause", @"");
@@ -222,7 +222,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touch = [[event allTouches] anyObject];
+    UITouch *touch = [event.allTouches anyObject];
     if (touch.view.tag == timeLabel.tag) {
         [self invertCountDown:timeLabel];
     }
@@ -273,7 +273,7 @@
     } else {
         col = mColor0;
     }
-		
+        
     timeLabel.textColor = col;
 }
 
