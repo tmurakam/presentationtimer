@@ -323,7 +323,7 @@
     return ts;
 }
 
-#pragma mark iOS4 support
+#pragma mark Suspend support
 
 - (void)appSuspended
 {

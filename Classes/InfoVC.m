@@ -69,7 +69,7 @@
       target:self
       action:@selector(doneAction:)];
 
-    NSString *version = [[NSBundle mainBundle].infoDictionary valueForKey:@"CFBundleVersion"];
+    NSString *version = [[NSBundle mainBundle].infoDictionary valueForKey:@"CFBundleShortVersionString"];
     mVersionLabel.text = [NSString stringWithFormat:@"Version %@", version];
 }
 
@@ -85,7 +85,7 @@
 - (IBAction)webButtonTapped
 {
     NSURL *url = [NSURL URLWithString:NSLocalizedString(@"HelpURL", @"web help url")];
-    [[UIApplication sharedApplication] openURL:url];
+    [UIApplication.sharedApplication openURL:url];
 }
 
 /*

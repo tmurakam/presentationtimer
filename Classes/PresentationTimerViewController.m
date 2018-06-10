@@ -31,10 +31,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#import <AVFoundation/AVFoundation.h>
-
 #import "PresentationTimerViewController.h"
-#import "TimePickerViewController.h"
 #import "InfoVC.h"
 
 @interface PresentationTimerViewController()
@@ -303,13 +300,15 @@
     [mTimer saveDefaults];
 }
 
-#pragma mark iOS4 support
+#pragma mark Suspend support
 
+/// サスペンド移行
 - (void)appSuspended
 {
     [mTimer appSuspended];
 }
 
+/// レジューム処理
 - (void)appResumed
 {
     [mTimer appResumed];
