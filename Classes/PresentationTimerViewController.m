@@ -104,18 +104,17 @@
     // timeLabel: フォントサイズを over 300 に設定する
     timeLabel.font = [UIFont fontWithName:@"Helvetica" size:500];
     
-    [self setButtonBorder:bellButton];
-    [self setButtonBorder:startStopButton];
-    [self setButtonBorder:resetButton];
+    //[self setButtonBorder:bellButton];
+    //[self setButtonBorder:startStopButton];
+    //[self setButtonBorder:resetButton];
 }
 
+/*
 - (void)setButtonBorder:(UIButton *)button {
-    //button.layer.borderColor = [UIColor whiteColor].CGColor;
-    //button.layer.borderWidth = 1.0f;
-
-    button.layer.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f].CGColor;
-    button.layer.cornerRadius = 7.5f;
+    //button.layer.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f].CGColor;
+    //button.layer.cornerRadius = 7.5f;
 }
+*/
 
 - (void)viewWillAppear:(BOOL)animated
 {
