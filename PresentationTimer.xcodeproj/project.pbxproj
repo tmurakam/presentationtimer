@@ -23,6 +23,7 @@
 		3E76E5B0160761E2003FA881 /* TimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E76E5AF160761E2003FA881 /* TimerModel.m */; };
 		3E7763BD1D720C0F006FD94B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7763BC1D720C0F006FD94B /* Images.xcassets */; };
 		3E7763BF1D7210FE006FD94B /* LaunchScreeen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7763BE1D7210FE006FD94B /* LaunchScreeen.storyboard */; };
+		3E83692A2483D6F500527C41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E8369292483D6F500527C41 /* GoogleService-Info.plist */; };
 		3EA9809F1157451300526A21 /* 1bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809A1157451300526A21 /* 1bell.wav */; };
 		3EA980A01157451300526A21 /* 2bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809B1157451300526A21 /* 2bell.wav */; };
 		3EA980A11157451300526A21 /* 3bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809C1157451300526A21 /* 3bell.wav */; };
@@ -57,6 +58,7 @@
 		3E76E5AF160761E2003FA881 /* TimerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerModel.m; sourceTree = "<group>"; };
 		3E7763BC1D720C0F006FD94B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PresentationTimer/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		3E7763BE1D7210FE006FD94B /* LaunchScreeen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreeen.storyboard; sourceTree = "<group>"; };
+		3E8369292483D6F500527C41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3EA9809A1157451300526A21 /* 1bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1bell.wav; sourceTree = "<group>"; };
 		3EA9809B1157451300526A21 /* 2bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2bell.wav; sourceTree = "<group>"; };
 		3EA9809C1157451300526A21 /* 3bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3bell.wav; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				3E359C3F1D721DF1003477BE /* Localizable.strings */,
 				3E359C431D721E11003477BE /* InfoPlist.strings */,
 				3E7763BE1D7210FE006FD94B /* LaunchScreeen.storyboard */,
+				3E8369292483D6F500527C41 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				3E7763BB1D72051A006FD94B /* ShellScript */,
+				6A590233056896092A6C03A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,6 +232,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				English,
 				en,
 				ja,
 			);
@@ -254,6 +259,7 @@
 				3EA980A01157451300526A21 /* 2bell.wav in Resources */,
 				3EA980A11157451300526A21 /* 3bell.wav in Resources */,
 				3ED31ABA121FE1F60012B9A0 /* InfoView.xib in Resources */,
+				3E83692A2483D6F500527C41 /* GoogleService-Info.plist in Resources */,
 				3E7763BF1D7210FE006FD94B /* LaunchScreeen.storyboard in Resources */,
 				3E359C451D721E11003477BE /* InfoPlist.strings in Resources */,
 			);
@@ -273,7 +279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 532ecad9ca165fccdfe2d04c731d6b7449375147 4a1b9ec5d0af491383edc13d851e0e4636e4845c4b8e468c5df8c445c1f917db";
+			shellScript = "${PODS_ROOT}/FirebaseCrashlytics/run\n";
 		};
 		49D1BF37C2383ADD48F32440 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -291,6 +297,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A590233056896092A6C03A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -342,12 +365,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 4.2.0.0;
 				DEVELOPMENT_TEAM = 5HUHR3STUG;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				MARKETING_VERSION = 4.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.tmurakam.presentationTimer;
 				PRODUCT_NAME = PresentationTimer;
 			};
@@ -361,10 +386,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 4.2.0.0;
 				DEVELOPMENT_TEAM = 5HUHR3STUG;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				MARKETING_VERSION = 4.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.tmurakam.presentationTimer;
 				PRODUCT_NAME = PresentationTimer;
 			};
