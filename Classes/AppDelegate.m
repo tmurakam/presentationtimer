@@ -34,14 +34,13 @@
 #import "AppDelegate.h"
 #import "PresentationTimerViewController.h"
 
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
+#import "Firebase.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Fabric
-    [Fabric with:@[[Crashlytics class]]];
+    // Firebase
+    [FIRApp configure];
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
