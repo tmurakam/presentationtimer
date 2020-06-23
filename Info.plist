@@ -30,6 +30,8 @@
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreeen</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
