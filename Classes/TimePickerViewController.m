@@ -70,7 +70,7 @@
         [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                       target:self 
                                                       action:@selector(onDone:)];
-	
+    
     NSString *title = NSLocalizedString(@"Use as presentation end time", @"");
     [mCdtButton setTitle:title forState:UIControlStateNormal];
     [mCdtButton setTitle:title forState:UIControlStateHighlighted];
@@ -89,6 +89,7 @@
         CGRect rect = CGRectMake(42 + (size.width / 3) * i, size.height / 2 - 15, 75, 30);
         UILabel *label = [[UILabel alloc] initWithFrame:rect];
         label.text = titles[i];
+        label.textColor = [UIColor whiteColor];
         [picker addSubview:label];
     }
 }
@@ -132,6 +133,7 @@
 {
     UILabel *columnView = [[UILabel alloc] initWithFrame:CGRectMake(35, 0, self.view.frame.size.width/3 - 35, 30)];
     columnView.text = [NSString stringWithFormat:@"%lu", (long) row];
+    columnView.textColor = [UIColor whiteColor];
     columnView.textAlignment = NSTextAlignmentLeft;
     
     return columnView;
