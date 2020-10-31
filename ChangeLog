@@ -1,49 +1,55 @@
-2020/06/23 : Takuya Murakami
+2020/XX/XX : ver 4.3.0 (4.3.0.0)
 
-    * ver 4.2.1 (4.2.1.0)
+    * iOS 12 以上必須
+    * Firebase 更新
+
+2020/06/23 : ver 4.2.1 (4.2.1.0)
+
     * バグ修正: 時刻設定の文字が見えない問題を修正
 
-2020/05/31 : Takuya Murakami
+2020/05/31 : ver 4.2.0 (4.2.0.0)
 
-    * ver 4.2.0 (4.2.0.0)
     * Fabric -> Firebase 移行
 
-2018/10/07 : Takuya Murakami
+2018/10/07 : ver 4.1.1 (4.1.1.1)
 
-	* ver 4.1.1 (4.1.1.1)
-	* iOS 10 以上必須
-	* 横画面レイアウト修正
+    * iOS 10 以上必須
+    * 横画面レイアウト修正
 
-2018/06/10 : Takuya Murakami
+2018/06/10 : ver 4.1.0 (4.1.0.1)
 
-	* ver 4.1.0 (4.1.0.1)
-	* iOS 9 以上必須
-	* iPhone X 対応追加、レイアウト修正
-	* Fabric/Crashlytics 最新化
+    * iOS 9 以上必須
+    * iPhone X 対応追加、レイアウト修正
+    * Fabric/Crashlytics 最新化
 
 2016/08/28 : Takuya Murakami
 
-	* v34 4.0
-	* 秒指定対応
-	* iOS 8 以上必須
-	* デザイン修正 (AutoLayout)
+    * v34 4.0
+    * 秒指定対応
+    * iOS 8 以上必須
+    * デザイン修正 (AutoLayout)
 
-2012/09/17 : Takuya Murakami
+2012/09/17 : ver 3.0
 
-	* ver 3.0
-	* iPhone5 4inch display 対応
-	* ARC対応
-	* iOS 4.2.1以下サポート終了
-	* リファクタリング
-	* Retina アイコン追加
-	* Landscape でボタンが表示されるように UI 変更
-	* 音量調整
-	* 1H以上の時間表示に対応
-	* ヘルプURL変更
-	* バックグランド再生に対応
+    * iPhone5 4inch display 対応
+    * ARC対応
+    * iOS 4.2.1以下サポート終了
+    * リファクタリング
+    * Retina アイコン追加
+    * Landscape でボタンが表示されるように UI 変更
+    * 音量調整
+    * 1H以上の時間表示に対応
+    * ヘルプURL変更
+    * バックグランド再生に対応
 
-2010/08/21 : Takuya Murakami
-	* ver 2.1
-	* iOS 4 対応 : サスペンドに対応
-	* バグ修正 : NSTimer retain count 問題
-	* Info View を追加
+2010/08/21 : ver 2.1
+
+    * iOS 4 対応 : サスペンドに対応
+    * バグ修正 : NSTimer retain count 問題
+    * Info View を追加
+
+2010/03/22 : ver 2.0
+
+2008/10/23 : ver 1.1
+
+    * Initial
