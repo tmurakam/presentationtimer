@@ -85,7 +85,7 @@
 - (IBAction)webButtonTapped
 {
     NSURL *url = [NSURL URLWithString:NSLocalizedString(@"HelpURL", @"web help url")];
-    [UIApplication.sharedApplication openURL:url];
+    [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
 }
 
 /*
