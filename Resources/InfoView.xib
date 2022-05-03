@@ -51,9 +51,10 @@
                     <rect key="frame" x="147.5" y="120" width="80" height="80"/>
                 </imageView>
                 <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9" customClass="CustomButton">
-                    <rect key="frame" x="57" y="582" width="261" height="37"/>
+                    <rect key="frame" x="67.5" y="582" width="240" height="37"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="37" id="4F8-9w-uUC"/>
+                        <constraint firstAttribute="width" constant="240" id="7Z6-mT-qtt"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal" title="Go to support site">
@@ -83,9 +84,8 @@
                 <constraint firstItem="8" firstAttribute="top" secondItem="7" secondAttribute="bottom" constant="33" id="2xh-39-0Wd">
                     <variation key="heightClass=compact" constant="8"/>
                 </constraint>
-                <constraint firstAttribute="trailing" secondItem="9" secondAttribute="trailing" constant="57" id="FYk-O8-E5k"/>
                 <constraint firstItem="3" firstAttribute="top" secondItem="1" secondAttribute="top" constant="120" id="KBf-Hx-ojR">
-                    <variation key="heightClass=compact" constant="72"/>
+                    <variation key="heightClass=compact" constant="48"/>
                     <variation key="heightClass=regular-widthClass=regular" constant="240"/>
                 </constraint>
                 <constraint firstItem="JiM-j2-Wdc" firstAttribute="bottom" secondItem="9" secondAttribute="bottom" constant="48" id="LPJ-Gt-kg6"/>
@@ -96,12 +96,12 @@
                 <constraint firstItem="7" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="25" id="dzC-Am-MzU">
                     <variation key="heightClass=compact" constant="8"/>
                 </constraint>
-                <constraint firstItem="9" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="57" id="gto-EL-SVp"/>
                 <constraint firstItem="8" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="jGb-TK-2ZR"/>
                 <constraint firstItem="7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="jmW-ff-yAV"/>
                 <constraint firstAttribute="trailing" secondItem="7" secondAttribute="trailing" id="jzq-0S-vj3"/>
                 <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="o8c-v2-zjI"/>
                 <constraint firstItem="4" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="rWx-mH-ZAC"/>
+                <constraint firstItem="9" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="rjm-pm-RpW"/>
                 <constraint firstItem="3" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="xmU-Md-hu9"/>
                 <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="xzq-wY-BpD"/>
             </constraints>
