@@ -30,7 +30,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="6O8-00-jpv">
                             <variation key="heightClass=compact" constant="300"/>
-                            <variation key="heightClass=compact-widthClass=regular" constant="300"/>
+                            <variation key="heightClass=compact-widthClass=regular" constant="360"/>
                             <variation key="heightClass=regular-widthClass=regular" constant="600"/>
                         </constraint>
                     </constraints>
