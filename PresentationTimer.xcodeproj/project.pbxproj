@@ -29,7 +29,6 @@
 		3EA980A11157451300526A21 /* 3bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809C1157451300526A21 /* 3bell.wav */; };
 		3ED31ABA121FE1F60012B9A0 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ED31AB9121FE1F60012B9A0 /* InfoView.xib */; };
 		3ED31AC6121FE2470012B9A0 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED31AC5121FE2470012B9A0 /* InfoVC.m */; };
-		5BF43D5B6B3B0B84CEF2773E /* Pods_PresentationTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E642DCD8018ADC51476AFF10 /* Pods_PresentationTimer.framework */; };
 		662ABAC6E12BC6F9757218A4 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 662AB6D15472507751F339FB /* CustomButton.m */; };
 /* End PBXBuildFile section */
 
@@ -68,9 +67,6 @@
 		662AB6D15472507751F339FB /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		662ABA2A91F1C46631CBF8AE /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		9D872353124E934C086DAE2E /* Pods-PresentationTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PresentationTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer.debug.xcconfig"; sourceTree = "<group>"; };
-		E642DCD8018ADC51476AFF10 /* Pods_PresentationTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PresentationTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9530BA1967AEB7CD972D0CC /* Pods-PresentationTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PresentationTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +79,6 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				3E0E24D60E7BE5F500CA7AC4 /* AudioToolbox.framework in Frameworks */,
-				5BF43D5B6B3B0B84CEF2773E /* Pods_PresentationTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,15 +104,6 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		1976BF9BD39987B70A3F11A2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9D872353124E934C086DAE2E /* Pods-PresentationTimer.debug.xcconfig */,
-				F9530BA1967AEB7CD972D0CC /* Pods-PresentationTimer.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +112,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -134,7 +120,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				1976BF9BD39987B70A3F11A2 /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -174,7 +159,6 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
-				E642DCD8018ADC51476AFF10 /* Pods_PresentationTimer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,12 +187,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "PresentationTimer" */;
 			buildPhases = (
-				49D1BF37C2383ADD48F32440 /* [CP] Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				3E7763BB1D72051A006FD94B /* ShellScript */,
-				6A590233056896092A6C03A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,7 +218,7 @@
 				en,
 				ja,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -281,41 +263,6 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/FirebaseCrashlytics/run\n";
 		};
-		49D1BF37C2383ADD48F32440 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PresentationTimer-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A590233056896092A6C03A0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PresentationTimer/Pods-PresentationTimer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -359,7 +306,6 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D872353124E934C086DAE2E /* Pods-PresentationTimer.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -380,7 +326,6 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9530BA1967AEB7CD972D0CC /* Pods-PresentationTimer.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
