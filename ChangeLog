@@ -1,5 +1,6 @@
-2022/XX/XX : ver 4.3.0 (4.3.0.0)
+2022/05/03 : ver 4.3.0 (4.3.0.0)
 
+    * UI改善: タイマ文字表示拡大、レイアウト調整
     * iOS 12 以上必須
     * Firebase 更新
 
@@ -22,9 +23,8 @@
     * iPhone X 対応追加、レイアウト修正
     * Fabric/Crashlytics 最新化
 
-2016/08/28 : Takuya Murakami
+2016/08/28 : ver 4.0
 
-    * v34 4.0
     * 秒指定対応
     * iOS 8 以上必須
     * デザイン修正 (AutoLayout)
