@@ -1,7 +1,7 @@
 /*
   Presentation Timer for iOS
 
-  Copyright (c) 2008-2018, Takuya Murakami, All rights reserved.
+  Copyright (c) 2008-2022, Takuya Murakami, All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are
@@ -31,41 +31,37 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#import "AppDelegate.h"
+import UIKit
+import Firebase
 
-#import "Firebase.h"
+@UIApplicationMain
+class AppDelegate : UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    var viewController: PresentationTimerViewController?
 
-#import "PresentationTimer-Swift.h"
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Firebase
+        FirebaseApp.configure()
 
-@implementation AppDelegate
+        window = UIWindow(frame: UIScreen.main.bounds)
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Firebase
-    [FIRApp configure];
+        let nibName = "PresentationTimerViewController";
+        viewController = PresentationTimerViewController(nibName: nibName, bundle: nil)
 
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
 
-    NSString *nibName = @"PresentationTimerViewController";
-    self.viewController = [[PresentationTimerViewController alloc] initWithNibName:nibName bundle:nil];
-    
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
+        return true
+    }
 
-    return YES;
+    func applicationWillTerminate(_ application: UIApplication) {
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        viewController?.appSuspended()
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        viewController?.appResumed()
+    }
 }
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    [self.viewController appSuspended];
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    [self.viewController appResumed];
-}
-
-@end
