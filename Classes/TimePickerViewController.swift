@@ -33,7 +33,7 @@
 
 import UIKit
 
-protocol TimePickerViewDelegate: class {
+protocol TimePickerViewDelegate: AnyObject {
     func timePickerViewSetTime(_ seconds: Int)
     func timePickerViewSetCountdownTarget()
 }

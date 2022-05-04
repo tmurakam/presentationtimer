@@ -39,7 +39,6 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2899E5210DE3E06400AC0155 /* PresentationTimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentationTimerViewController.xib; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* PresentationTimer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationTimer_Prefix.pch; sourceTree = "<group>"; };
 		3E0E24D50E7BE5F500CA7AC4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
 		3E359C401D721DF1003477BE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E359C461D721E17003477BE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -53,7 +52,6 @@
 		3E8369292483D6F500527C41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3E89289828210EDD00DD9AB3 /* base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E89289928210EED00DD9AB3 /* base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3E9E884028229D7C0091ADB8 /* PresentationTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PresentationTimer-Bridging-Header.h"; sourceTree = "<group>"; };
 		3E9E884128229D7D0091ADB8 /* InfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		3E9E88432822AD670091ADB8 /* TimerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		3E9E88452822C4BC0091ADB8 /* PresentationTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationTimerViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 				3E46E73E2822D5F000AFE6CA /* TimePickerViewController.swift */,
 				3E9E884128229D7D0091ADB8 /* InfoVC.swift */,
 				3E46E7422822E83F00AFE6CA /* AppDelegate.swift */,
-				3E9E884028229D7C0091ADB8 /* PresentationTimer-Bridging-Header.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -108,20 +105,11 @@
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
 			name = CustomTemplate;
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				32CA4F630368D1EE00C91783 /* PresentationTimer_Prefix.pch */,
-			);
-			name = "Other Sources";
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
@@ -335,7 +323,7 @@
 				MARKETING_VERSION = 4.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.tmurakam.presentationTimer;
 				PRODUCT_NAME = PresentationTimer;
-				SWIFT_OBJC_BRIDGING_HEADER = "Classes/PresentationTimer-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -361,7 +349,7 @@
 				MARKETING_VERSION = 4.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.tmurakam.presentationTimer;
 				PRODUCT_NAME = PresentationTimer;
-				SWIFT_OBJC_BRIDGING_HEADER = "Classes/PresentationTimer-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

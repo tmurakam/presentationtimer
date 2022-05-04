@@ -36,7 +36,7 @@ import AVFoundation
 
 let NUM_BELLS = 3
 
-@objc protocol TimerModelDelegate {
+protocol TimerModelDelegate {
     func timerUpdated()
 }
 
@@ -83,7 +83,6 @@ class TimerInfo {
 /**
  Timer business logic
  */
-@objcMembers
 class TimerModel: NSObject {
     var delegate: TimerModelDelegate?
 
@@ -266,7 +265,7 @@ class TimerModel: NSObject {
      Timer handler: called for each 1 second.
      - Parameter theTimer:
      */
-    func timerHandler(theTimer: Timer) {
+    @objc func timerHandler(theTimer: Timer) {
         // バックグランド中はタイマイベントを無視する
         // TBD: 本来は止めたほうがよい。。。
         if (mIsInBackground) {

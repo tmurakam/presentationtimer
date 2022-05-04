@@ -33,7 +33,6 @@
 
 import UIKit
 
-@objcMembers
 class PresentationTimerViewController : UIViewController, TimePickerViewDelegate, TimerModelDelegate {
     @IBOutlet weak var timeLabel: UILabel?
     @IBOutlet weak var bell1Button: UIButton?
