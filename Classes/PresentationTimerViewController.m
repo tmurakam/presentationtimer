@@ -33,8 +33,6 @@
 
 #import "PresentationTimerViewController.h"
 
-#import "PresentationTimer-Swift.h"
-
 @interface PresentationTimerViewController()
 {
     IBOutlet UILabel *timeLabel;
