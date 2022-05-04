@@ -58,8 +58,8 @@
 		3E7763BC1D720C0F006FD94B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PresentationTimer/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		3E7763BE1D7210FE006FD94B /* LaunchScreeen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreeen.storyboard; sourceTree = "<group>"; };
 		3E8369292483D6F500527C41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		3E89289828210EDD00DD9AB3 /* base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = base; path = base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3E89289928210EED00DD9AB3 /* base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = base; path = base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3E89289828210EDD00DD9AB3 /* base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3E89289928210EED00DD9AB3 /* base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EA9809A1157451300526A21 /* 1bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1bell.wav; sourceTree = "<group>"; };
 		3EA9809B1157451300526A21 /* 2bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2bell.wav; sourceTree = "<group>"; };
 		3EA9809C1157451300526A21 /* 3bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3bell.wav; sourceTree = "<group>"; };
