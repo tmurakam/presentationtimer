@@ -16,7 +16,7 @@
 		3E0E24D60E7BE5F500CA7AC4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0E24D50E7BE5F500CA7AC4 /* AudioToolbox.framework */; };
 		3E359C411D721DF1003477BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E359C3F1D721DF1003477BE /* Localizable.strings */; };
 		3E359C451D721E11003477BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E359C431D721E11003477BE /* InfoPlist.strings */; };
-		3E55F3FD0E7BAA0C008D9D4B /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */; };
+		3E46E73F2822DD2400AFE6CA /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E46E73E2822D5F000AFE6CA /* TimePickerViewController.swift */; };
 		3E59EAAD160705CD00FE0BC3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E59EAAC160705CD00FE0BC3 /* AVFoundation.framework */; };
 		3E5A8ED30EAF5B3200118C3C /* TimePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */; };
 		3E7763BD1D720C0F006FD94B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7763BC1D720C0F006FD94B /* Images.xcassets */; };
@@ -47,8 +47,7 @@
 		3E0E24D50E7BE5F500CA7AC4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
 		3E359C401D721DF1003477BE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E359C461D721E17003477BE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3E55F3FB0E7BAA0C008D9D4B /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
-		3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
+		3E46E73E2822D5F000AFE6CA /* TimePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
 		3E55F4030E7BAD58008D9D4B /* TimePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimePickerViewController.xib; sourceTree = "<group>"; };
 		3E59EAAC160705CD00FE0BC3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3E7763BC1D720C0F006FD94B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PresentationTimer/Images.xcassets; sourceTree = SOURCE_ROOT; };
@@ -92,11 +91,10 @@
 			children = (
 				3E9E88452822C4BC0091ADB8 /* PresentationTimerViewController.swift */,
 				3E9E88432822AD670091ADB8 /* TimerModel.swift */,
+				3E46E73E2822D5F000AFE6CA /* TimePickerViewController.swift */,
 				3E9E884128229D7D0091ADB8 /* InfoVC.swift */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
-				3E55F3FB0E7BAA0C008D9D4B /* TimePickerViewController.h */,
-				3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */,
 				662AB6D15472507751F339FB /* CustomButton.m */,
 				662ABA2A91F1C46631CBF8AE /* CustomButton.h */,
 				3E9E884028229D7C0091ADB8 /* PresentationTimer-Bridging-Header.h */,
@@ -290,9 +288,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E9E88462822C4BC0091ADB8 /* PresentationTimerViewController.swift in Sources */,
+				3E46E73F2822DD2400AFE6CA /* TimePickerViewController.swift in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
-				3E55F3FD0E7BAA0C008D9D4B /* TimePickerViewController.m in Sources */,
 				3E9E88442822AD670091ADB8 /* TimerModel.swift in Sources */,
 				3E9E884228229D7D0091ADB8 /* InfoVC.swift in Sources */,
 				662ABAC6E12BC6F9757218A4 /* CustomButton.m in Sources */,
