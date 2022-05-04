@@ -221,7 +221,7 @@ class TimerModel: NSObject {
             return // do nothing
         }
 
-        mTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(TimerModel.timerHandler), userInfo: nil, repeats: true)
+        mTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerHandler), userInfo: nil, repeats: true)
 
         // Disable auto lock when timer is running
         UIApplication.shared.isIdleTimerDisabled = true

@@ -49,7 +49,7 @@ class InfoVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("Info", comment: "");
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(InfoVC.doneAction(sender:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneAction))
 
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
         mVersionLabel?.text = "Version \(version ?? "?")"
@@ -59,7 +59,7 @@ class InfoVC : UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    @objc func doneAction(sender: Any) {
+    @objc func doneAction() {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 

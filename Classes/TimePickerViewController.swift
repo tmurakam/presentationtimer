@@ -62,9 +62,9 @@ class TimePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
 
         self.title = "Set Time"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self,
-                action: #selector(TimePickerViewController.onCancel))
+                action: #selector(onCancel))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self,
-                action: #selector(TimePickerViewController.onDone))
+                action: #selector(onDone))
 
         let title = NSLocalizedString("Use as presentation end time", comment: "")
         mCdtButton?.setTitle(title, for: .normal)
@@ -146,7 +146,7 @@ class TimePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     */
 
-    @IBAction func onDone(_ sender: Any) {
+    @IBAction func onDone() {
         let hour = mPickerView!.selectedRow(inComponent: 0)
         let min = mPickerView!.selectedRow(inComponent: 1)
         let sec = mPickerView!.selectedRow(inComponent: 2)
@@ -156,7 +156,7 @@ class TimePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
         dismiss(animated: true)
     }
 
-    @IBAction func onCancel(_ sender: Any) {
+    @IBAction func onCancel() {
         dismiss(animated: true)
     }
 
