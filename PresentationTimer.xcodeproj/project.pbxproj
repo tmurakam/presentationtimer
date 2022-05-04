@@ -13,7 +13,6 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2899E5220DE3E06400AC0155 /* PresentationTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* PresentationTimerViewController.xib */; };
-		28D7ACF80DDB3853001CB0EB /* PresentationTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* PresentationTimerViewController.m */; };
 		3E0E24D60E7BE5F500CA7AC4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0E24D50E7BE5F500CA7AC4 /* AudioToolbox.framework */; };
 		3E359C411D721DF1003477BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E359C3F1D721DF1003477BE /* Localizable.strings */; };
 		3E359C451D721E11003477BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E359C431D721E11003477BE /* InfoPlist.strings */; };
@@ -27,6 +26,7 @@
 		3E89289628210CB500DD9AB3 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3E89289528210CB500DD9AB3 /* FirebaseCrashlytics */; };
 		3E9E884228229D7D0091ADB8 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E884128229D7D0091ADB8 /* InfoVC.swift */; };
 		3E9E88442822AD670091ADB8 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E88432822AD670091ADB8 /* TimerModel.swift */; };
+		3E9E88462822C4BC0091ADB8 /* PresentationTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E88452822C4BC0091ADB8 /* PresentationTimerViewController.swift */; };
 		3EA9809F1157451300526A21 /* 1bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809A1157451300526A21 /* 1bell.wav */; };
 		3EA980A01157451300526A21 /* 2bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809B1157451300526A21 /* 2bell.wav */; };
 		3EA980A11157451300526A21 /* 3bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809C1157451300526A21 /* 3bell.wav */; };
@@ -42,8 +42,6 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2899E5210DE3E06400AC0155 /* PresentationTimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentationTimerViewController.xib; sourceTree = "<group>"; };
-		28D7ACF60DDB3853001CB0EB /* PresentationTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationTimerViewController.h; sourceTree = "<group>"; };
-		28D7ACF70DDB3853001CB0EB /* PresentationTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationTimerViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PresentationTimer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationTimer_Prefix.pch; sourceTree = "<group>"; };
 		3E0E24D50E7BE5F500CA7AC4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
@@ -61,6 +59,7 @@
 		3E9E884028229D7C0091ADB8 /* PresentationTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PresentationTimer-Bridging-Header.h"; sourceTree = "<group>"; };
 		3E9E884128229D7D0091ADB8 /* InfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		3E9E88432822AD670091ADB8 /* TimerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		3E9E88452822C4BC0091ADB8 /* PresentationTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationTimerViewController.swift; sourceTree = "<group>"; };
 		3EA9809A1157451300526A21 /* 1bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1bell.wav; sourceTree = "<group>"; };
 		3EA9809B1157451300526A21 /* 2bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2bell.wav; sourceTree = "<group>"; };
 		3EA9809C1157451300526A21 /* 3bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3bell.wav; sourceTree = "<group>"; };
@@ -91,12 +90,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3E9E88452822C4BC0091ADB8 /* PresentationTimerViewController.swift */,
 				3E9E88432822AD670091ADB8 /* TimerModel.swift */,
 				3E9E884128229D7D0091ADB8 /* InfoVC.swift */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
-				28D7ACF60DDB3853001CB0EB /* PresentationTimerViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* PresentationTimerViewController.m */,
 				3E55F3FB0E7BAA0C008D9D4B /* TimePickerViewController.h */,
 				3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */,
 				662AB6D15472507751F339FB /* CustomButton.m */,
@@ -291,9 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9E88462822C4BC0091ADB8 /* PresentationTimerViewController.swift in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
-				28D7ACF80DDB3853001CB0EB /* PresentationTimerViewController.m in Sources */,
 				3E55F3FD0E7BAA0C008D9D4B /* TimePickerViewController.m in Sources */,
 				3E9E88442822AD670091ADB8 /* TimerModel.swift in Sources */,
 				3E9E884228229D7D0091ADB8 /* InfoVC.swift in Sources */,

@@ -32,9 +32,10 @@
 */
 
 #import "AppDelegate.h"
-#import "PresentationTimerViewController.h"
 
 #import "Firebase.h"
+
+#import "PresentationTimer-Swift.h"
 
 @implementation AppDelegate
 
