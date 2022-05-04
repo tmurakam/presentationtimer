@@ -1,7 +1,7 @@
 /*
  Presentation Timer for iOS
  
- Copyright (c) 2008-2018, Takuya Murakami, All rights reserved.
+ Copyright (c) 2008-2022, Takuya Murakami, All rights reserved.
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are
@@ -31,7 +31,40 @@
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <UIKit/UIKit.h>
+import UIKit
 
-@interface InfoVC : UIViewController
-@end
+class InfoVC : UIViewController {
+    @IBOutlet weak var mNameLabel: UILabel?
+    @IBOutlet weak var mVersionLabel: UILabel?
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+    init() {
+        super.init(nibName: "InfoView", bundle: nil)
+    }
+
+    // Implement viewDidLoad to do additional setup after loading the view.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = NSLocalizedString("Info", comment: "");
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(InfoVC.doneAction(sender:)))
+
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
+        mVersionLabel?.text = "Version \(version ?? "?")"
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    @objc func doneAction(sender: Any) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func webButtonTapped() {
+        let url = URL(string: NSLocalizedString("HelpURL", comment: "web help url"))
+        UIApplication.shared.open(url!, completionHandler: nil)
+    }
+}

@@ -32,7 +32,8 @@
 */
 
 #import "PresentationTimerViewController.h"
-#import "InfoVC.h"
+
+#import "PresentationTimer-Swift.h"
 
 @interface PresentationTimerViewController()
 {

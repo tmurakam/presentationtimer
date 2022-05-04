@@ -26,11 +26,11 @@
 		3E83692A2483D6F500527C41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E8369292483D6F500527C41 /* GoogleService-Info.plist */; };
 		3E89289428210CB500DD9AB3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3E89289328210CB500DD9AB3 /* FirebaseAnalytics */; };
 		3E89289628210CB500DD9AB3 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3E89289528210CB500DD9AB3 /* FirebaseCrashlytics */; };
+		3E9E884228229D7D0091ADB8 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E884128229D7D0091ADB8 /* InfoVC.swift */; };
 		3EA9809F1157451300526A21 /* 1bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809A1157451300526A21 /* 1bell.wav */; };
 		3EA980A01157451300526A21 /* 2bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809B1157451300526A21 /* 2bell.wav */; };
 		3EA980A11157451300526A21 /* 3bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9809C1157451300526A21 /* 3bell.wav */; };
 		3ED31ABA121FE1F60012B9A0 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ED31AB9121FE1F60012B9A0 /* InfoView.xib */; };
-		3ED31AC6121FE2470012B9A0 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED31AC5121FE2470012B9A0 /* InfoVC.m */; };
 		662ABAC6E12BC6F9757218A4 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 662AB6D15472507751F339FB /* CustomButton.m */; };
 /* End PBXBuildFile section */
 
@@ -60,12 +60,12 @@
 		3E8369292483D6F500527C41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3E89289828210EDD00DD9AB3 /* base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E89289928210EED00DD9AB3 /* base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3E9E884028229D7C0091ADB8 /* PresentationTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PresentationTimer-Bridging-Header.h"; sourceTree = "<group>"; };
+		3E9E884128229D7D0091ADB8 /* InfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		3EA9809A1157451300526A21 /* 1bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1bell.wav; sourceTree = "<group>"; };
 		3EA9809B1157451300526A21 /* 2bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2bell.wav; sourceTree = "<group>"; };
 		3EA9809C1157451300526A21 /* 3bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3bell.wav; sourceTree = "<group>"; };
 		3ED31AB9121FE1F60012B9A0 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
-		3ED31AC4121FE2470012B9A0 /* InfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoVC.h; sourceTree = "<group>"; };
-		3ED31AC5121FE2470012B9A0 /* InfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoVC.m; sourceTree = "<group>"; };
 		662AB6D15472507751F339FB /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		662ABA2A91F1C46631CBF8AE /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -92,6 +92,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3E9E884128229D7D0091ADB8 /* InfoVC.swift */,
 				3E76E5AE160761E2003FA881 /* TimerModel.h */,
 				3E76E5AF160761E2003FA881 /* TimerModel.m */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
@@ -100,10 +101,9 @@
 				28D7ACF70DDB3853001CB0EB /* PresentationTimerViewController.m */,
 				3E55F3FB0E7BAA0C008D9D4B /* TimePickerViewController.h */,
 				3E55F3FC0E7BAA0C008D9D4B /* TimePickerViewController.m */,
-				3ED31AC4121FE2470012B9A0 /* InfoVC.h */,
-				3ED31AC5121FE2470012B9A0 /* InfoVC.m */,
 				662AB6D15472507751F339FB /* CustomButton.m */,
 				662ABA2A91F1C46631CBF8AE /* CustomButton.h */,
+				3E9E884028229D7C0091ADB8 /* PresentationTimer-Bridging-Header.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -216,6 +216,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						LastSwiftMigration = 1330;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PresentationTimer" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -292,7 +297,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* PresentationTimerViewController.m in Sources */,
 				3E55F3FD0E7BAA0C008D9D4B /* TimePickerViewController.m in Sources */,
-				3ED31AC6121FE2470012B9A0 /* InfoVC.m in Sources */,
+				3E9E884228229D7D0091ADB8 /* InfoVC.swift in Sources */,
 				3E76E5B0160761E2003FA881 /* TimerModel.m in Sources */,
 				662ABAC6E12BC6F9757218A4 /* CustomButton.m in Sources */,
 			);
@@ -327,6 +332,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 4.3.0.0;
@@ -336,9 +342,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 4.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.tmurakam.presentationTimer;
 				PRODUCT_NAME = PresentationTimer;
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/PresentationTimer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -347,6 +360,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 4.3.0.0;
@@ -354,9 +368,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 4.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.tmurakam.presentationTimer;
 				PRODUCT_NAME = PresentationTimer;
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/PresentationTimer-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
