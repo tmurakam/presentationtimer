@@ -309,7 +309,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4.3.0.0;
+				CURRENT_PROJECT_VERSION = 4.4.0.0;
 				DEVELOPMENT_TEAM = 5HUHR3STUG;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -320,7 +320,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.3.0;
+				MARKETING_VERSION = 4.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.tmurakam.presentationTimer;
 				PRODUCT_NAME = PresentationTimer;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -337,7 +337,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 4.3.0.0;
+				CURRENT_PROJECT_VERSION = 4.4.0.0;
 				DEVELOPMENT_TEAM = 5HUHR3STUG;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PresentationTimer_Prefix.pch;
@@ -346,7 +346,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.3.0;
+				MARKETING_VERSION = 4.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.tmurakam.presentationTimer;
 				PRODUCT_NAME = PresentationTimer;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
